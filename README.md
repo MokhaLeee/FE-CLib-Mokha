@@ -25,12 +25,12 @@ LYN_REF := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
 
 You can use functions and variables defined inside `include/` folders directly without worry about their adress inside ROM or RAM, for example, just use `gActiveUnit->pow` to get unit's strength power and lyn will automaticlly get where `gActiveUnit` is (`0x3004E50`, actually).
 
-However, if you want to use some new funcs or vars that have not been decomped yet, may be you need to define the by yourself inside source code, here is an example:
+However, if you want to use some new funcs or vars that have not been decomped yet, you can define them by yourself inside source code, for example:
 ```
 static u16 (*PrepItemUse_ApplyJunaFruitAndGetMessageId)(struct Unit*, int item_slot) = (const void*) 0x802F979;
 ```
 
-BTW, the old versions of function and variables definitions is also available inside reference.
+BTW, the old versions of function and variable definitions is also available inside reference.
 
 ## Updating the reference
 
