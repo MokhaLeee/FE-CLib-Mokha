@@ -6,6 +6,10 @@ A newer C headers with references fit to [FE8U decomp](https://github.com/FireEm
 
 ## Usage
 
+#### Here is an [example](https://github.com/MokhaLeee/FE8U-CHAX-template.git) via new C-Lib to build Decomp-based CHAX.
+
+For custom build:
+
 - Add the `FE-CLib-Mokha/include` directory to your include path of makefile, such as:
 ```
 # inside wizardry.mk
