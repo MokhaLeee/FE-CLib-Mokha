@@ -1072,7 +1072,7 @@ dat 0x080000BE, RomHeaderReserved2
 dat 0x080000C0, crt0
 dat 0x080000F4, unk_3007E00
 dat 0x080000F8, IRQStackBottom
-dat 0x080000FC, GlobalIRQHandler
+@dat 0x080000FC, GlobalIRQHandler
 dat 0x08000120, loop
 dat 0x080001C8, loop1
 dat 0x080001CC, foundInterrupt
