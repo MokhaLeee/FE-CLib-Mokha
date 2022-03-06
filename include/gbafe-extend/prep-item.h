@@ -6,7 +6,6 @@
 // https://github.com/MokhaLeee/FE-CLib-Mokha.git
 
 #include "gbafe.h"
-#include "bmitem.h"
 // ====================================================
 
 
