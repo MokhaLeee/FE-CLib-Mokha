@@ -117,58 +117,58 @@ struct ClassData
 
 struct Unit
 {
-    /* 00 */ const struct CharacterData* pCharacterData;
-    /* 04 */ const struct ClassData* pClassData;
+	/* 00 */ const struct CharacterData* pCharacterData;
+	/* 04 */ const struct ClassData* pClassData;
 
-    /* 08 */ s8 level;
-    /* 09 */ u8 exp;
+	/* 08 */ s8 level;
+	/* 09 */ u8 exp;
 
-    /* 0A */ u8 aiFlags;
+	/* 0A */ u8 aiFlags;
 
-    /* 0B */ s8 index;
+	/* 0B */ s8 index;
 
-    /* 0C */ u32 state;
+	/* 0C */ u32 state;
 
-    /* 10 */ s8 xPos;
-    /* 11 */ s8 yPos;
+	/* 10 */ s8 xPos;
+	/* 11 */ s8 yPos;
 
-    /* 12 */ s8 maxHP;
-    /* 13 */ s8 curHP;
-    /* 14 */ s8 pow;
-    /* 15 */ s8 skl;
-    /* 16 */ s8 spd;
-    /* 17 */ s8 def;
-    /* 18 */ s8 res;
-    /* 19 */ s8 lck;
+	/* 12 */ s8 maxHP;
+	/* 13 */ s8 curHP;
+	/* 14 */ s8 pow;
+	/* 15 */ s8 skl;
+	/* 16 */ s8 spd;
+	/* 17 */ s8 def;
+	/* 18 */ s8 res;
+	/* 19 */ s8 lck;
 
-    /* 1A */ s8 conBonus;
-    /* 1B */ u8 rescueOtherUnit;
-    /* 1C */ u8 ballistaIndex;
-    /* 1D */ s8 movBonus;
+	/* 1A */ s8 conBonus;
+	/* 1B */ u8 rescueOtherUnit;
+	/* 1C */ u8 ballistaIndex;
+	/* 1D */ s8 movBonus;
 
-    /* 1E */ u16 items[UNIT_ITEM_COUNT];
-    /* 28 */ u8 ranks[8];
+	/* 1E */ u16 items[UNIT_ITEM_COUNT];
+	/* 28 */ u8 ranks[8];
 
-    /* 30 */ u8 statusIndex : 4;
-    /* 30 */ u8 statusDuration : 4;
+	/* 30 */ u8 statusIndex : 4;
+	/* 30 */ u8 statusDuration : 4;
 
-    /* 31 */ u8 torchDuration : 4;
-    /* 31 */ u8 barrierDuration : 4;
+	/* 31 */ u8 torchDuration : 4;
+	/* 31 */ u8 barrierDuration : 4;
 
-    /* 32 */ u8 supports[UNIT_SUPPORT_MAX_COUNT];
-    /* 39 */ s8 supportBits;
-    /* 3A */ u8 _u3A;
-    /* 3B */ u8 _u3B;
+	/* 32 */ u8 supports[UNIT_SUPPORT_MAX_COUNT];
+	/* 39 */ s8 supportBits;
+	/* 3A */ u8 _u3A;
+	/* 3B */ u8 _u3B;
 
-    /* 3C */ struct SMSHandle* pMapSpriteHandle;
+	/* 3C */ struct SMSHandle* pMapSpriteHandle;
 
-    /* 40 */ u16 ai3And4;
-    /* 42 */ u8 ai1;
-    /* 43 */ u8 ai1data;
-    /* 44 */ u8 ai2;
-    /* 45 */ u8 ai2data;
-    /* 46 */ u8 _u46;
-    /* 47 */ u8 _u47;
+	/* 40 */ u16 ai3And4;
+	/* 42 */ u8 ai1;
+	/* 43 */ u8 ai1data;
+	/* 44 */ u8 ai2;
+	/* 45 */ u8 ai2data;
+	/* 46 */ u8 _u46;
+	/* 47 */ u8 _u47;
 };
 
 struct UnitDefinition
