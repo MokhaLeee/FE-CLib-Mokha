@@ -78,7 +78,9 @@ extern "C" {
 #include "gbafe-extend/other.h"
 #include "gbafe-extend/sound.h"
 #include "gbafe-extend/compress.h"
-
+#include "gbafe-extend/proc.h"
+#include "gbafe-extend/game.h"
+#include "gbafe-extend/map.h"
 
 #ifdef __cplusplus
 } // extern "C"
