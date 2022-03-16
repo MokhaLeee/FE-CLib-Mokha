@@ -6,7 +6,7 @@ A newer C headers with references fit to [FE8U decomp](https://github.com/FireEm
 
 ## Usage
 
-#### Here is an [example](https://github.com/MokhaLeee/FE8U-CHAX-template.git) via new C-Lib to build Decomp-based CHAX.
+#### Here is an [example](https://github.com/MokhaLeee/FE-cHack-Template.git) via new C-Lib to build Decomp-based CHAX.
 
 For custom build:
 
@@ -17,11 +17,22 @@ CLI_DIR := $(realpath .)/Tools/FE-CLib-Mokha
 INC_DIRS := Wizardry/include $(CLI_DIR)/include 
 INCFLAGS := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
 ``` 
+
+	Then set compiling flags as:
+```
+ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
+CFLAGS  := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -mlong-calls
+```
+
 - `#include "gbafe.h"` in your souce code.
+
 - Build the *latest* reference object (for now, is `reference/FE8U-Decomp-20220222.o`) and link against it as:
 ```
 # inside wizardry.mk
-LYN_REF := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
+LYN_REFERENCE := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
+# ...
+%.lyn.event: %.o $(LYN_REFERENCE)
+	@$(LYN) $< $(LYN_REFERENCE) > $@
 ``` 
 
 
@@ -38,7 +49,7 @@ BTW, the old versions of function and variable definitions is also available ins
 
 ## Updating the reference
 
-I use [elf2ref](https://github.com/StanHash/fe6-wizardry/blob/master/tools/scripts/elf2ref.py) to make reference by command:
+Take [elf2ref](https://github.com/StanHash/fe6-wizardry/blob/master/tools/scripts/elf2ref.py)(credit to StanH) to make reference by command:
 ```
 python3 elf2ref.py fireemblem8.elf > FE8U-Decomp-20220222.s
 ```
