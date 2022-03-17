@@ -67,7 +67,6 @@ extern "C" {
 #include "gbafe/functions.h"
 
 
-
 #include "gbafe-extend/unit.h"
 #include "gbafe-extend/map-select.h"
 #include "gbafe-extend/stat-screen.h"

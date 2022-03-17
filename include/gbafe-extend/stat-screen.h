@@ -58,3 +58,4 @@ extern struct SSTextDispInfo const sPage0TextInfo[];
 extern struct SSTextDispInfo const sPage1TextInfo[];
 extern struct SSTextDispInfo const sPage2TextInfo_Physical[];
 extern struct SSTextDispInfo const sPage2TextInfo_Magical[];
+
