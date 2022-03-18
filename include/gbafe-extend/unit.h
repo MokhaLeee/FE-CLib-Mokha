@@ -4,6 +4,7 @@
 
 typedef struct Unit Unit;
 
+
 extern struct Vec2 gActiveUnitMoveOrigin;
 
 struct UnitDefinition* GetChapterAllyUnitDataPointer(); // FE8U 0x08083349
