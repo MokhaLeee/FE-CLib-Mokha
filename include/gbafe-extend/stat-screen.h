@@ -45,6 +45,8 @@ struct HelpPromptSprProc
 };
 
 
+
+
 extern struct StatScreenSt gStatScreen;	// 0x2003BFC in FE8U
 extern u16 gBmFrameTmap0[0x280]; // bg0 tilemap buffer for stat screen page
 extern u16 gBmFrameTmap1[0x240]; // bg2 tilemap buffer for stat screen page
