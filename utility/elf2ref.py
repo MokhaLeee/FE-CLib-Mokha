@@ -57,7 +57,17 @@ def main(args):
 
         sym = elf_symbols[addr]
 
-        print(f"{'fun' if sym[1] else 'dat'} 0x{addr:08X}, {sym[0]}")
-
+        print(f"{'fun' if sym[1] else 'dat'} 0x{addr:07X}, {sym[0]}")
+	
+	
+	for i in range(6):
+		print("\n")
+		
+	with open("base_ref.s", "r") as f:
+		lines = f.readlines()
+		
+		for line in lines:
+			print(line)
+	
 if __name__ == '__main__':
     main(sys.argv[1:])
