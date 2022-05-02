@@ -1,0 +1,11 @@
+global.h:
+	reworked a lot
+
+packed_data_block.h：	
+	add "pragma once"
+
+bmdebug.h：
+	remove "#include "variables.h""
+
+global.h:
+	remove "#include "variables.h""

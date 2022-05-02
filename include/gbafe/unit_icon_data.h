@@ -3,7 +3,7 @@
 
 #pragma once
 
-/* #include "unit_icon_pointer.h" */
+#include "unit_icon_pointer.h"
 
 typedef struct {
     short pattern; // unknown, seems to be useless

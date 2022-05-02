@@ -2,7 +2,7 @@
 
 #pragma once
 
-/* #include "chap_title_pointer.h" */
+#include "chap_title_pointer.h"
 
 typedef struct {
     char *save; // save image

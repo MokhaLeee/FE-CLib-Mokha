@@ -44,7 +44,7 @@ struct DispCnt
     u16 win0_on:1;
     u16 win1_on:1;
     u16 objWin_on:1;
-}__attribute((aligned (4)));
+};
 
 struct DispStat
 {
@@ -56,7 +56,7 @@ struct DispStat
     u16 vcountIrqEnable:1;
     u16 dummy:2;
     u8 vcountCompare;
-}__attribute((aligned (4)));
+};
 
 struct BgCnt
 {
@@ -68,7 +68,7 @@ struct BgCnt
     u16 screenBaseBlock:5;
     u16 areaOverflowMode:1;
     u16 screenSize:2;
-}__attribute((aligned (4)));
+};
 
 struct WinCnt
 {
@@ -103,7 +103,7 @@ struct WinCnt
     u8 wobj_enableObj : 1;
     u8 wobj_enableBlend : 1;
     u8 : 2;
-}__attribute((aligned (4)));
+};
 
 struct BlendCnt
 {
@@ -120,7 +120,7 @@ struct BlendCnt
     u16 target2_bg3_on:1;
     u16 target2_obj_on:1;
     u16 target2_bd_on:1;
-}__attribute((aligned (4)));
+};
 
 struct PlttData
 {

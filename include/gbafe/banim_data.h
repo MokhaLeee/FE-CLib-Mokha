@@ -1,8 +1,8 @@
 // battle animation data in the ROM
 // by laqieer
 
-/* #include "packed_data_block.h"
-#include "banim_pointer.h" */
+#include "packed_data_block.h"
+#include "banim_pointer.h"
 
 typedef struct {
     char abbr[12];
