@@ -1,10 +1,24 @@
 
 
+.macro SET_FUNC name, value
+	.global \name
+	.type   \name, function
+	.set    \name, \value
+.endm
+
+.macro SET_DATA name, value
+	.global \name
+	.type   \name, object
+	.set    \name, \value
+.endm
+
+
+
 @ division & other libgcc functions
 SET_FUNC __aeabi_idiv,    __divsi3
 SET_FUNC __aeabi_idivmod, __modsi3
 
-SET_FUNC GlobalIRQHandler, 0x80000FC
+@ SET_FUNC GlobalIRQHandler, 0x80000FC
 SET_FUNC ARM_ClearOAMBuffer, 0x8000304
 SET_FUNC ARM_ComputeChecksum32, 0x8000360
 SET_FUNC ARM_BgMapFillRect, 0x80003A8
