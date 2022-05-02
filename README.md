@@ -1,7 +1,7 @@
 
 ## FE-Clib fit to Decomp
 
-A newer C headers with references fit to [FE8U decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git) at date 2022.02.22 by Mokha.
+A newer C headers with references fit to [FE8U decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git) at date 2022.05.03 by Mokha.
 
 
 ## Usage
@@ -51,7 +51,7 @@ BTW, the old versions of function and variable definitions is also available ins
 
 Take [elf2ref](https://github.com/StanHash/fe6-wizardry/blob/master/tools/scripts/elf2ref.py)(credit to StanH) to make reference by command:
 ```
-python3 elf2ref.py fireemblem8.elf > FE8U-Decomp-20220222.s
+python3 elf2ref.py fireemblem8.elf > FE8U-Decomp-20220503.s
 ```
 where `fireemblem8.elf` can be got through making [FE8U decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git). Don't forget to copy what inside `FE8U-20190316.s` to new ref file.
 
