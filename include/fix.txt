@@ -1,3 +1,6 @@
+gba/types.h:
+	add a lot of "ALIGNED(4)"
+
 global.h:
 	reworked a lot
 
