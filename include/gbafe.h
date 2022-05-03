@@ -87,7 +87,6 @@ extern "C" {
 #include "gbafe-extend/menu-panel.h"
 #include "gbafe-extend/item.h"
 
-
 #ifdef __cplusplus
 } // extern "C"
 #endif
