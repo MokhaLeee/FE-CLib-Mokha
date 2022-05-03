@@ -5,12 +5,12 @@ typedef struct PanelProc PanelProc;
 struct PanelProc{
 	/* 00 */ PROC_HEADER;
 	
-	/* 2C */ Unit* unit;
+	/* 2C */ struct Unit* unit;
 	/* 30 */ u8 xPos;
 	/* 31 */ u8 yPos;
-	/* 32 */ u8 IconPalIndex;
-	/* 33 */ s8 ItemSlotIndex;
-	/* 34 */ TextHandle text[6];
+	/* 32 */ u8 icon_pal;
+	/* 33 */ s8 item_slot;
+	/* 34 */ struct TextHandle text[6];
 	/* 64 */ u8 _unk64;
 };
 
