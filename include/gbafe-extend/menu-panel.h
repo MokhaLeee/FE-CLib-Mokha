@@ -16,7 +16,7 @@ struct PanelProc{
 
 
 
-extern const ProcCmd gProc_MenuItemPanel[]; // FE8U 0x859AE88
+extern const struct ProcCmd gProc_MenuItemPanel[]; // FE8U 0x859AE88
 
 void ForceMenuItemPanel(struct MenuProc* menu, struct Unit*, u8 x, u8 y); // 0x801E685
 void MenuItemPanel_Idle(struct PanelProc* proc); // 0x801E684
