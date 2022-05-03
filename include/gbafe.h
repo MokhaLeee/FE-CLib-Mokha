@@ -84,6 +84,8 @@ extern "C" {
 #include "gbafe-extend/proc.h"
 #include "gbafe-extend/game.h"
 #include "gbafe-extend/map.h"
+#include "gbafe-extend/menu-panel.h"
+
 
 #ifdef __cplusplus
 } // extern "C"
