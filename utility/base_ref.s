@@ -17,6 +17,8 @@
 @ division & other libgcc functions
 SET_FUNC __aeabi_idiv,    __divsi3
 SET_FUNC __aeabi_idivmod, __modsi3
+SET_FUNC __aeabi_uidiv, __divsi3
+SET_FUNC __aeabi_uidivmod, __modsi3
 
 @ SET_FUNC GlobalIRQHandler, 0x80000FC
 SET_FUNC ARM_ClearOAMBuffer, 0x8000304
