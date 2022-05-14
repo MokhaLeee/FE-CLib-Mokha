@@ -128,7 +128,7 @@ struct PlttData
     u16 g:5; // green
     u16 b:5; // blue
     u16 unused_15:1;
-} /*__attribute__((packed))*/;
+}ALIGNED(4);
 
 struct OamData
 {
@@ -147,7 +147,7 @@ struct OamData
              u16 priority:2;
              u16 paletteNum:4;
     /*0x06*/ u16 affineParam;
-};
+}ALIGNED(4);
 
 #define ST_OAM_OBJ_NORMAL 0
 #define ST_OAM_OBJ_BLEND  1
@@ -177,7 +177,7 @@ struct BgAffineSrcData
     s16 sx;
     s16 sy;
     u16 alpha;
-};
+}ALIGNED(4);
 
 struct BgAffineDstData
 {
@@ -187,14 +187,14 @@ struct BgAffineDstData
     s16 pd;
     s32 dx;
     s32 dy;
-};
+}ALIGNED(4);
 
 struct ObjAffineSrcData
 {
     s16 xScale;
     s16 yScale;
     u16 rotation;
-};
+}ALIGNED(4);
 
 // Multi-player SIO Control Structure
 struct SioMultiCnt
@@ -210,7 +210,7 @@ struct SioMultiCnt
     u16 intrEnable:1;  // IRQ enable
     u16 unused_15:1;
     u16 data;          // data
-};
+}ALIGNED(4);
 
 #define ST_SIO_MULTI_MODE 2 // Multi-player communication mode
 
@@ -233,6 +233,6 @@ struct WaitCnt
     u16 dummy:1;
     u16 prefetchBufEnable:1;
     u16 gamePakType:1;
-};
+}ALIGNED(4);
 
 #endif // GUARD_GBA_TYPES_H
