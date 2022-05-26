@@ -1,6 +1,26 @@
 #pragma once
 #include "gbafe.h"
 
+struct StatScreenEffectProc
+{
+	/* 00 */ PROC_HEADER;
+
+	/* 29 */ u8 pad29[0x38 - 0x29];
+
+	/* 38 */ int direction;
+	/* 3C */ int yDispInit;
+	/* 40 */ int yDispFinal;
+
+	/* 44 */ u8 pad44[0x4A - 0x44];
+
+	/* 4A */ short newItem; // page or unit depending on slide
+	/* 4C */ short timer;
+	/* 4E */ short blendDirection;
+
+	/* 50 */ u8 pad50[0x52 - 0x50];
+
+	/* 52 */ u16   key;
+};
 
 struct StatScreenPageNameProc
 {
