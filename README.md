@@ -18,8 +18,8 @@ Build makefile as below:
 ```
 include $(DEVKITARM)/base_tools
 
-CLIB_DIR := $(realpath .)/Tools/FE-CLib-Mokha
-INC_DIRS := Wizardry/include $(CLI_DIR)/include 
+CLIB_DIR := $(realpath .)/FE-CLib-Mokha
+INC_DIRS := $(CLIB_DIR)/include 
 INCFLAGS := $(foreach dir, $(INC_DIRS), -I "$(dir)")
 ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS  := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -mlong-calls
