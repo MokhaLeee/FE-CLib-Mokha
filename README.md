@@ -29,7 +29,7 @@ CDEPFLAGS = -MMD -MT "$*.o" -MT "$*.asm" -MF "$(CACHE_DIR)/$(notdir $*).d" -MP
 	@$(CC) $(CFLAGS) $(CDEPFLAGS) -g -c $< -o $@ $(ERROR_FILTER)
 
 
-LYN_REF := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220503.o
+LYN_REF := $(CLIB_DIR)/reference/FE8U-Decomp-20220503.o
 LYN := EventAssembler/Tools/lyn.exe
 
 %.lyn.event: %.o $(LYN_REF)
