@@ -4,9 +4,9 @@
 A newer C headers with references fit to [FE8U decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git) at date 2022.05.03 by Mokha.
 
 
-## Usage
+## Toturial
 
-Please refer to StanH's [GBAFE hack in C toturial]().
+Please refer to StanH's [GBAFE hack in C toturial](https://feuniverse.us/t/guide-doc-asm-hacking-in-c-with-ea/3351).
 
 Here is an [example](https://github.com/MokhaLeee/FE-cHack-Template.git) via new C-Lib to build Decomp-based CHAX.
 
