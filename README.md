@@ -6,54 +6,45 @@ A newer C headers with references fit to [FE8U decomp](https://github.com/FireEm
 
 ## Usage
 
-#### Here is an [example](https://github.com/MokhaLeee/FE-cHack-Template.git) via new C-Lib to build Decomp-based CHAX.
+Please refer to StanH's [GBAFE hack in C toturial]().
 
-For custom build:
+Here is an [example](https://github.com/MokhaLeee/FE-cHack-Template.git) via new C-Lib to build Decomp-based CHAX.
 
-- Add the `FE-CLib-Mokha/include` directory to your include path of makefile, such as:
+
+## Usage (with DevkitARM):
+
+Build makefile as below:
+
 ```
-# inside wizardry.mk
-CLI_DIR := $(realpath .)/Tools/FE-CLib-Mokha
+include $(DEVKITARM)/base_tools
+
+CLIB_DIR := $(realpath .)/Tools/FE-CLib-Mokha
 INC_DIRS := Wizardry/include $(CLI_DIR)/include 
-INCFLAGS := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
-``` 
-
-	Then set compiling flags as:
-```
+INCFLAGS := $(foreach dir, $(INC_DIRS), -I "$(dir)")
 ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS  := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -mlong-calls
-```
+CDEPFLAGS = -MMD -MT "$*.o" -MT "$*.asm" -MF "$(CACHE_DIR)/$(notdir $*).d" -MP
 
-- `#include "gbafe.h"` in your souce code.
+%.o: %.c
+	@$(CC) $(CFLAGS) $(CDEPFLAGS) -g -c $< -o $@ $(ERROR_FILTER)
 
-- Build the *latest* reference object (for now, is `reference/FE8U-Decomp-20220222.o`) and link against it as:
-```
-# inside wizardry.mk
-LYN_REFERENCE := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
-# ...
-%.lyn.event: %.o $(LYN_REFERENCE)
-	@$(LYN) $< $(LYN_REFERENCE) > $@
+
+LYN_REF := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220503.o
+LYN := EventAssembler/Tools/lyn.exe
+
+%.lyn.event: %.o $(LYN_REF)
+	@$(LYN) $< $(LYN_REF) > $@
 ``` 
 
+Finally, type `#include "gbafe.h"` in the header of your own C files.
 
-## Reference objects
+Then you can use command `make *.lyn.event` to compile your own c-code through Msys2.
 
-You can use functions and variables defined inside `include/` folders directly without worry about their adress inside ROM or RAM, for example, just use `gActiveUnit->pow` to get unit's strength power and lyn will automaticlly get where `gActiveUnit` is (`0x3004E50`, actually).
+Note that `$(CC)` is set as `$(DEVKITARM)/arm-none-eabi-gcc` which is defined in `$(DEVKITARM)/base_tools`, you can also use ARM tool chains for master hackers. `$(LYN)` is path to lyn.exe, usually it can be found in `EventAssembler/Tools`, and the `$(LYN_REF)` holds all of the functions and variables pointers.
 
-However, if you want to use some new funcs or vars that have not been decomped yet, you can define them by yourself inside source code, for example:
-```
-static u16 (*PrepItemUse_ApplyJunaFruitAndGetMessageId)(struct Unit*, int item_slot) = (const void*) 0x802F979;
-```
 
-BTW, the old versions of function and variable definitions is also available inside reference.
 
-## Updating the reference
 
-Take [elf2ref](https://github.com/StanHash/fe6-wizardry/blob/master/tools/scripts/elf2ref.py)(credit to StanH) to make reference by command:
-```
-python3 elf2ref.py fireemblem8.elf > FE8U-Decomp-20220503.s
-```
-where `fireemblem8.elf` can be got through making [FE8U decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git). Don't forget to copy what inside `FE8U-20190316.s` to new ref file.
 
 ## Thanks
 - `StanH` and `Laqieer`, constructor of original FE-Clib, Decomp. proj., etc. Cool guys.
