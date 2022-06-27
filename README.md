@@ -16,17 +16,18 @@ Here is an [example](https://github.com/MokhaLeee/FE-cHack-Template.git) via new
 Build makefile as below:
 
 ```
+CLIB_DIR := $(realpath .)/FE-CLib-Mokha
 include $(DEVKITARM)/base_tools
 
-CLIB_DIR := $(realpath .)/FE-CLib-Mokha
 INC_DIRS := $(CLIB_DIR)/include 
 INCFLAGS := $(foreach dir, $(INC_DIRS), -I "$(dir)")
 ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS  := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -mlong-calls
-CDEPFLAGS = -MMD -MT "$*.o" -MT "$*.asm" -MF "$(CACHE_DIR)/$(notdir $*).d" -MP
+CDEPFLAGS = -MD -MT $*.o -MT $*.asm -MF $*.d -MP
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(CDEPFLAGS) -g -c $< -o $@ $(ERROR_FILTER)
+
 
 
 LYN_REF := $(CLIB_DIR)/reference/FE8U-Decomp-20220503.o
