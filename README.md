@@ -17,21 +17,26 @@ Build makefile as below:
 
 ```
 CLIB_DIR := $(realpath .)/FE-CLib-Mokha
+
+# Need DevKitPRO Installed!
 include $(DEVKITARM)/base_tools
 
+# Get all header files directories
 INC_DIRS := $(CLIB_DIR)/include 
 INCFLAGS := $(foreach dir, $(INC_DIRS), -I "$(dir)")
+
+# Refer to StanH's toturial: https://feuniverse.us/t/guide-doc-asm-hacking-in-c-with-ea/3351
 ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS  := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -mlong-calls
-CDEPFLAGS = -MD -MT $*.o -MT $*.asm -MF $*.d -MP
+CDEPFLAGS := -MD -MT $*.o -MT $*.asm -MF $*.d -MP
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(CDEPFLAGS) -g -c $< -o $@ $(ERROR_FILTER)
 
 
-
-LYN_REF := $(CLIB_DIR)/reference/FE8U-Decomp-20220503.o
+# Need Lyn(elf2ea) asset: https://feuniverse.us/t/ea-asm-tool-lyn-elf2ea-if-you-will/2986
 LYN := EventAssembler/Tools/lyn.exe
+LYN_REF := $(CLIB_DIR)/reference/FE8U-Decomp-20220503.o
 
 %.lyn.event: %.o $(LYN_REF)
 	@$(LYN) $< $(LYN_REF) > $@
