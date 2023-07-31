@@ -28,107 +28,13 @@ typedef u8  bool8;
 typedef u16 bool16;
 typedef u32 bool32;
 
-struct DispCnt
-{
-    u16 mode:3;
-    u16 cgbMode:1;  // reserved, do not use
-    u16 bmpFrameNum:1;
-    u16 hblankIntervalFree:1;
-    u16 obj1dMap:1;
-    u16 forcedBlank:1;
-    u16 bg0_on:1;
-    u16 bg1_on:1;
-    u16 bg2_on:1;
-    u16 bg3_on:1;
-    u16 obj_on:1;
-    u16 win0_on:1;
-    u16 win1_on:1;
-    u16 objWin_on:1;
-}ALIGNED(4);
-
-struct DispStat
-{
-    u16 vblankFlag:1;
-    u16 hblankFlag:1;
-    u16 vcountFlag:1;
-    u16 vblankIrqEnable:1;
-    u16 hblankIrqEnable:1;
-    u16 vcountIrqEnable:1;
-    u16 dummy:2;
-    u8 vcountCompare;
-}ALIGNED(4);
-
-struct BgCnt
-{
-    u16 priority:2;
-    u16 charBaseBlock:2;
-    u16 dummy:2;
-    u16 mosaic:1;
-    u16 colorMode:1;
-    u16 screenBaseBlock:5;
-    u16 areaOverflowMode:1;
-    u16 screenSize:2;
-}ALIGNED(4);
-
-struct WinCnt
-{
-    u8 win0_enableBg0 : 1;
-    u8 win0_enableBg1 : 1;
-    u8 win0_enableBg2 : 1;
-    u8 win0_enableBg3 : 1;
-    u8 win0_enableObj : 1;
-    u8 win0_enableBlend : 1;
-    u8 : 2;
-
-    u8 win1_enableBg0 : 1;
-    u8 win1_enableBg1 : 1;
-    u8 win1_enableBg2 : 1;
-    u8 win1_enableBg3 : 1;
-    u8 win1_enableObj : 1;
-    u8 win1_enableBlend : 1;
-    u8 : 2;
-
-    u8 wout_enableBg0 : 1;
-    u8 wout_enableBg1 : 1;
-    u8 wout_enableBg2 : 1;
-    u8 wout_enableBg3 : 1;
-    u8 wout_enableObj : 1;
-    u8 wout_enableBlend : 1;
-    u8 : 2;
-
-    u8 wobj_enableBg0 : 1;
-    u8 wobj_enableBg1 : 1;
-    u8 wobj_enableBg2 : 1;
-    u8 wobj_enableBg3 : 1;
-    u8 wobj_enableObj : 1;
-    u8 wobj_enableBlend : 1;
-    u8 : 2;
-}ALIGNED(4);
-
-struct BlendCnt
-{
-    u16 target1_bg0_on:1;
-    u16 target1_bg1_on:1;
-    u16 target1_bg2_on:1;
-    u16 target1_bg3_on:1;
-    u16 target1_obj_on:1;
-    u16 target1_bd_on:1;
-    u16 effect:2;
-    u16 target2_bg0_on:1;
-    u16 target2_bg1_on:1;
-    u16 target2_bg2_on:1;
-    u16 target2_bg3_on:1;
-    u16 target2_obj_on:1;
-    u16 target2_bd_on:1;
-}ALIGNED(4);
-
 struct PlttData
 {
     u16 r:5; // red
     u16 g:5; // green
     u16 b:5; // blue
     u16 unused_15:1;
-}ALIGNED(4);
+} /*__attribute__((packed))*/;
 
 struct OamData
 {
@@ -147,7 +53,7 @@ struct OamData
              u16 priority:2;
              u16 paletteNum:4;
     /*0x06*/ u16 affineParam;
-}ALIGNED(4);
+};
 
 #define ST_OAM_OBJ_NORMAL 0
 #define ST_OAM_OBJ_BLEND  1
@@ -177,7 +83,7 @@ struct BgAffineSrcData
     s16 sx;
     s16 sy;
     u16 alpha;
-}ALIGNED(4);
+};
 
 struct BgAffineDstData
 {
@@ -187,14 +93,14 @@ struct BgAffineDstData
     s16 pd;
     s32 dx;
     s32 dy;
-}ALIGNED(4);
+};
 
 struct ObjAffineSrcData
 {
     s16 xScale;
     s16 yScale;
     u16 rotation;
-}ALIGNED(4);
+};
 
 // Multi-player SIO Control Structure
 struct SioMultiCnt
@@ -210,7 +116,7 @@ struct SioMultiCnt
     u16 intrEnable:1;  // IRQ enable
     u16 unused_15:1;
     u16 data;          // data
-}ALIGNED(4);
+};
 
 #define ST_SIO_MULTI_MODE 2 // Multi-player communication mode
 
@@ -233,6 +139,6 @@ struct WaitCnt
     u16 dummy:1;
     u16 prefetchBufEnable:1;
     u16 gamePakType:1;
-}ALIGNED(4);
+};
 
 #endif // GUARD_GBA_TYPES_H
