@@ -116,12 +116,6 @@ extern u8 gGenericBuffer[0x2000];
 // extern ??? gUnknown_02026E10
 // extern ??? gUnknown_02028F78
 // extern ??? gUnknown_02029D88
-extern struct TextBuffer0202A6AC gUnknown_0202A6AC;
-//extern u8 gUnknown_0202AC01[];
-//extern u8 gUnknown_0202B156[];
-extern u8 gUnknown_0202B4AC[];
-// extern ??? gUnknown_0202B5AC
-extern int gUnknown_0202B6AC;
 extern struct BmSt gBmSt;
 extern struct PlaySt gPlaySt;
 // extern ??? gUnknown_0202BD30
@@ -244,7 +238,7 @@ extern struct OamDataTransfer gUnknown_03000030;
 // extern ??? gUnknown_03001850
 // extern ??? gUnknown_03001860
 // extern ??? gUnknown_03001864
-// extern ??? gUnknown_030018F0
+extern u16 gUnknown_030018F0[];
 // extern ??? gUnknown_03001A30
 // extern ??? gUnknown_03001A34
 // extern ??? gUnknown_03001C34
@@ -483,8 +477,8 @@ extern const struct FaceVramEntry gFaceConfig_PrepItemUseScreen[4];
 // extern ??? gUnknown_08205E28
 // extern ??? gUnknown_08205F28
 // extern ??? gUnknown_08205F7C
-// extern ??? gUnknown_08205FA0
-// extern ??? gUnknown_082060B0
+// extern ??? gWMNodeIconData
+// extern ??? gWMNodeData
 // extern ??? gUnknown_08206450
 // extern ??? gUnknown_08206498
 // extern ??? gWMPathData
@@ -580,8 +574,8 @@ extern struct Glyph *TextGlyphs_Special[];
 // extern ??? gUnknown_0859160C
 // extern ??? gUnknown_08591624
 // extern ??? gUnknown_0859163C
-extern const char *gUnknown_08591AA4[][2];
-//extern struct {u32 *unk0; u32 *unk4; u32 *unk8;} gUnknown_08591AA4;
+extern const char *gStrPrefix[][2];
+//extern struct {u32 *unk0; u32 *unk4; u32 *unk8;} gStrPrefix;
 // extern ??? gUnknown_08591AB4
 
 // extern ??? sProcScr_Popup
@@ -1395,13 +1389,13 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gUnknown_08A3DD20
 // extern ??? gUnknown_08A3DD38
 // extern ??? gUnknown_08A3DD88
-// extern ??? gUnknown_08A3DDF4
-// extern ??? gUnknown_08A3DE84
-// extern ??? gUnknown_08A3DECC
-// extern ??? gUnknown_08A3DEFC
-// extern ??? gUnknown_08A3DF2C
-// extern ??? gUnknown_08A3DF64
-// extern ??? gUnknown_08A3DF94
+// extern ??? gProcScr_GMapScreenVSync
+// extern ??? gProcScr_GMapScreen
+// extern ??? gProcScr_GmapUnit
+// extern ??? gProcScr_GmapUnitContainer
+// extern ??? gProcScr_GmapUnitFade
+// extern ??? gProcScr_GmNodeIconDisplay
+// extern ??? gProcScr_GmapCursor
 // extern ??? gProcScr_GMapRoute
 // extern ??? gMenu_WMGeneralMenu
 // extern ??? gMenuRect_WMGeneralMenuRect
@@ -1420,11 +1414,6 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gUnknown_08A3E3BA
 // extern ??? gUnknown_08A3E412
 // extern ??? gUnknown_08A3E448
-// extern ??? gUnknown_08A3E458
-// extern ??? gUnknown_08A3E45B
-// extern ??? gUnknown_08A3E45E
-// extern ??? gUnknown_08A3E461
-// extern ??? gUnknown_08A3E464
 // extern ??? gUnknown_08A3E4D4
 // extern ??? gUnknown_08A3E4F4
 // extern ??? gUnknown_08A3E52C
@@ -1481,9 +1470,9 @@ extern u8 gUnknown_08A40B14[]; // tsa
 extern u8 gUnknown_08A96308[]; // gfx -> world map tiles
 extern u8 gUnknown_08A97410[]; // tsa
 extern u16 gUnknown_08A97A40[]; // pal
-// extern ??? gUnknown_08A97A60
-// extern ??? gUnknown_08A97A80
-// extern ??? gUnknown_08A97ACC
+extern u16 gPal_GMapPI_ShopIcons[];
+extern u8 gGfx_GMapPI_ShopIcons[];
+// extern ??? gPal_08A97ACC
 // extern ??? gUnknown_08A97AEC
 // extern ??? gUnknown_08A97C98
 // extern ??? gUnknown_08A97E28
@@ -1502,10 +1491,10 @@ extern u16 gUnknown_08A97FA4[]; // pal
 // extern ??? gUnknown_08A98E4C
 // extern ??? gUnknown_08A98E6C
 // extern ??? gUnknown_08A98E8C
-// extern ??? gUnknown_08A98EAC
-// extern ??? gUnknown_08A98F30
-// extern ??? gUnknown_08A9901C
-// extern ??? gUnknown_08A99120
+extern u8 gUnknown_08A98EAC[]; // tsa
+extern u8 gUnknown_08A98F30[]; // tsa
+extern u8 gGfx_GMapPI_LevelNums[];
+extern u16 gPal_GMapPI_LevelNums[];
 // extern ??? gUnknown_08A99140
 // extern ??? gUnknown_08A9DF74
 // extern ??? gUnknown_08A9E4C4

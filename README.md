@@ -1,24 +1,28 @@
 
-## FE-Clib fit to Decomp
+# FE-Clib fit to Decomp
 
 C header files for **FireEmblem8U** port from [decomp](https://github.com/FireEmblemUniverse/fireemblem8u)
 
 ## Usage (for WSL & ubuntu):
 
-Suppose you have a **.c** file (named as *test.c*), then
+1. Suppose you have a **.c** file (named as *test.c*), put it to repo directory and then:
 
-1. **.c** to **.o**
+2. **.c** to **.o**
+    ```sh
+    make -f template.mk test.o
+    ```
+    Now you get the obj file *test.o* and then:
 
-```bash
-make -f <path-to-lib>/template.mk test.o
-```
+3. **.o** to **.lyn.event**
 
-Then you can use [lyn(elf2ea)](https://feuniverse.us/t/ea-asm-tool-lyn-elf2ea-if-you-will/2986) to convert **.o** file to the **.lyn.event**, or
+    Get [lyn](https://github.com/StanHash/lyn) and then:
 
-2. **.c** to **.lyn.event**
+    ```bash
+    ./lyn test.o reference/fireemblem8.ref.o > test.lyn.event
+    ```
 
-Put compiled [EventAssembler](https://github.com/StanHash/EventAssembler) to the home dir(**~/EventAssembler**), then
+## See also
 
-```bash
-make -f <path-to-lib>/wizardry.mk test.lyn.event
-```
+* [**fe8-chax-template**](https://github.com/MokhaLeee/fe8-chax-template), an example to use this C-Lib to compile your own source files.
+* [**FE-CBuild**](https://github.com/MokhaLeee/FE-CBuild), project to insert everything through EA for CHAX.
+* [**FireEmblemUniverse/fireemblem8u**](https://github.com/FireEmblemUniverse/fireemblem8u), a decompilation of Fire Emblem: The Sacred Stones (US)

@@ -136,7 +136,7 @@ struct LCDControlBuffer {
     /* 60 */ u32 bg3x;
     /* 64 */ u32 bg3y;
     /* 68 */ s8 colorAddition;
-} BITPACKED;
+};
 
 struct KeyStatusBuffer {
     /* 00 */ u8 repeatDelay;     // initial delay before generating auto-repeat presses
