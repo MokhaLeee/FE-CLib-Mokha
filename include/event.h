@@ -3,9 +3,11 @@
 
 #include "global.h"
 
-struct EventEngineProc {
-    PROC_HEADER;
+struct UnitDefinition;
 
+struct EventEngineProc
+{
+    /* 00 */ PROC_HEADER;
     /* 2C */ void (*pCallback)(struct EventEngineProc*);
 
     /* 30 */ const u16* pEventStart;
@@ -22,14 +24,17 @@ struct EventEngineProc {
 
     /* 44 */ u16 mapSpritePalIdOverride;
 
-    /* 46 */ // pad
+    /* 46 */ STRUCT_PAD(0x46, 0x48);
 
-    /* 48 */ const void* pUnitLoadData;
+    /* 48 */ const struct UnitDefinition* pUnitLoadData;
     /* 4C */ s16 unitLoadCount;
-
+    
     /* 4E */ u8  idk4E;
 
-    /* 4F */ u8 _pad_4F[0x54 - 0x4F];
+    /* 4F */ u8 unitLoadParameter : 7;
+    /* 4F */ u8 unk4F_7 : 1;
+
+    /* 50 */ STRUCT_PAD(0x50, 0x54);
     /* 54 */ struct Unit *unit;
 };
 
@@ -62,14 +67,17 @@ enum EventStateFlags {
     // I don't think there's more, but I could be wrong
 };
 
-enum EventExecRet {
-    EV_RET_DEFAULT = 0,
-    EV_RET_1,
-    EV_RET_2,
-    EV_RET_3,
-    EV_RET_4,
-    EV_RET_BREAK,
-    EV_RET_ERR,
+enum EventCommandReturnCode
+{
+    EVC_ADVANCE_CONTINUE = 0,
+    EVC_STOP_CONTINUE    = 1,
+
+    EVC_ADVANCE_YIELD    = 2,
+    EVC_STOP_YIELD       = 3,
+    
+    EVC_UNK4             = 4,
+    EVC_END              = 5,
+    EVC_ERROR            = 6
 };
 
 // This will probably be used in evtcmd_gmap/evtscr for defining the event code handler arrays or something
@@ -85,7 +93,7 @@ typedef u8(*EventFuncType)(struct EventEngineProc*);
  * QP (D)
  */
 #define EVENT_SLOT_COUNT 0xE
-extern unsigned gEventSlots[EVENT_SLOT_COUNT];
+extern u32 gEventSlots[EVENT_SLOT_COUNT];
 
 struct EnqueuedEventCall {
     const u16* events;
@@ -102,21 +110,78 @@ struct Struct03000570 {
 
 extern struct Struct03000570 gUnknown_03000570[];
 
-enum EventCmdIndex {
-    EV_CMD_NOP = 0,
-    EV_CMD_END,
-    EV_CMD_EVSET,
-    EV_CMD_EVCHECK,
-    EV_CMD_RANDOMNUMBER,
-    EV_CMD_SVAL,
-    EV_CMD_SLOT_OPS,
-    EV_CMD_QUEUE_OPS,
-    EV_CMD_LABEL,
-    EV_CMD_GOTO,
-    EV_CMD_CALL,
-    EV_CMD_0B,
-    EV_CMD_BRANCH,
-    EV_CMD_ASMC,
+enum EventCmdIndex
+{
+    EV_CMD_NOP              = 0x00,
+    EV_CMD_END              = 0x01,
+    EV_CMD_EVSET            = 0x02,
+    EV_CMD_EVCHECK          = 0x03,
+    EV_CMD_RANDOMNUMBER     = 0x04,
+    EV_CMD_SVAL             = 0x05,
+    EV_CMD_SLOT_OPS         = 0x06,
+    EV_CMD_QUEUE_OPS        = 0x07,
+    EV_CMD_LABEL            = 0x08,
+    EV_CMD_GOTO             = 0x09,
+    EV_CMD_CALL             = 0x0A,
+    EV_CMD_0B               = 0x0B,
+    EV_CMD_BRANCH           = 0x0C,
+    EV_CMD_ASMC             = 0x0D,
+    EV_CMD_STALL            = 0x0E,
+    EV_CMD_COUNTER          = 0x0F,
+    EV_CMD_EVBITMODIFY      = 0x10,
+    EV_CMD_IGNOREKEYS       = 0x11,
+    EV_CMD_BGMCHANGE_12     = 0x12,
+    EV_CMD_BGMCHANGE_13     = 0x13,
+    EV_CMD_BGMOVERWRITE     = 0x14,
+    EV_CMD_BGMVOLUMECHANGE  = 0x15,
+    EV_CMD_PLAYSE           = 0x16,
+    EV_CMD_FADE             = 0x17,
+    EV_CMD_COLORFADE        = 0x18,
+    EV_CMD_CHECKVARIOUS     = 0x19,
+    EV_CMD_SETTEXTTYPE      = 0x1A,
+    EV_CMD_DISPLAYTEXT      = 0x1B,
+    EV_CMD_CONTINUETEXT     = 0x1C,
+    EV_CMD_ENDTEXT          = 0x1D,
+    EV_CMD_DISPLAYFACE      = 0x1E,
+    EV_CMD_MOVEFACE         = 0x1F,
+    EV_CMD_CLEARTEXTBOX     = 0x20,
+    EV_CMD_SHOWBG           = 0x21,
+    EV_CMD_CLEARSCREEN      = 0x22,
+    EV_CMD_23               = 0x23,
+    EV_CMD_24               = 0x24,
+    EV_CMD_LOMA             = 0x25,
+    EV_CMD_CAMERACONTROL    = 0x26,
+    EV_CMD_27               = 0x27,
+    EV_CMD_CHANGEWEATHER    = 0x28,
+    EV_CMD_CHANGEFOGVISION  = 0x29,
+    EV_CMD_CHANGECHAPTER    = 0x2A,
+    EV_CMD_2B               = 0x2B,
+    EV_CMD_2C               = 0x2C,
+    EV_CMD_2D               = 0x2D,
+    EV_CMD_2E               = 0x2E,
+    EV_CMD_MOVEUNIT         = 0x2F,
+    EV_CMD_ENUN             = 0x30,
+    EV_CMD_TOGGLERANGE      = 0x31,
+    EV_CMD_LOADSINGLEUNIT   = 0x32,
+    EV_CMD_CHECKSTATE       = 0x33,
+    EV_CMD_CHANGESTATE      = 0x34,
+    EV_CMD_CHANGECLASS      = 0x35,
+    EV_CMD_CHECKINAREA      = 0x36,
+    EV_CMD_GIVEITEM         = 0x37,
+    EV_CMD_CHANGEACTIVEUNIT = 0x38,
+    EV_CMD_CHANGEAI         = 0x39,
+    EV_CMD_DISPLAYPOPUP     = 0x3A,
+    EV_CMD_DISPLAYCURSOR    = 0x3B,
+    EV_CMD_3C               = 0x3C,
+    EV_CMD_3D               = 0x3D,
+    EV_CMD_PREPSCREEN       = 0x3E,
+    EV_CMD_3F               = 0x3F,
+    EV_CMD_40               = 0x40,
+    EV_CMD_41               = 0x41,
+    EV_CMD_42               = 0x42,
+    EV_CMD_43               = 0x43,
+    EV_CMD_44               = 0x44,
+    EV_CMD_45               = 0x45,
 };
 
 #define EVT_SUB_CMD(scr) (*((const u8 *)(scr)) & 0xF)
@@ -176,8 +241,8 @@ enum EventCmdSubIndex {
 // extern ??? gUnknown_030004E4
 // extern ??? gUnknown_030004E6
 // extern ??? gUnknown_030004E8
-extern unsigned gEventSlotQueue[]; // event slot queue (just an array)
-extern unsigned gEventSlotCounter;
+extern u32 gEventSlotQueue[]; // event slot queue (just an array)
+extern u32 gEventSlotCounter;
 extern struct ProcCmd gGenericProc[4];
 
 extern const struct ProcCmd gProc_StdEventEngine[]; // map event engine proc
@@ -240,20 +305,21 @@ unsigned SlotQueuePop(void);
 void SetEventSlotCounter(unsigned value);
 unsigned GetEventSlotCounter(void);
 
-// ??? sub_800B910(???);
-// ??? sub_800B954(???);
-// ??? sub_800B994(???);
-// ??? sub_800B9B8(???);
-// ??? sub_800BA04(???);
-// ??? sub_800BA34(???);
-// ??? SetSomeRealCamPos(???);
-// ??? sub_800BAA8(???);
-// ??? TriggerMapChanges(???);
-// ??? sub_800BB48(???);
+void sub_800B910(int, int, int);
+void sub_800B954(int, int, int);
+void sub_800B994(int, int, int);
+void sub_800B9B8(int, int);
+void sub_800BA04(int, int);
+void sub_800BA34(void);
+void SetSomeRealCamPos(s8 x, s8 y, s8 unk);
+void sub_800BAA8(s16, u8, ProcPtr);
+void TriggerMapChanges(u16 mapChangeId, u8 displayFlag, ProcPtr parent);
+void sub_800BB48(u16 mapChangeId, u8 displayFlag, ProcPtr parent);
+void sub_800BB98(void);
 void sub_800BB98(void);
 // ??? sub_800BBB4(???);
 // ??? sub_800BBE4(???);
-// ??? HideAllUnits(???);
+void HideAllUnits(void);
 struct Unit * GetUnitStructFromEventParameter(s16 pid);
 void sub_800BCDC(int); // battle related
 // ??? Event80_(???);
@@ -376,7 +442,7 @@ void sub_800BCDC(int); // battle related
 // ??? Event1B_TEXTSHOW(???);
 // ??? Event1C_TEXTCONT(???);
 // ??? Event1D_TEXTEND(???);
-// void sub_800E640(struct EventEngineProc*);
+void sub_800E640(struct EventEngineProc*);
 // ??? _WhileFace6CExists(???);
 // ??? Event1E_(???);
 // ??? Event1F_(???);
@@ -403,14 +469,14 @@ void sub_800BCDC(int); // battle related
 // ??? sub_800F50C(???);
 // ??? ShouldUNITBeLoaded(???);
 // ??? sub_800F5B8(???);
-// ??? sub_800F698(???);
-// ??? LoadUnit_800F704(???);
-// ??? sub_800F8A8(???);
+void sub_800F698(const struct UnitDefinition* def, s16 count, u8 param);
+void LoadUnit_800F704(const struct UnitDefinition *, u16, s8, s8);
+void sub_800F8A8(struct Unit*, const struct UnitDefinition*, u16, s8);
 // ??? sub_800F914(???);
 // ??? Event2B_(???);
 // ??? Event2C_LoadUnits(???);
-// ??? TryPrepareEventUnitMovement(???);
-// ??? GetSomeEventEngineMoveRelatedBitfield(???);
+u8 TryPrepareEventUnitMovement(struct EventEngineProc * proc, int x, int y);
+unsigned GetSomeEventEngineMoveRelatedBitfield(struct EventEngineProc *, s8);
 // ??? Event2D_(???);
 // ??? Event2E_CheckAt(???);
 // ??? Event2F_MoveUnit(???);
@@ -423,10 +489,10 @@ void sub_800BCDC(int); // battle related
 // ??? Event36_CheckInArea(???);
 // ??? Event37_GiveItem(???);
 // ??? Event38_ChangeActiveUnit(???);
-// ??? Event39_(???);
-// ??? Event3A_(???);
+// ??? Event39_ChangeAiScript(???);
+// ??? Event3A_DisplayPopup(???);
 // ??? sub_8010748(???);
-// ??? Event3B_(???);
+// ??? Event3B_DisplayCursor(???);
 // ??? Event3C_(???);
 // ??? Event3D_(???);
 // ??? Event3E_PrepScreenCall(???);
@@ -440,5 +506,7 @@ void sub_800BCDC(int); // battle related
 // ??? Event43_(???);
 // ??? Event44_(???);
 // ??? Event45_(???);
+
+#define EVENT_IS_SKIPPING(aEventEngineProc) (((aEventEngineProc)->evStateBits >> 2) & 1)
 
 #endif // GUARD_EVENT_H

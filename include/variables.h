@@ -590,8 +590,8 @@ extern const char *gStrPrefix[][2];
 // extern ??? gPopup_WpnBroken
 // extern ??? gPopup_WRankUp
 // extern ??? gPopup_NewAlly
-// extern ??? gUnknown_085924D8
-// extern ??? gUnknown_08592530
+// extern ??? gProcScr_BrownTextBox
+// extern ??? gProcScr_08592530
 // extern ??? gUnknown_08592568
 // extern ??? gUnknown_08592580
 // extern ??? ProcScr_BoomFogFx
@@ -1133,7 +1133,7 @@ extern unsigned CONST_DATA gMid_Dark;
 // extern ??? gUnknown_08A01698
 // extern ??? gUnknown_08A016C8
 // extern ??? gUnknown_08A016D8
-// extern ??? gProcScr_BoxDialogue
+extern struct ProcCmd gProcScr_BoxDialogue[];
 // extern ??? gUnknown_08A01740
 // extern ??? gProcScr_BoxDialogueInterpreter
 // extern ??? gUnknown_08A01800
@@ -1385,10 +1385,10 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gProcScr_WorldMapFaceCtrl
 // extern ??? gUnknown_08A3D728
 // extern ??? gProcScr_WorldMapMain
-// extern ??? gUnknown_08A3DD08
-// extern ??? gUnknown_08A3DD20
-// extern ??? gUnknown_08A3DD38
-// extern ??? gUnknown_08A3DD88
+// extern ??? gProcScr_08A3DD08
+// extern ??? gProcScr_08A3DD20
+// extern ??? gProcScr_08A3DD38
+// extern ??? gWMSongTable
 // extern ??? gProcScr_GMapScreenVSync
 // extern ??? gProcScr_GMapScreen
 // extern ??? gProcScr_GmapUnit
@@ -1425,7 +1425,7 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gUnknown_08A3E6E4
 // extern ??? gUnknown_08A3E78C
 // extern ??? gUnknown_08A3E888
-// extern ??? gUnknown_08A3E8B8
+extern struct ProcCmd gUnknown_08A3E8B8[];
 // extern ??? gUnknown_08A3E9A0
 // extern ??? gUnknown_08A3EA00
 // extern ??? gUnknown_08A3EA38
@@ -1461,8 +1461,8 @@ extern u8 gTsa_FinScreen[];
 extern u16 gUnknown_08A40AD4[]; // pal
 extern u8 gUnknown_08A40B14[]; // tsa
 // extern ??? gUnknown_08A40FC8
-// extern ??? gUnknown_08A4CF2C
-// extern ??? gUnknown_08A4D0CC
+// extern ??? gGfx_BrownTextBox
+// extern ??? gPal_BrownTextBox
 // extern ??? gUnknown_08A83364
 // extern ??? gUnknown_08A95F64
 // extern ??? gUnknown_08A95FE4
@@ -1802,7 +1802,7 @@ extern u16 gPal_TitleSmallLightBubbles[];
 // extern ??? gUnknown_08B12C14
 // extern ??? gUnknown_08B12C3C
 extern struct ProcCmd CONST_DATA ProcScr_E_Guide1[];
-// extern ??? ProcScr_E_Guide2
+extern struct ProcCmd CONST_DATA ProcScr_E_Guide2[];
 extern u8 Img_CommGameBgScreen[];  // gfx
 extern u16 gUnknown_08B1754C[]; // pal
 extern u16 gUnknown_08B1756C[]; // pal, used in opsubtitle

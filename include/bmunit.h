@@ -189,7 +189,8 @@ struct UnitDefinition
     /* 05 */ u16 genMonster : 1; /* 05:4 */
     /* 05 */ u16 itemDrop   : 1; /* 05:5 */
     /* 05 */ u16 sumFlag    : 1; /* 05:6 */
-    /* 05 */ u16 extraData  : 9; /* 05:7 to 06:7 */
+    /* 05 */ u16 unk_05_7   : 1; /* 05:7 */
+    /* 05 */ u16 extraData  : 8;
     /* 07 */ u16 redaCount  : 8;
 
     /* 08 */ const void* redas;
@@ -425,8 +426,8 @@ bool IsUnitSlotAvailable(int faction);
 void sub_8018F80(void);
 void sub_8018FC0(void);
 u16 CountAvailableBlueUnits(void);
-int CountRedUnits(void);
-int CountGreenUnits(void);
+u16 CountRedUnits(void);
+u16 CountGreenUnits(void);
 void ClearCutsceneUnits(void);
 void sub_8019108(void);
 int GetUnitCurrentHp(struct Unit* unit);
