@@ -1,6 +1,6 @@
 fun __divsi3, __aeabi_idiv
 fun __modsi3, __aeabi_idivmod
-fun Div, __aeabi_uidiv
-fun Mod, __aeabi_uidivmod
+fun __udivsi3, __aeabi_uidiv
+fun __umodsi3, __aeabi_uidivmod
 
 dat 0x02000000, gAnims
