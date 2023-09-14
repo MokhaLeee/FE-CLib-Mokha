@@ -28,7 +28,7 @@ void MakeTargetListForSupport(struct Unit* unit);
 void AddUnitToTargetListIfAllied(struct Unit* unit);
 void FillBallistaRangeMaybe(struct Unit* unit);
 void TryAddClosedDoorToTargetList(int x, int y);
-void TryAddBridgeToTargetList(int x, int y;
+void TryAddBridgeToTargetList(int x, int y);
 void MakeTargetListForDoorAndBridges(struct Unit* unit, int terrainId);
 void sub_8025864(int x, int y);
 void MakeTargetListForPick(struct Unit* unit);
