@@ -116,6 +116,102 @@ struct GMapUnitContainerProc
     /* 34 */ struct GMapUnitProc * pMapUnitProcs[7];
 };
 
+struct GmapCursorProc
+{
+    /* 00 */ PROC_HEADER;
+
+    /* 2C */ u32 chr;
+    /* 30 */ u8 pal;
+    /* 31 */ u8 unk_31; // set to 0 on init and unreferenced
+    /* 32 */ s8 unk_32;
+    /* 33 */ s8 frameIdx;
+    /* 34 */ u8 unk_34;
+    /* 35 */ u8 unk_35;
+    /* 36 */ STRUCT_PAD(0x36, 0x37);
+    /* 38 */ int unk_38;
+    /* 3C */ int unk_3c;
+    /* 40 */ int unk_40;
+    /* 44 */ int unk_44;
+    /* 48 */ u16 unk_48;
+
+    /* 4C */ struct GmScreenProc * pScreenProc;
+};
+
+struct GMapMuPrimProc_Unk_34
+{
+    s8 a;
+    s8 b;
+    STRUCT_PAD(0x2, 0x4);
+};
+
+struct GMapMuPrimProc
+{
+    PROC_HEADER;
+    u8 unk_29_0 : 1;
+    u8 unk_29_1 : 1;
+    u8 unk_29_2 : 1;
+    u8 unk_29_3 : 1;
+    u8 unk_29_4 : 1;
+    u8 unk_29_5 : 1;
+    s8 unk_2a;
+    s8 unk_2b;
+    u8 unk_2c;
+    s8 unk_2d; // node ID?
+    s8 unk_2e; // node ID?
+    s8 unk_2f;
+    u8 unk_30;
+    s8 unk_31; // anim ID?
+    s8 unk_32; // anim ID?
+    struct GMapMuPrimProc_Unk_34 unk_34[3];
+    s16 unk_40;
+    s16 unk_42;
+    u16 unk_44;
+    u16 unk_46;
+    s16 unk_48;
+    s16 unk_4a;
+    s16 unk_4c;
+    s16 unk_4e;
+    int unk_50;
+    int unk_54;
+};
+
+struct GMapMuProc
+{
+    PROC_HEADER;
+    struct GMapMuPrimProc * unk_2c[7];
+};
+
+// used as input to "sub_80BDEB4" in "worldmap_mapmu.c"
+struct UnknownSub80BDEB4
+{
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ u8 unk_04;
+    /* 06 */ u16 unk_06;
+    /* 08 */ u16 unk_08;
+    /* 0A */ u16 unk_0a;
+    /* 0C */ int unk_0c;
+};
+
+// used as input to "sub_80BDFA4" in "worldmap_mapmu.c"
+struct UnknownSub80BDFA4
+{
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ u8 unk_04;
+    /* 05 */ u8 unk_05;
+    /* 06 */ u16 unk_06;
+    /* 08 */ u16 unk_08;
+    /* 0A */ u16 unk_0a;
+    /* 0C */ u16 unk_0c;
+    /* 0E */ u16 unk_0e;
+    /* 10 */ int unk_10;
+};
+
 struct WorldMapMainProc
 {
     /* 00 */ PROC_HEADER;
@@ -131,7 +227,8 @@ struct WorldMapMainProc
 
     /* 2A */ u8 unk_2a;
     /* 2C */ int unk_2c;
-    /* 30 */ STRUCT_PAD(0x30, 0x3a);
+    /* 30 */ int unk_30;
+    /* 34 */ STRUCT_PAD(0x34, 0x3a);
 
     /* 3A */ u16 unk_3a;
     /* 3C */ u16 unk_3c; // pad?
@@ -142,7 +239,7 @@ struct WorldMapMainProc
     /* 44 */ struct GmScreenProc * unk_44; // GmapScreen
     /* 48 */ struct GmNodeIconDisplayProc * unk_48; // GmNodeIconDisplay
     /* 4C */ struct GMapUnitContainerProc * unk_4c; // Gmap Unit Container
-    /* 50 */ ProcPtr unk_50; // Gmap Cursor
+    /* 50 */ struct GmapCursorProc * unk_50; // Gmap Cursor
     /* 54 */ ProcPtr unk_54; // Gmap MU
 };
 
@@ -331,25 +428,25 @@ ProcPtr NewMapScreen(ProcPtr);
 // ??? GmapUnit_Init(???);
 // ??? GmapUnit_Loop(???);
 // ??? GetPaletteIdForAllegience(???);
-// ??? NewMapUnit(???);
-// ??? MapUnitC_DeleteGmapUnit(???);
-// ??? MapUnitC_SetPosition(???);
-// ??? MapUnitC_GetPosition(???);
+int NewMapUnit(struct GMapUnitContainerProc * container, u16 classId, int faction);
+void MapUnitC_DeleteGmapUnit(struct GMapUnitContainerProc * container, int index);
+void MapUnitC_SetPosition(struct GMapUnitContainerProc * container, int index, int x, int y);
+void MapUnitC_GetPosition(struct GMapUnitContainerProc * container, int index, u16 * x, u16 * y);
 // ??? sub_80BAF58(???);
-// ??? MapUnitC_GetAnimId(???);
-// ??? MapUnitC_SetAnimId(???);
-// ??? MapUnitC_SetDisplayEnabled(???);
+int MapUnitC_GetAnimId(struct GMapUnitContainerProc * container, int index);
+void MapUnitC_SetAnimId(struct GMapUnitContainerProc * container, int index, int animId);
+void MapUnitC_SetDisplayEnabled(struct GMapUnitContainerProc * container, int index, s8 flag);
 // ??? MapUnitC_IsBlendEnabled(???);
-// ??? MapUnitC_SetBlendEnabled(???);
-// ??? MapUnitC_GetLayer(???);
-// ??? MapUnitC_SetLayer(???);
+void MapUnitC_SetBlendEnabled(struct GMapUnitContainerProc * container, int index, s8 flag);
+int MapUnitC_GetLayer(struct GMapUnitContainerProc * container, int index);
+void MapUnitC_SetLayer(struct GMapUnitContainerProc * container, int index, int layer);
 // ??? MapUnitC_GetFaction(???);
-// ??? MapUnitC_SetFaction(???);
+void MapUnitC_SetFaction(struct GMapUnitContainerProc * container, int index, int faction);
 // ??? MapUnitC_SetPalette(???);
 void MapUnitC_SetGfxNeedsUpdate(struct GMapUnitContainerProc * container, int index);
-// ??? sub_80BB0E0(???);
+s8 sub_80BB0E0(struct GMapUnitContainerProc * container, int index, int classId);
 // ??? sub_80BB188(???);
-// ??? sub_80BB194(???);
+int sub_80BB194(struct GMapUnitContainerProc * container, int index);
 // ??? GmapUnitContainer_Destruct(???);
 // ??? GmapUnitContainer_Init(???);
 ProcPtr NewGmapUnitContainer(ProcPtr, int, int);
@@ -359,10 +456,10 @@ ProcPtr NewGmapUnitContainer(ProcPtr, int, int);
 // ??? GmapUnitFade_Loop(???);
 // ??? StartGmapUnitFade(???);
 void EndGmapUnitFade(void);
-// ??? GetGmapUnitFade(???);
+ProcPtr GetGmapUnitFade(void);
 // ??? sub_80BB49C(???);
-// ??? sub_80BB4C0(???);
-// ??? sub_80BB538(???);
+void sub_80BB4C0(int index, int arg1, ProcPtr parent);
+void sub_80BB538(int index, int arg1, ProcPtr parent);
 int WMLoc_GetChapterId(int);
 int WMLoc_GetNextLocId(int idx);
 int sub_80BB628(void * unused, int arg1, int arg2, int arg3, int arg4);
@@ -434,7 +531,7 @@ int sub_80BCA1C(int);
 // ??? sub_80BCBAC(???);
 s8 sub_80BCCFC(s8, s8, int);
 // ??? sub_80BCDE4(???);
-// ??? sub_80BCE34(???);
+int sub_80BCE34(int, int, s16, void *, void *, int);
 void sub_80BCFB4(void); // GM_ClearAllStoryLocations
 int sub_80BCFDC(int);
 int sub_80BD014(struct GMapData*); // Get next WM Destination?
@@ -447,50 +544,50 @@ void sub_80BD270(struct GMapData*, void*);
 // ??? sub_80BD284(???);
 int sub_80BD28C(int);
 int sub_80BD29C(void);
-// ??? nullsub_37(???);
+// ??? GmMuPrim_OnEnd_Null(???);
 // ??? GetCharacterClassId(???);
 // ??? MapMUPrim_MakeUnitForChar(???);
 // ??? MapMUPrim_MakeUnitForClass(???);
-// ??? MapMUPrim_RemoveLinkedMapUnit(???);
-// ??? sub_80BD410(???);
-// ??? nullsub_70(???);
+void MapMUPrim_RemoveLinkedMapUnit(struct GMapMuPrimProc *);
+// ??? GmMuPrim_OnInit(???);
+// ??? GmMuPrim_Loop_Null(???);
 // ??? sub_80BD41C(???);
-// ??? sub_80BD444(???);
+// ??? GmMuPrim_80BD444(???);
 // ??? sub_80BD5B8(???);
 // ??? sub_80BD660(???);
 // ??? sub_80BD6A8(???);
 // ??? sub_80BD740(???);
-// ??? sub_80BD830(???);
-// ??? sub_80BD9D8(???);
-// ??? sub_80BDA78(???);
-// ??? nullsub_49(???);
-// ??? MapMU_FillPrim(???);
-ProcPtr NewMapMU(ProcPtr);
-// ??? MapMU_SetUnit(???);
-void MapMU_RemoveUnit(ProcPtr, int);
+// ??? GmMuPrim_80BD830(???);
+// ??? GmMuPrim_80BD9D8(???);
+// ??? GmMuPrim_80BDA78(???);
+// ??? GmMu_OnEnd_Null(???);
+// ??? GmMu_OnInit(???);
+ProcPtr StartGmMu(ProcPtr);
+// ??? GmMu_SetUnit(???);
+void GmMu_RemoveUnit(struct GMapMuProc *, int);
 // ??? sub_80BDD94(???);
-void sub_80BDDC4(ProcPtr, int);
-// ??? sub_80BDE3C(???);
-// ??? sub_80BDEB4(???);
+void GmMu_ShowUnit(struct GMapMuProc *, int);
+// ??? GmMu_HideUnit(???);
+void sub_80BDEB4(struct GMapMuProc *, struct UnknownSub80BDEB4 *);
 // ??? sub_80BDFA4(???);
-void sub_80BE054(ProcPtr, int); // GmMu_PauseMovement
-void sub_80BE068(ProcPtr, int); // GmMu_ResumeMovement
+void GmMu_PauseMovement(struct GMapMuProc *, int);
+void GmMu_ResumeMovement(struct GMapMuProc *, int);
 // ??? sub_80BE080(???);
-void sub_80BE0A4(ProcPtr, int, s16*, s16*);
+void sub_80BE0A4(struct GMapMuProc *, int, s16*, s16*);
 // ??? sub_80BE0C8(???);
-// ??? MapMU_SetUnitTCSOAMIndex(???);
-void MapMU_80BE108(ProcPtr, int, int);
-s8 sub_80BE12C(ProcPtr, int);
+void GmMu_SetSpriteLayer(struct GMapMuProc *, int, int);
+void GmMu_80BE108(struct GMapMuProc *, int, s8);
+s8 sub_80BE12C(struct GMapMuProc *, int);
 // ??? sub_80BE194(???);
 // ??? sub_80BE330(???);
-void sub_80BE35C(ProcPtr, int, s16, s16); // GmMu_SetPosition
-void sub_80BE3A0(ProcPtr, int, s16*, s16*);
-void sub_80BE3C8(ProcPtr, int, int); // GmMu_SetNode
+void GmMu_SetPosition(struct GMapMuProc *, int, s16, s16);
+void GmMu_GetPosition(struct GMapMuProc *, int, s16 *, s16 *);
+void GmMu_SetNode(struct GMapMuProc *, int, int);
 // ??? sub_80BE3E8(???);
-void sub_80BE40C(ProcPtr, int, int); // GmMu_StartFadeIn
-void sub_80BE42C(ProcPtr, int, int); // GmMu_StartFadeOut
-s8 sub_80BE44C(void); // GmUnitFadeExists
-// ??? sub_80BE45C(???);
+void GmMu_StartFadeIn(struct GMapMuProc *, int, int);
+void GmMu_StartFadeOut(struct GMapMuProc *, int, int);
+s8 GmUnitFadeExists(void);
+void sub_80BE45C(struct GMapMuPrimProc *);
 void MapMU_SetUnitClass(ProcPtr, int, int, int, int);
 void MapMU_SetUnitChar(ProcPtr, int, int, int, int);
 // ??? sub_80BE56C(???);
@@ -518,21 +615,21 @@ void sub_80BE5B4(int, int);
 // ??? sub_80BEF6C(???);
 // ??? GMapPI_Init(???);
 // ??? StartWorldMapPlayerInterface(???);
-void sub_80BF13C(void);
+ProcPtr sub_80BF13C(ProcPtr);
 void sub_80BF15C(void);
-// ??? sub_80BF180(???);
-// ??? sub_80BF190(???);
-// ??? sub_80BF198(???);
-// ??? sub_80BF210(???);
-// ??? sub_80BF294(???);
-// ??? sub_80BF2AC(???);
-// ??? sub_80BF2D0(???);
-// ??? sub_80BF2D8(???);
-// ??? sub_80BF370(???);
-s8 sub_80BF3F4(void);
-void sub_80BF404(int, int, int, int, s16, int);
+// ??? GmMoveCursor_OnEnd(???);
+// ??? GmMoveCursor_OnInit(???);
+// ??? GmMoveCursor_OnLoop(???);
+// ??? StartGmMoveCursor(???);
+// ??? GmMoveCursorExists(???);
+// ??? GmScrollManage_OnEnd(???);
+// ??? GmScrollManage_OnInit(???);
+// ??? GmScrollManage_OnLoop(???);
+// ??? StartGmScrollManage(???);
+// s8 FindGmScrollManage(void);
+void StartGmScroll(s16 xStart, s16 yStart, s16 xEnd, s16 yEnd, s16 speed, s16 delay);
 // ??? sub_80BF490(???);
-void sub_80BF4A8(void);
+void EndGmScroll(void);
 void WM_PutClassSprite(int, int, int, int);
 void WM_PutCharSprite(int, int, int, int);
 void WM_RemoveUnit(int);
@@ -599,7 +696,7 @@ int sub_80C0834(int, int, s16, s16, int);
 void GetWMCenteredCameraPosition(int, int, s16*, s16*);
 int sub_80C089C(int, int, int, int);
 int sub_80C0960(int chIndex);
-// ??? sub_80C09B8(???);
+void sub_80C09B8(void);
 // ??? sub_80C09EC(???);
 // ??? sub_80C0A10(???);
 // ??? sub_80C0A44(???);

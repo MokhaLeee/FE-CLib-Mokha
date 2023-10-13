@@ -24,18 +24,18 @@ extern u16 *gMinimapObjectFlashPal;
 // extern ??? gUnknown_02000C78
 // extern ??? gUnknown_02000F00
 // extern ??? gBmMapBuffer
-// extern ??? gUnknown_02001088
+extern u8 gEkrKakudaiSomeBufLeft[];
 // extern ??? gUnknown_02001180
 // extern ??? gUnknown_02001184
 // extern ??? gUnknown_02001188
 // extern ??? gConvoyItemCount
 // extern ??? gUnknown_02002038
-// extern ??? gUnknown_02002088
+// extern ??? gBanimRightImgSheetBuf
 extern struct Font gUnknown_02002774;
 // extern ??? gaBattleForecastTextStructs
 // extern ??? gUnknown_02002FF4
 // extern ??? gUnknown_0200300C
-// extern ??? gUnknown_02003088
+extern u8 gEkrKakudaiSomeBufRight[];
 // extern ??? gUnknown_0200310C
 // extern ??? gUnknown_020038AC
 // extern ??? gUnknown_020038C4
@@ -108,7 +108,6 @@ extern char gStringBufferAlt[];
 
 // TODO: define this in hardware.c?
 extern u8 gGenericBuffer[0x2000];
-// extern ??? gUnknown_02022188
 
 // extern ??? gUnknown_02026968
 // extern ??? gUnknown_02026A6C
@@ -192,14 +191,14 @@ extern struct Struct203E87C gUnknown_0203E87C;
 // extern ??? gLCGRNValue
 
 // time.c/hardware.c
-// extern ??? gUnknown_0300000C
+// extern ??? gKeyComboResetEN
 extern u8 sModifiedBGs;  // BGs that need copying
 extern s8 sModifiedPalette;
-extern u16 gUnknown_03000010;
+extern u16 gKeyStatusIgnoredSt;
 // extern ??? gUnknown_03000014
 extern u8 gUnknown_03000018;
 extern u8 gUnknown_03000019;
-extern u8 gUnknown_0300001A;
+extern bool gSoftwareResetFlag;
 extern struct OamDataTransfer gUnknown_03000020;
 extern struct OamDataTransfer gUnknown_03000030;
 
@@ -261,15 +260,6 @@ extern u16 gUnknown_030018F0[];
 // extern ??? gUnknown_03002C61
 extern u8 gUnknown_03003060;
 extern void* gUnknown_03003070;
-//extern u16 gUnknown_0300308C[];
-// extern ??? gUnknown_03003090
-// extern ??? gUnknown_03003094
-// extern ??? gUnknown_03003098
-// extern ??? gUnknown_030030B4
-// extern ??? gUnknown_030030B6
-// extern ??? gUnknown_030030C8
-// extern ??? gUnknown_030030D8
-// extern ??? gUnknown_030030F0
 // extern ??? gUnknown_03003128
 extern u16 gUnknown_0300312C;
 // extern ??? gUnknown_03003130
@@ -278,17 +268,17 @@ extern u16 gUnknown_03003140[];
 extern u32 gUnknown_03003240[];
 // extern ??? gUnknown_03003540
 // extern ??? gUnknown_03003740
-extern u32 *gUnknown_03003744;
-extern void (*sHBlankHandler2)(void);
+extern u32 * gUnknown_03003744;
+extern void (* sHBlankHandler2)(void);
 // extern ??? gUnknown_03003750
 // extern ??? gUnknown_03004150
 // extern ??? gUnknown_03004154
-extern u16* gUnknown_03004158;
+extern u16 * gUnknown_03004158;
 // extern ??? gUnknown_03004160
 // extern ??? gUnknown_03004960
 // extern ??? gUnknown_03004990
 // extern ??? gStatGainSimUnit
-extern struct Unit* gActiveUnit;
+extern struct Unit * gActiveUnit;
 // extern ??? gUnknown_03004E70
 // extern ??? gUnknown_03004E74
 // extern ??? gUnknown_03004E80
@@ -768,14 +758,14 @@ extern u16 CONST_DATA Pal_MineFx[];
 // extern ??? gUnknown_085AA2FC
 // extern ??? gUnknown_085AA4CC
 // extern ??? gUnknown_085AA5BC
-// extern ??? gUnknown_085AA6BC
+// extern ??? ProcScr_SIOMAIN
 // extern ??? gUnknown_085AA75C
 // extern ??? gUnknown_085AA7B4
 // extern ??? gUnknown_085AA7EC
 // extern ??? gUnknown_085AA824
 // extern ??? gUnknown_085AA83C
 // extern ??? gUnknown_085AA854
-// extern ??? gUnknown_085AA86C
+// extern ??? ProcScr_SIOWARP
 // extern ??? ProcScr_SIOWARPFX
 // extern ??? gUnknown_085AA914
 // extern ??? gUnknown_085AA954
@@ -1000,17 +990,17 @@ extern CONST_DATA struct MMSData gMMSDataTable[]; // Moving Map Sprite Table
 // extern ??? gUnknown_089ED67C
 // extern ??? gUnknown_089ED694
 // extern ??? gUnknown_089ED6AC
-extern struct ProcCmd gUnknown_089EDF78[];
-extern struct ProcCmd gUnknown_089EDFD8[];
+extern struct ProcCmd ProcScr_BmGameOver[];
+extern struct ProcCmd ProcScr_ForceAsyncButtonB[];
 extern struct ProcCmd gUnknown_089EE000[];
-extern struct ProcCmd gUnknown_089EE030[];
-extern struct ProcCmd gUnknown_089EE048[];
-extern struct ProcCmd gUnknown_089EE068[];
-extern struct ProcCmd gUnknown_089EE088[];
-extern const u16 gUnknown_089EE99C[];
+extern struct ProcCmd ProcScr_089EE030[];
+extern struct ProcCmd ProcScr_089EE048[];
+extern struct ProcCmd ProcScr_089EE068[];
+extern struct ProcCmd ProcScr_089EE088[];
+extern const u16 Obj_089EE99C[];
 extern u16 CONST_DATA *gUnknown_089EE9B0[];    /* images */
 extern u16 CONST_DATA *gUnknown_089EE9C8[];    /* images */
-extern struct ProcCmd gUnknown_089EE9E0[];
+extern struct ProcCmd ProcScr_089EE9E0[];
 extern struct ProcCmd gUnknown_089EEA28[];
 extern const struct MenuDef gUnknown_089F36A0;
 // extern ??? gUnknown_089FF480
@@ -1170,11 +1160,11 @@ extern u16 gTSA_TerrainBox_Destructable[];
 extern u16 gUnknown_08A176B4[];
 extern u16 gTSA_GoalBox_TwoLines[];
 extern u16 gTSA_GoalBox_OneLine[];
-// extern ??? gUnknown_08A177A0
-// extern ??? gUnknown_08A178C0
+// extern ??? ProcScr_bmenu
+// extern ??? ProcScr_bmenu2
 // extern ??? gUnknown_08A17990
-// extern ??? gUnknown_08A17A30
-// extern ??? gUnknown_08A17B08
+// extern ??? ProcScr_bmenu3
+// extern ??? ProcScr_bmview
 // extern ??? gUnknown_08A17B30
 // extern ??? gUnknown_08A17B36
 // extern ??? gUnknown_08A17B58
@@ -1190,9 +1180,9 @@ extern u16 gTSA_GoalBox_OneLine[];
 // extern ??? gpSramExtraData
 // extern ??? gBgConfig_SaveMenu
 // extern ??? gProcScr_08A20068
-// extern ??? gProcScr_08A20098
+// extern ??? ProcScr_CallExtraMap
 // extern ??? ProcScr_SaveMenu
-// extern ??? gProcScr_SaveMenu2
+// extern ??? gProcScr_SaveMenuPostChapter
 // extern ??? gUnknown_08A204B8
 // extern ??? gUnknown_08A204BC
 // extern ??? gUnknown_08A2051C
@@ -1303,8 +1293,8 @@ extern u8 gUnknown_08A2E4C4[]; // TSA
 extern u8 gUnknown_08A2E5EC[]; // Gfx
 extern u16 gUnknown_08A2E8F0[]; // Pal
 // extern ??? gUnknown_08A2E950
-// extern ??? gUnknown_08A2EE90
-// extern ??? gUnknown_08A2EEC0
+// extern ??? ProcScr_ColFadeOut
+// extern ??? ProcScr_ColFadeIn
 extern u8 gUnknown_08A301B0[]; // gfx?
 extern u16 gUnknown_08A30780[]; // pal
 extern u8 gUnknown_08A30800[]; // gfx
@@ -1350,9 +1340,9 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gMenuRect_WMNodeMenuRectB
 // extern ??? gUnknown_08A3E22C
 // extern ??? gUnknown_08A3E23C
-// extern ??? gUnknown_08A3E248
-// extern ??? gUnknown_08A3E2C0
-// extern ??? gUnknown_08A3E2F0
+// extern ??? gProcScr_GMapMuPrim
+// extern ??? gProcScr_GMapMu
+// extern ??? gGMapMuSpriteLayerLut
 // extern ??? gUnknown_08A3E2F8
 // extern ??? gUnknown_08A3E31C
 // extern ??? gUnknown_08A3E360
@@ -1361,8 +1351,8 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gUnknown_08A3E412
 // extern ??? gUnknown_08A3E448
 // extern ??? gUnknown_08A3E4D4
-// extern ??? gUnknown_08A3E4F4
-// extern ??? gUnknown_08A3E52C
+// extern ??? gProcScr_GmMoveCursor
+// extern ??? gProcScr_GmScrollManage
 // extern ??? gUnknown_08A3E55C
 // extern ??? gUnknown_08A3E594
 // extern ??? gUnknown_08A3E5E4
@@ -1479,35 +1469,7 @@ extern u8 CONST_DATA gTsa_OpSubtitle_03[]; // tsa
 extern u8 CONST_DATA gTsa_OpSubtitle_04[]; // tsa
 extern u8 CONST_DATA gTsa_OpSubtitle_05[]; // tsa
 extern u8 CONST_DATA gTsa_OpSubtitle_06[]; // tsa
-// extern ??? gUnknown_08AA6BFA
-// extern ??? gUnknown_08AA6C0E
-// extern ??? gUnknown_08AA6C22
-// extern ??? gUnknown_08AA6C36
-// extern ??? gUnknown_08AA6C4A
-// extern ??? gUnknown_08AA6C58
-// extern ??? gUnknown_08AA6C66
-// extern ??? gUnknown_08AA6C74
-// extern ??? gUnknown_08AA6C82
-// extern ??? gUnknown_08AA6C8A
-// extern ??? gUnknown_08AA6C92
-// extern ??? gUnknown_08AA6C9A
-// extern ??? gUnknown_08AA6CA4
-// extern ??? gUnknown_08AA6CBC
-// extern ??? gUnknown_08AA6CDC
-// extern ??? gUnknown_08AA6D04
-// extern ??? gUnknown_08AA6D14
-// extern ??? gUnknown_08AA6EA4
-// extern ??? gUnknown_08AA7034
-// extern ??? gUnknown_08AA705C
-// extern ??? gUnknown_08AA707C
-// extern ??? gUnknown_08AA709C
-// extern ??? gUnknown_08AA70BC
-// extern ??? gUnknown_08AA70DC
-// extern ??? gUnknown_08AA70EA
-// extern ??? gUnknown_08AA7116
-// extern ??? gUnknown_08AA712A
-// extern ??? gUnknown_08AA715C
-// extern ??? gUnknown_08AA7194
+
 extern u8 gGfx_TitleMainBackground_1[];
 extern u8 gGfx_TitleMainBackground_2[];
 extern u8 gTsa_TitleMainBackground[];
@@ -1538,73 +1500,73 @@ extern u8 gGfx_TitleLargeGlowingOrb[];
 extern u16 gPal_TitleLargeGlowingOrb[];
 extern u8 gGfx_TitleSmallLightBubbles[];
 extern u16 gPal_TitleSmallLightBubbles[];
-// extern ??? gUnknown_08AB21D8
-// extern ??? gUnknown_08AB5D90
-// extern ??? gUnknown_08AB630C
-// extern ??? gUnknown_08AB632C
-// extern ??? gUnknown_08AB7AC0
-// extern ??? gUnknown_08AB7DB0
-// extern ??? gUnknown_08AB7DD0
-// extern ??? gUnknown_08AB87E0
-// extern ??? gUnknown_08AB8CAC
-// extern ??? gUnknown_08AB8CCC
-// extern ??? gUnknown_08AB942C
-// extern ??? gUnknown_08ABB14C
-// extern ??? gUnknown_08ABC074
-// extern ??? gUnknown_08ABC22C
-// extern ??? gUnknown_08ABD174
-// extern ??? gUnknown_08ABD348
-// extern ??? gUnknown_08ABE120
-// extern ??? gUnknown_08ABE304
-// extern ??? gUnknown_08ABEF70
-// extern ??? gUnknown_08ABF168
-// extern ??? gUnknown_08AC0BD8
-// extern ??? gUnknown_08AC1878
-// extern ??? gUnknown_08AC1B98
-// extern ??? gUnknown_08AC1C8C
-// extern ??? gUnknown_08AC1DEC
-// extern ??? gUnknown_08AC2B24
-// extern ??? gUnknown_08AC2CB4
-// extern ??? gUnknown_08AC3A2C
-// extern ??? gUnknown_08AC3BC8
-// extern ??? gUnknown_08AC4760
-// extern ??? gUnknown_08AC4928
-// extern ??? gUnknown_08AC5420
-// extern ??? gUnknown_08AC5614
-// extern ??? gUnknown_08AC7374
-// extern ??? gUnknown_08AC8DDC
-// extern ??? gUnknown_08AC91F8
-// extern ??? gUnknown_08AC933C
-// extern ??? gUnknown_08AC949C
-// extern ??? gUnknown_08ACAF70
-// extern ??? gUnknown_08ACBF58
+extern u8 Img_OpAnimWorldMap[];
+extern u8 Tsa_OpAnimWorldMap[];
+extern u16 pal_08AB630C[];
+extern u8 Img_OpAnimWorldMapFog[];
+extern u8 Tsa_OpAnimWorldMapFog[];
+extern u16 Pal_OpAnimWorldMapFog[];
+extern u8 Img_OpAnimCharacterBG[];
+extern u8 Tsa_OpAnimCharacterBG[];
+extern u16 Pal_OpAnimCharacterBG[];
+// extern ??? Img_OpAnimGenericCharacterBG
+// extern ??? Tsa_OpAnimGenericCharacterBG
+extern u8 Img_OpAnimEphraim[];
+extern u8 Tsa_OpAnimEphraim[];
+extern u8 Img_OpAnimEphraimBlur1[];
+extern u8 Tsa_OpAnimEphraimBlur1[];
+extern u8 Img_OpAnimEphraimBlur2[];
+extern u8 Tsa_OpAnimEphraimBlur2[];
+extern u8 Img_OpAnimEphraimBlur3[];
+extern u8 Tsa_OpAnimEphraimBlur3[];
+extern u8 Img_OpAnimEphraimClose1[];
+extern u8 Img_OpAnimEphraimClose2[];
+extern u8 Tsa_OpAnimEphraimClose[];
+extern u8 Tsa_OpAnimEphraimClose2[];
+extern u16 Pal_OpAnimEphraimBlur[];
+extern u8 Img_OpAnimEirika[];
+extern u8 Tsa_OpAnimEirika[];
+extern u8 Img_OpAnimEirikaBlur1[];
+extern u8 Tsa_OpAnimEirikaBlur1[];
+extern u8 Img_OpAnimEirikaBlur2[];
+extern u8 Tsa_OpAnimEirikaBlur2[];
+extern u8 Img_OpAnimEirikaBlur3[];
+extern u8 Tsa_OpAnimEirikaBlur3[];
+extern u8 Img_OpAnimEirikaClose1[];
+extern u8 Img_OpAnimEirikaClose2[];
+extern u8 Tsa_OpAnimEirikaClose[];
+extern u8 Tsa_OpAnimEirikaClose2[];
+extern u16 Pal_OpAnimEirikaBlur[];
+extern u8 Img_OpAnimJoshua[];
+extern u8 Img_OpAnimJoshua2[];
+extern u8 Tsa_OpAnimJoshua2[];
 // extern ??? gUnknown_08ACC340
-// extern ??? gUnknown_08ACC3E0
-// extern ??? gUnknown_08ACC540
-// extern ??? gUnknown_08ACE0B8
-// extern ??? gUnknown_08ACEED0
-// extern ??? gUnknown_08ACF200
-// extern ??? gUnknown_08ACF314
-// extern ??? gUnknown_08ACF474
-// extern ??? gUnknown_08AD1048
-// extern ??? gUnknown_08AD206C
-// extern ??? gUnknown_08AD236C
-// extern ??? gUnknown_08AD24B4
-// extern ??? gUnknown_08AD2614
-// extern ??? gUnknown_08AD423C
-// extern ??? gUnknown_08AD5094
-// extern ??? gUnknown_08AD543C
-// extern ??? gUnknown_08AD54DC
-// extern ??? gUnknown_08AD563C
-// extern ??? gUnknown_08AD72FC
-// extern ??? gUnknown_08AD8518
-// extern ??? gUnknown_08AD88D4
-// extern ??? gUnknown_08AD89A8
-// extern ??? gUnknown_08AD8B08
-// extern ??? gUnknown_08ADA31C
-// extern ??? gUnknown_08ADB804
+extern u16 Pal_OpAnimJoshua[];
+extern u8 Img_OpAnimLArachel[];
+extern u8 Img_OpAnimLArachel2[];
+extern u8 Tsa_OpAnimLArachel[];
+extern u8 Tsa_OpAnimLArachelLeft[];
+extern u16 Pal_OpAnimLArachel[];
+extern u8 Img_OpAnimCharacterSeth[];
+extern u8 Img_OpAnimCharacterSeth2[];
+extern u8 Tsa_OpAnimCharacterSeth[];
+extern u8 gUnknown_08AD236C[];
+extern u16 Pal_OpAnimCharacterSeth[];
+extern u8 Img_OpAnimMyrrh[];
+extern u8 Img_OpAnimMyrrh2[];
+extern u8 Tsa_OpAnimMyrrh2[];
+extern u8 gUnknown_08AD543C[];
+extern u16 Pal_OpAnimMyrrh2[];
+extern u8 Img_OpAnimSaleh[];
+extern u8 Img_OpAnimSaleh2[];
+extern u8 Tsa_OpAnimSaleh2[];
+extern u8 gUnknown_08AD88D4[];
+extern u16 Pal_OpAnimSaleh2[];
+// extern ??? Img_OpAnimTethys
+// extern ??? Img_OpAnimTethys2
+// extern ??? Tsa_OpAnimTethys
 // extern ??? gUnknown_08ADBC0C
-// extern ??? gUnknown_08ADBD18
+// extern ??? Pal_OpAnimTethys
 // extern ??? gUnknown_08ADBE78
 // extern ??? gUnknown_08ADBE98
 // extern ??? gUnknown_08ADC3C0
@@ -1629,13 +1591,13 @@ extern u16 gPal_TitleSmallLightBubbles[];
 // extern ??? gUnknown_08AE04D4
 // extern ??? gUnknown_08AE04F4
 // extern ??? gUnknown_08AE0A48
-// extern ??? gUnknown_08AE0D74
+// extern ??? Pal_OpAnimFaceVanessaShadow
 // extern ??? gUnknown_08AE0D94
 // extern ??? gUnknown_08AE12BC
 // extern ??? gUnknown_08AE1634
-// extern ??? gUnknown_08AE1654
-// extern ??? gUnknown_08AE1D00
-// extern ??? gUnknown_08AE20C4
+// extern ??? Img_OpAnimFaceVanessa
+// extern ??? Img_OpAnimFaceVanessaShadow
+// extern ??? Pal_OpAnimFaceVanessa
 // extern ??? gUnknown_08AE20E4
 // extern ??? gUnknown_08AE281C
 // extern ??? gUnknown_08AE2BF4
@@ -1683,7 +1645,7 @@ extern u16 gPal_TitleSmallLightBubbles[];
 // extern ??? gUnknown_08AEB56C
 // extern ??? gUnknown_08AEB58C
 // extern ??? gUnknown_08AEBCEC
-// extern ??? gUnknown_08AEC048
+// extern ??? Pal_OpAnimFaceValterShadow
 // extern ??? gUnknown_08AEC068
 // extern ??? gUnknown_08AEC724
 // extern ??? gUnknown_08AECAC0
@@ -1696,44 +1658,43 @@ extern u16 gPal_TitleSmallLightBubbles[];
 // extern ??? gUnknown_08AEDCA0
 // extern ??? gUnknown_08AEE218
 // extern ??? gUnknown_08AEE564
-// extern ??? gUnknown_08AEE584
-// extern ??? gUnknown_08AEEBB0
-// extern ??? gUnknown_08AEEECC
+// extern ??? Img_OpAnimFaceValter
+// extern ??? Img_OpAnimFaceValterShadow
+// extern ??? Pal_OpAnimFaceValter
 // extern ??? gUnknown_08AEEEEC
 // extern ??? gUnknown_08AEF580
 // extern ??? gUnknown_08AEF880
 // extern ??? gUnknown_08AEF8A0
 // extern ??? gUnknown_08AEFDC8
-// extern ??? gUnknown_08AF0130
+// extern ??? Pal_OpAnimFaceVigardeShadow
 // extern ??? gUnknown_08AF0150
 // extern ??? gUnknown_08AF09E4
 // extern ??? gUnknown_08AF0DE8
-// extern ??? gUnknown_08AF0E08
-// extern ??? gUnknown_08AF16CC
-// extern ??? gUnknown_08AF1AC8
-// extern ??? gUnknown_08AF1AE8
-// extern ??? gUnknown_08AF1B18
-// extern ??? gUnknown_08AF1B38
-// extern ??? gUnknown_08AF1FB0
-// extern ??? gUnknown_08AF1FD0
-// extern ??? gUnknown_08AF2634
-// extern ??? gUnknown_08AF2654
-// extern ??? gUnknown_08AF310C
-// extern ??? gUnknown_08AF312C
-// extern ??? gUnknown_08AF404C
-// extern ??? gUnknown_08AF4330
-// extern ??? gUnknown_08AF47F0
-// extern ??? gUnknown_08B103D8
-// extern ??? gUnknown_08B104D8
-// extern ??? gUnknown_08B10630
-// extern ??? gUnknown_08B10ABC
-// extern ??? gUnknown_08B10ADC
-// extern ??? gUnknown_08B10CA4
-// extern ??? gUnknown_08B11864
-// extern ??? gUnknown_08B118C4
-// extern ??? gUnknown_08B11C0C
-// extern ??? gUnknown_08B11D0C
-// extern ??? gUnknown_08B125F4
+// extern ??? Img_OpAnimFaceVigarde
+// extern ??? Img_OpAnimFaceVigardeShadow
+// extern ??? Pal_OpAnimFaceVigarde
+extern u8 Img_OpAnimSplitLine[];
+extern u16 Pal_OpAnimSplitLine[];
+extern u8 Img_opanim_unk1[];
+extern u16 Pal_opanim_unk1[];
+extern u8 Img_OpAnimEphEirikaName[];
+extern u16 Pal_OpAnimEphEirikaName[];
+extern u8 Img_OpAnimDivlEye[];
+extern u16 Pal_OpAnimDivlEye[];
+// extern ??? Img_OpAnimShinningRing
+// extern ??? Tsa_OpAnimShinningRing
+// extern ??? Tsa_OpAnimShinningRingBlinking
+
+extern u8 Tsa_08B104D8[];
+extern u8 Img_08B10630[];
+extern u16 gUnknown_08B10ABC[];
+extern u8 Tsa_08B10ADC[];
+extern u8 Img_08B10CA4[];
+extern u16 gUnknown_08B11864[];
+extern u8 Tsa_OpAnimHleathSafetyScreenBG1[];
+extern u8 Tsa_OpAnimHleathSafetyScreenBG0[];
+extern u8 Img_OpAnimHleathSafetyScreen[];
+extern u16 gUnknown_08B125F4[];
 /* #include classchg.h */
 // extern ??? gpBuf
 // extern ??? gUnknown_08B12AA8
