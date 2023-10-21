@@ -99,7 +99,7 @@ struct BlendCnt {
     u16 target2_bg3_on : 1;
     u16 target2_obj_on : 1;
     u16 target2_bd_on : 1;
-    STRUCT_PAD(0x02, 0x04);
+    u32 _unused;
 } BITPACKED;
 
 struct LCDControlBuffer {
@@ -119,7 +119,6 @@ struct LCDControlBuffer {
     /* 38 */ u16 mosaic;
              STRUCT_PAD(0x3A, 0x3C);
     /* 3C */ struct BlendCnt bldcnt;
-    /* 40 */ STRUCT_PAD(0x40, 0x44);
     /* 44 */ u8 blendCoeffA;
     /* 45 */ u8 blendCoeffB;
     /* 46 */ u8 blendY;
@@ -163,6 +162,25 @@ struct TileDataTransfer {
     u16 size;
     u16 mode;
 };
+
+struct OamSection {
+    u16 * buf;
+    void * oam;
+    u16 offset;
+    u16 count;
+};
+
+extern struct OamSection sOamHi;
+extern struct OamSection sOamLo;
+
+// extern ??? gKeyComboResetEN
+extern u8 sModifiedBGs;  // BGs that need copying
+extern s8 sModifiedPalette;
+extern u16 gKeyStatusIgnoredSt;
+// extern ??? gUnknown_03000014
+extern u8 gUnknown_03000018;
+extern u8 gUnknown_03000019;
+extern bool gSoftwareResetFlag;
 
 extern s8 gUnknown_02022288[];
 extern s8 gUnknown_020222A8[];
@@ -402,10 +420,10 @@ void ClearTileRigistry(void);
 void RegisterDataMove(const void *a, void *b, int c);
 void RegisterFillTile(const void *a, void *b, int c);
 void FlushTiles(void);
-void SetupOAMBufferSplice(int a);
-void FlushSecondaryOAM(void);
-void FlushPrimaryOAM(void);
-void WriteOAMRotScaleData(int index, s16 pa, s16 pb, s16 pc, s16 pd);
+void InitOam(int a);
+void SyncHiOam(void);
+void SyncLoOam(void);
+void SetObjAffine(int index, s16 pa, s16 pb, s16 pc, s16 pd);
 // ??? sub_80021E4(???);
 int GetPrimaryOAMSize(void);
 

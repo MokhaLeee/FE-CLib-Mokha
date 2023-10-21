@@ -48,14 +48,6 @@ struct Struct0858791C
     u16 unk2;
 };
 
-struct OamDataTransfer
-{
-    void *src;
-    void *dest;
-    u16 unk8;
-    u16 count;
-};
-
 typedef void (*InterruptHandler)(void);
 
 struct Vec2 { short x, y; };
@@ -111,7 +103,7 @@ enum BmSt_gameStateBits {
     BM_FLAG_2 = (1 << 2),
     BM_FLAG_3 = (1 << 3),
     BM_FLAG_4 = (1 << 4),
-    BM_FLAG_5 = (1 << 5),
+    BM_FLAG_5 = (1 << 5),   /* Maybe mute battle-anim BGM ? */
     BM_FLAG_LINKARENA = (1 << 6),
 };
 
