@@ -396,6 +396,24 @@ extern const char gUnknown_080D7954[];
 // extern ??? gMsgHuffmanTable
 // extern ??? gMsgHuffmanTableRoot
 extern const u8 *const gMsgStringTable[];
+
+extern u16 gPal_StoneShatterAnim[];
+extern u8 gImg_StoneShatterAnim[];
+extern u8 gTsa_StoneShatter_081C1900[];
+extern u8 gTsa_StoneShatter_081C194C[];
+extern u8 gTsa_StoneShatter_081C1998[];
+extern u8 gTsa_StoneShatter_081C19E4[];
+extern u8 gTsa_StoneShatter_081C1A30[];
+extern u8 gTsa_StoneShatter_081C1A7C[];
+extern u8 gTsa_StoneShatter_081C1AC8[];
+extern u8 gTsa_StoneShatter_081C1B14[];
+extern u8 gTsa_StoneShatter_081C1B60[];
+extern u8 gTsa_StoneShatter_081C1BAC[];
+extern u8 gTsa_StoneShatter_081C1BF8[];
+extern u8 gTsa_StoneShatter_081C1C44[];
+extern u8 gTsa_StoneShatter_081C1C90[];
+extern u8 gTsa_StoneShatter_081C1CDC[];
+
 extern const u8 gUnknown_08205714[4];
 // extern ??? gUnknown_0820579C
 // extern ??? gUnknown_08205824
@@ -427,14 +445,13 @@ extern const u8 gUnknown_0820588E[];
 // extern ??? Pals_PrepWindow
 // extern ??? gUnknown_08205C64
 extern const struct FaceVramEntry gFaceConfig_PrepItemUseScreen[4];
-// extern ??? gUnknown_08205C90
 // extern ??? sSaveMarker
 // extern ??? sConvySavePackMask1
 // extern ??? sConvySavePackMask2
 // extern ??? gInitialMultiArenaRankings
 // extern ??? gUnknown_08205D7C
-// extern ??? gUnknown_08205E18
-// extern ??? gUnknown_08205E28
+// extern ??? Objs1_SysBrownBox
+// extern ??? Objs2_SysBrownBox
 // extern ??? gUnknown_08205F28
 // extern ??? gUnknown_08205F7C
 // extern ??? gWMNodeIconData
@@ -556,7 +573,7 @@ extern const char *gStrPrefix[][2];
 // extern ??? gUnknown_08592580
 // extern ??? ProcScr_BoomFogFx
 // extern ??? gUnknown_085925F0
-// extern ??? gUnknown_08592608
+// extern ??? gProcScr_StoneShatterEvent
 // extern ??? gUnknown_08592628
 // extern ??? gUnknown_085926F4
 // extern ??? gUnknown_085996F4
@@ -828,7 +845,7 @@ extern const u16 gLegacyUiFrameDPalette[];
 extern const u16 gUiBarPaletteD[];
 extern const u8  gUnkUiFrameImage[];
 extern const u16 gUnkUiFramePalettes[];
-// extern ??? gUnknown_085B92C4
+extern u8 Img_SysGrayBox[];
 
 extern u8 Img_EkrExpBar[];
 extern u16 Img_EkrExpBarChange[];
@@ -1199,16 +1216,7 @@ extern u16* gUnknown_08A209F0[];
 // extern ??? gSprite_UiSpinningArrows_Horizontal
 // extern ??? gSprite_UiSpinningArrows_Vertical
 // extern ??? gProcScr_UiSpinningArrows
-// extern ??? ProcScr_ParallelFiniteLoop
-// extern ??? gUnknown_08A20BD4
-// extern ??? ProcScr_ParallelWorker
-// extern ??? ProcScr_SysHandCtrlMaybe
-// extern ??? gUnknown_08A20C4C
-// extern ??? gUnknown_08A20D6C
-// extern ??? gUnknown_08A20D8C
-extern struct ProcCmd CONST_DATA gUnknown_08A20DA4[];
-extern struct ProcCmd CONST_DATA gUnknown_08A20DCC[];
-// extern ??? gUnknown_08A20DFC
+
 // extern ??? gUnknown_08A20E24
 // extern ??? gUnknown_08A20E44
 // extern ??? gSoundRoomTable
@@ -1271,7 +1279,7 @@ extern u16 gUnknown_08A2E4A4[]; // Pal
 extern u8 gUnknown_08A2E4C4[]; // TSA
 extern u8 gUnknown_08A2E5EC[]; // Gfx
 extern u16 gUnknown_08A2E8F0[]; // Pal
-// extern ??? gUnknown_08A2E950
+extern u8 gUnknown_08A2E950[]; // Gfx
 // extern ??? ProcScr_ColFadeOut
 // extern ??? ProcScr_ColFadeIn
 extern u8 gUnknown_08A301B0[]; // gfx?
