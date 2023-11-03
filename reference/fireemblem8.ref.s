@@ -156,9 +156,6 @@ dat 0x02013498, gPrepItemTexts
 dat 0x02013510, gPrepItemScreenTexts
 dat 0x02013590, gUnknown_02013590
 dat 0x02013598, gPrepUnitTexts
-dat 0x02013608, gUnknown_02013608
-dat 0x02013630, gUnknown_02013630
-dat 0x02013640, gUnknown_02013640
 dat 0x02013648, gUnknown_02013648
 dat 0x02013660, gUnknown_02013660
 dat 0x02013668, gUnknown_02013668
@@ -520,7 +517,7 @@ dat 0x0203EF64, gSaveMenuRTextData
 dat 0x0203EF68, gShopItemTexts
 dat 0x0203EF98, sShopState
 dat 0x0203EFB4, gUnknown_0203EFB4
-dat 0x0203EFB8, end
+dat 0x0203EFB8, gLoadUnitBuffer
 dat 0x02040000, EWRAM_END
 dat 0x03000000, __iwram_start
 dat 0x03000008, gLCGRNValue
@@ -543,7 +540,7 @@ dat 0x030000F0, sTalkFont
 dat 0x03000108, sAPArray
 dat 0x03000428, gUnknown_03000428
 dat 0x03000430, gUnknown_03000430
-dat 0x03000434, gUnknown_03000434
+dat 0x03000434, gLoadedUnitBuffer
 dat 0x03000438, gEventCallQueue
 dat 0x030004B8, gEventSlots
 dat 0x030004E4, gUnknown_030004E4
