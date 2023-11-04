@@ -1,6 +1,11 @@
 #ifndef BONUSCLAIM_H
 #define BONUSCLAIM_H
 
+#include "global.h"
+#include "proc.h"
+#include "bmunit.h"
+#include "fontgrp.h"
+
 struct BonusClaimEnt {
     /* 00 */ u8 unseen;
     /* 01 */ u8 kind;
@@ -33,9 +38,9 @@ struct BonusClaimProc {
     /* 34 */ ProcPtr unk_34;
 };
 
-struct Unknown8A215A4 {
+struct BonusClaimConfig {
     /* 00 */ s8 hasInventorySpace;
-    /* 04 */ struct Unit* unit;
+    /* 04 */ struct Unit * unit;
 };
 
 void PutChapterBannerSprites(void);
@@ -60,11 +65,18 @@ void BonusClaim_ClearItemSentPopup(void);
 void BonusClaim_OnEnd(struct BonusClaimProc * proc);
 void StartBonusClaimScreen(ProcPtr);
 
-extern struct BonusClaimEnt gUnknown_02000968[];
-extern struct BonusClaimEnt gUnknown_02000D68[];
-extern struct BonusClaimItemEnt gUnknown_02001168[];
-extern struct Unknown8A215A4 gUnknown_02001368[];
-extern int gUnknown_02001568;
-extern struct Text gUnknown_02001668[];
+extern struct BonusClaimEnt gBonusClaimData[];
+extern struct BonusClaimEnt gBonusClaimDataUpdated[];
+extern struct BonusClaimItemEnt gBonusClaimItemList[];
+extern struct BonusClaimConfig gBonusClaimConfig[];
+extern int gBonusClaimItemCount;
+extern struct Text gBonusClaimText[];
+
+extern struct BonusClaimEnt * gpBonusClaimData;
+extern struct BonusClaimEnt * gpBonusClaimDataUpdated;
+extern struct BonusClaimItemEnt * gpBonusClaimItemList;
+extern int * gpBonusClaimItemCount;
+extern struct Text * gpBonusClaimText;
+extern struct BonusClaimConfig * gpBonusClaimConfig;
 
 #endif // BONUSCLAIM_H
