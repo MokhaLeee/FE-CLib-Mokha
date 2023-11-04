@@ -21,28 +21,50 @@ struct BonusClaimItemEnt {
     /* 01 */ s8 claimable;
 };
 
-// ??? PutChapterBannerSprites(???);
-// ??? sub_80B0674(???);
-// ??? sub_80B06FC(???);
-// ??? InitBonusClaimData(???);
-// ??? DrawBonusClaimItemText(???);
-// ??? SetBonusItemClaimed(???);
-// ??? SetupBonusClaimTargets(???);
-// ??? sub_80B0ABC(???);
-// ??? BonusClaim_Init(???);
-// ??? BonusClaim_Loop_MainKeyHandler(???);
-// ??? BonusClaim_DrawTargetUnitSprites(???);
-// ??? sub_80B1008(???);
-// ??? BonusClaim_StartSelectTargetSubMenu(???);
-// ??? TryClaimBonusItem(???);
-// ??? BonusClaim_Loop_SelectTargetKeyHandler(???);
-// ??? BonusClaim_EndSelectTargetSubMenu(???);
-// ??? BonusClaim_DrawItemSentPopup(???);
-// ??? BonusClaim_Loop_PopupDisplayTimer(???);
-// ??? BonusClaim_ClearItemSentPopup(???);
-// ??? BonusClaim_OnEnd(???);
+struct BonusClaimProc {
+    /* 00 */ PROC_HEADER;
+
+    /* 29 */ u8 menuIndex;
+    /* 2A */ u8 submenuIndex;
+    /* 2B */ u8 targets;
+    /* 2C */ s16 unk_2c;
+    /* 2E */ s8 unk_2e;
+    /* 30 */ int timer;
+    /* 34 */ ProcPtr unk_34;
+};
+
+struct Unknown8A215A4 {
+    /* 00 */ s8 hasInventorySpace;
+    /* 04 */ struct Unit* unit;
+};
+
+void PutChapterBannerSprites(void);
+void sub_80B0674(void);
+void sub_80B06FC(void);
+s8 InitBonusClaimData(void);
+void DrawBonusClaimItemText(int idx);
+void SetBonusItemClaimed(int idx);
+void SetupBonusClaimTargets(struct BonusClaimProc * proc);
+void sub_80B0ABC(void);
+void BonusClaim_Init(struct BonusClaimProc * proc);
+void BonusClaim_Loop_MainKeyHandler(struct BonusClaimProc * proc);
+void BonusClaim_DrawTargetUnitSprites(struct BonusClaimProc * proc);
+void sub_80B1008(struct BonusClaimProc * proc);
+void BonusClaim_StartSelectTargetSubMenu(struct BonusClaimProc * proc);
+s8 TryClaimBonusItem(struct BonusClaimProc * proc);
+void BonusClaim_Loop_SelectTargetKeyHandler(struct BonusClaimProc * proc);
+void BonusClaim_EndSelectTargetSubMenu(struct BonusClaimProc * proc);
+void BonusClaim_DrawItemSentPopup(struct BonusClaimProc * proc);
+void BonusClaim_Loop_PopupDisplayTimer(struct BonusClaimProc * proc);
+void BonusClaim_ClearItemSentPopup(void);
+void BonusClaim_OnEnd(struct BonusClaimProc * proc);
 void StartBonusClaimScreen(ProcPtr);
 
 extern struct BonusClaimEnt gUnknown_02000968[];
+extern struct BonusClaimEnt gUnknown_02000D68[];
+extern struct BonusClaimItemEnt gUnknown_02001168[];
+extern struct Unknown8A215A4 gUnknown_02001368[];
+extern int gUnknown_02001568;
+extern struct Text gUnknown_02001668[];
 
 #endif // BONUSCLAIM_H
