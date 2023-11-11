@@ -109,25 +109,16 @@ extern char gStringBufferAlt[];
 // TODO: define this in hardware.c?
 extern u8 gGenericBuffer[0x2000];
 
-// extern ??? gUnknown_02026968
-// extern ??? gUnknown_02026A6C
-// extern ??? gUnknown_02026A90
-// extern ??? gUnknown_02026E10
-// extern ??? gUnknown_02028F78
-// extern ??? gUnknown_02029D88
 extern struct BmSt gBmSt;
 extern struct PlaySt gPlaySt;
-// extern ??? gUnknown_0202BD30
 extern u8 gActiveUnitId;
 extern struct Vec2 gActiveUnitMoveOrigin;
-// extern ??? gUnknown_02030B8C
 extern u8 gWorkingMovementScript[];
 extern u16 gConvoyItemArray[];
 extern struct Unit* sUnitStackBase;
 extern struct Unit* sUnitStackTop;
 extern u8 sUnitStackSize;
 extern struct ActionData gActionData;
-// extern ??? gUnknown_0203A95E
 // extern ??? gUnknown_0203A974
 // extern ??? gUnknown_0203AA7F
 // extern ??? gUnknown_0203AA80
@@ -454,17 +445,12 @@ extern const struct FaceVramEntry gFaceConfig_PrepItemUseScreen[4];
 // extern ??? Objs2_SysBrownBox
 // extern ??? gUnknown_08205F28
 // extern ??? gUnknown_08205F7C
-// extern ??? gWMNodeIconData
-// extern ??? gWMNodeData
+
 // extern ??? gUnknown_08206450
 // extern ??? gUnknown_08206498
-// extern ??? gWMPathData
+
 // extern ??? gUnknown_08206868
-// extern ??? gUnknown_082068F4
-// extern ??? gUnknown_082068FC
-// extern ??? gUnknown_08206904
-extern u8 gWMMonsterSpawnLocations[];
-extern u8 gWMMonsterSpawnsSize;
+
 // extern ??? gUnknown_08206954
 // extern ??? gUnknown_082069D8
 // extern ??? gUnknown_082069E3
@@ -653,8 +639,8 @@ extern CONST_DATA u16 Pal_PhaseChangePlayer[];
 // extern ??? Img_PhaseChangeOther
 // extern ??? Pal_PhaseChangeOther
 extern CONST_DATA u16 Img_PhaseChangeSquares[];
-// extern ??? gUnknown_085A0838
-// extern ??? gUnknown_085A08F0
+extern u8 gUnknown_085A0838[]; // tsa
+extern u8 gUnknown_085A08F0[]; // tsa
 // extern ??? gTSA_BattleForecastStandard
 // extern ??? gTSA_BattleForecastExtended
 // extern ??? gBattleForecast_x2x4Gfx
@@ -936,9 +922,9 @@ extern u8 CONST_DATA gItemUseJidList_SolarBrace[]; // Solar Brace class list
 // extern ??? gUnknown_088D2058
 extern struct CONST_DATA gfx_set gConvoBackgroundData[];
 extern u8 CONST_DATA gPromoJidLut[][2];
-extern u8 gUnknown_0895E0A4[];
-extern u8 gUnknown_0895EEA4[];
-extern u8 gUnknown_0895F5A4[4][2];
+extern u8 gAnimCharaPalConfig[0x100][7];
+extern u8 gAnimCharaPalIt[0x100][7];
+extern u8 gSummonConfig[4][2];
 // extern ??? gUnknown_0895F5A5
 extern u16 CONST_DATA gUnknown_089A18D4[];      /* a palatte */
 extern u16 CONST_DATA gUnknown_089A18F4[];      /* a image */
@@ -1344,14 +1330,14 @@ extern u16 gUnknown_08A37300[]; // pal
 // extern ??? gProcScr_GmapBaseEntry
 // extern ??? gProcScr_GmapMuEntry1
 // extern ??? gProcScr_GmapMuEntry2
-// extern ??? gUnknown_08A3E6AC
-// extern ??? gUnknown_08A3E6E4
-// extern ??? gUnknown_08A3E78C
-// extern ??? gUnknown_08A3E888
-extern struct ProcCmd gUnknown_08A3E8B8[];
+// extern ??? gProcScr_GmapLineFade
+// extern ??? gProcScr_GmapTmConfront
+// extern ??? gHelpInfo_WorldmapStatus
+// extern ??? gBgConfig_WorldmapStatus
+extern struct ProcCmd gProcScr_WorldmapStatusUi[];
 // extern ??? gUnknown_08A3E9A0
-// extern ??? gUnknown_08A3EA00
-// extern ??? gUnknown_08A3EA38
+// extern ??? gProcScr_GmapEffectPal
+// extern ??? gProcScr_GmapEffect
 // extern ??? gUnknown_08A3EA70
 // extern ??? gUnknown_08A3EAA8
 // extern ??? gUnknown_08A3EAF0
@@ -1397,19 +1383,19 @@ extern u16 gPal_GMapPI_ShopIcons[];
 extern u8 gGfx_GMapPI_ShopIcons[];
 // extern ??? gPal_08A97ACC
 // extern ??? gUnknown_08A97AEC
-// extern ??? gUnknown_08A97C98
-// extern ??? gUnknown_08A97E28
-// extern ??? gUnknown_08A97E48
+extern u8 gImg_WorldmapNodeRevealEffect[];
+extern u16 gPal_WorldmapNodeRevealEffect[];
+extern u16 gUnknown_08A97E48[]; // pal
 extern u8 gUnknown_08A97ED8[]; // gfx
 extern u16 gUnknown_08A97FA4[]; // pal
-// extern ??? gUnknown_08A986C0
-// extern ??? gUnknown_08A98BF8
-// extern ??? gUnknown_08A98CFC
-// extern ??? gUnknown_08A98D58
-// extern ??? gUnknown_08A98D88
-// extern ??? gUnknown_08A98DA0
-// extern ??? gUnknown_08A98DB8
-// extern ??? gUnknown_08A98DCC
+extern u8 gUnknown_08A986C0[]; // tsa
+extern u8 gUnknown_08A98BF8[]; // gfx
+extern u8 gUnknown_08A98CFC[]; // tsa
+extern u8 gUnknown_08A98D58[]; // tsa
+extern u8 gUnknown_08A98D88[]; // tsa
+extern u8 gUnknown_08A98DA0[]; // tsa
+extern u8 gUnknown_08A98DB8[]; // tsa
+extern u16 gUnknown_08A98DCC[]; // pal
 // extern ??? gUnknown_08A98E2C
 // extern ??? gUnknown_08A98E4C
 // extern ??? gUnknown_08A98E6C
@@ -1434,8 +1420,8 @@ extern u8 gUnknown_08AA11D0[]; // tsa?
 // extern ??? gUnknown_08AA18AC
 // extern ??? gUnknown_08AA1930
 // extern ??? gUnknown_08AA1950
-// extern ??? gUnknown_08AA1970
-// extern ??? gUnknown_08AA1C70
+extern u8 gImg_WorldmapSkirmish[]; // gfx
+extern u8 SpriteAnim_WorldmapSkirmish[]; // ap proc data
 // extern ??? gUnknown_08AA2044
 // extern ??? gUnknown_08AA2084
 // extern ??? gBgConfig_OpSubtitle
