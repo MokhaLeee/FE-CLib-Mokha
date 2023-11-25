@@ -418,7 +418,7 @@ extern int gBanimLinkArenaFlag;
 extern int gBattleDeamonActive;
 extern struct ProcEkrBattleDeamon *gpProcEkrBattleDeamon;
 extern s16 gEkrDebugModeMaybe;
-extern s16 gEkrPairSomeTile;
+extern s16 gBanimGackgroundIndex;
 extern s16 gEkrInitialHitSide;
 extern s16 gEkrSnowWeather;
 extern s16 gEkrPairSideVaild[2];
@@ -690,7 +690,7 @@ extern const u16 gUnknown_080DCDE4[];
 // extern ??? gUnknown_080DF042
 // extern ??? gUnknown_080DF080
 // extern ??? gUnknown_080DF0E0
-extern const u16 gUnknown_080DF188[];
+extern const u16 FrameLut_EfxCriricalEffectBGCOL[];
 extern const u16 gUnknown_080DF1EE[];
 extern const u16 gUnknown_080DF26A[];
 extern const u16 gUnknown_080DF2DC[];

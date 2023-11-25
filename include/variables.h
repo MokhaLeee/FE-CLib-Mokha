@@ -853,48 +853,50 @@ extern const s8 gUnknown_0880C479[]; // terrainId to ? lookup
 extern const s8 gUnknown_0880C4BA[]; // terrainId to ? lookup
 extern const s8 gUnknown_0880C744[]; // terrainid-to-healamount lookup
 extern const s8 gUnknown_0880C785[]; // terrainid-to-something lookup
-// extern ??? gUnknown_0880C7C6
-// extern ??? gUnknown_0880C807
-// extern ??? gUnknown_0880C848
-// extern ??? gUnknown_0880C889
-// extern ??? gUnknown_0880C8CA
-// extern ??? gUnknown_0880C90B
-// extern ??? gUnknown_0880C94C
-// extern ??? gUnknown_0880C98D
-// extern ??? gUnknown_0880C9CE
-// extern ??? gUnknown_0880CA0F
-// extern ??? gUnknown_0880CA50
-// extern ??? gUnknown_0880CA91
-// extern ??? gUnknown_0880CAD2
-// extern ??? gUnknown_0880CB13
-// extern ??? gUnknown_0880CB54
-// extern ??? gUnknown_0880CB95
-// extern ??? gUnknown_0880CBD6
-// extern ??? gUnknown_0880CC17
-// extern ??? gUnknown_0880CC58
-// extern ??? gUnknown_0880CC99
-// extern ??? gUnknown_0880CCDA
-// extern ??? gUnknown_0880CD1B
-// extern ??? gUnknown_0880CD5C
-// extern ??? gUnknown_0880CD9D
-// extern ??? gUnknown_0880CDDE
-// extern ??? gUnknown_0880CE1F
-// extern ??? gUnknown_0880CE60
-// extern ??? gUnknown_0880CEA1
-// extern ??? gUnknown_0880CEE2
-// extern ??? gUnknown_0880CF23
-// extern ??? gUnknown_0880CF64
-// extern ??? gUnknown_0880CFA5
-// extern ??? gUnknown_0880CFE6
-// extern ??? gUnknown_0880D027
-// extern ??? gUnknown_0880D068
-// extern ??? gUnknown_0880D0A9
-// extern ??? gUnknown_0880D0EA
-// extern ??? gUnknown_0880D12B
-// extern ??? gUnknown_0880D16C
-// extern ??? gUnknown_0880D1AD
-// extern ??? gUnknown_0880D1EE
-// extern ??? gUnknown_0880D22F
+
+extern u8 gUnknown_0880C7C6[];
+extern u8 gUnknown_0880C807[];
+extern u8 gUnknown_0880C848[];
+extern u8 gUnknown_0880C889[];
+extern u8 gUnknown_0880C8CA[];
+extern u8 gUnknown_0880C90B[];
+extern u8 gUnknown_0880C94C[];
+extern u8 gUnknown_0880C98D[];
+extern u8 gUnknown_0880C9CE[];
+extern u8 gUnknown_0880CA0F[];
+extern u8 gUnknown_0880CA50[];
+extern u8 gUnknown_0880CA91[];
+extern u8 gUnknown_0880CAD2[];
+extern u8 gUnknown_0880CB13[];
+extern u8 gUnknown_0880CB54[];
+extern u8 gUnknown_0880CB95[];
+extern u8 gUnknown_0880CBD6[];
+extern u8 gUnknown_0880CC17[];
+extern u8 gUnknown_0880CC58[];
+extern u8 gUnknown_0880CC99[];
+extern u8 gUnknown_0880CCDA[];
+
+extern u8 gBanimBackgroundIndexLutDefault[];
+extern u8 gBanimBackgroundIndexLut01[];
+extern u8 gBanimBackgroundIndexLut02[];
+extern u8 gBanimBackgroundIndexLut03[];
+extern u8 gBanimBackgroundIndexLut04[];
+extern u8 gBanimBackgroundIndexLut05[];
+extern u8 gBanimBackgroundIndexLut06[];
+extern u8 gBanimBackgroundIndexLut07[];
+extern u8 gBanimBackgroundIndexLut08[];
+extern u8 gBanimBackgroundIndexLut09[];
+extern u8 gBanimBackgroundIndexLut0A[];
+extern u8 gBanimBackgroundIndexLut0B[];
+extern u8 gBanimBackgroundIndexLut0C[];
+extern u8 gBanimBackgroundIndexLut0D[];
+extern u8 gBanimBackgroundIndexLut0E[];
+extern u8 gBanimBackgroundIndexLut0F[];
+extern u8 gBanimBackgroundIndexLut10[];
+extern u8 gBanimBackgroundIndexLut11[];
+extern u8 gBanimBackgroundIndexLut12[];
+extern u8 gBanimBackgroundIndexLut13[];
+extern u8 gBanimBackgroundIndexLut14[];
 extern u16 CONST_DATA gUnknown_0880D374[]; // terrainid-to-textid lookup
 // extern ??? gUnknown_088ACBC4
 extern u8 CONST_DATA gUnknown_088ADEF1[]; // Some bow effectiveness list
@@ -1203,20 +1205,20 @@ extern u16* gUnknown_08A209F0[];
 // extern ??? gSprite_UiSpinningArrows_Vertical
 // extern ??? gProcScr_UiSpinningArrows
 
-// extern ??? gUnknown_08A20E24
-// extern ??? gUnknown_08A20E44
+// extern ??? gProcScr_08A20E24
+// extern ??? gProcScr_BonusClaimHelpBox
 // extern ??? gSoundRoomTable
 // extern ??? gUnknown_08A212D4
 // extern ??? gUnknown_08A212D8
 // extern ??? gUnknown_08A212DC
-// extern ??? gUnknown_08A212E0
-// extern ??? gUnknown_08A212E4
-// extern ??? gUnknown_08A21304
-// extern ??? gUnknown_08A21308
+// extern ??? gSoundRoomShuffleBuffer
+// extern ??? gProcScr_SoundRoomSongChange
+// extern ??? gpSoundInfo
+// extern ??? gProcScr_VolumeGraphBuffer
 // extern ??? gProcScr_SoundRoomUi
-// extern ??? gUnknown_08A21440
-// extern ??? gUnknown_08A2144E
-// extern ??? gUnknown_08A2145C
+// extern ??? gSprite_SoundRoom_AButtonPlay
+// extern ??? gSprite_SoundRoom_StartButtonStop
+// extern ??? gSprite_SoundRoom_SelectButtonRandom
 // extern ??? gSprite_RandomModeBanner
 // extern ??? gSprite_MusicPlayer_SeekBar
 // extern ??? gSprite_MusicPlayer_SeekBarIndicator
@@ -1251,12 +1253,12 @@ extern u8 gUnknown_08A295D4[]; // tsa
 // extern ??? gUnknown_08A2C4C8
 // extern ??? gUnknown_08A2C5A8
 // extern ??? gUnknown_08A2C7A4
-// extern ??? gUnknown_08A2C838
-// extern ??? gUnknown_08A2C8A8
+extern u8 Img_SoundRoomVolumeGraph[];
+extern u16 Pal_SoundRoomVolumeGraph[];
 // extern ??? gUnknown_08A2C908
 // extern ??? gUnknown_08A2C92C
-// extern ??? gUnknown_08A2CABC
-// extern ??? gUnknown_08A2D2CC
+// extern ??? Img_SoundRoomUiElements
+// extern ??? Pal_SoundRoomUiElements
 extern u8 gUnknown_08A2D32C[]; // Gfx
 extern u16 gUnknown_08A2E1B8[]; // Pal
 extern u8 gUnknown_08A2E1F8[]; // Gfx
@@ -1669,27 +1671,27 @@ extern u8 Tsa_OpAnimHleathSafetyScreenBG0[];
 extern u8 Img_OpAnimHleathSafetyScreen[];
 extern u16 Pal_OpAnimHleathSafetyScreen[];
 /* #include classchg.h */
-// extern ??? gpBuf
-// extern ??? gUnknown_08B12AA8
-// extern ??? gUnknown_08B12AC2
-// extern ??? gUnknown_08B12AD0
-// extern ??? gUnknown_08B12AE0
-// extern ??? gUnknown_08B12B04
-// extern ??? gUnknown_08B12B1C
-// extern ??? gUnknown_08B12B3C
-// extern ??? gUnknown_08B12B9C
-// extern ??? gUnknown_08B12BEC
-// extern ??? gUnknown_08B12C14
-// extern ??? gUnknown_08B12C3C
+// extern ??? gGuideSt
+// extern ??? gSprite_GuideBannerText
+// extern ??? gSprite_SelectButtonSort
+// extern ??? gSprite_BButtonBack
+// extern ??? gTextIds_GuideCategoriesChapter
+// extern ??? gTextIds_GuideCategoriesTopic
+// extern ??? gProcScr_Guide_DrawSprites
+// extern ??? gProcScr_GuideCategoryRedraw
+// extern ??? gProcScr_GuideEntryListRedraw_Initial
+// extern ??? gProcScr_GuideEntryListRedraw_Up
+// extern ??? gProcScr_GuideEntryListRedraw_Down
+// extern ??? gProcScr_GuideDetailsRedraw
 extern struct ProcCmd CONST_DATA ProcScr_E_Guide1[];
 extern struct ProcCmd CONST_DATA ProcScr_E_Guide2[];
 extern u8 Img_CommGameBgScreen[];  // gfx
 extern u16 gUnknown_08B1754C[]; // pal
 extern u16 gUnknown_08B1756C[]; // pal, used in opsubtitle
-// extern ??? gUnknown_08B176CC
-// extern ??? gUnknown_08B177C0
-// extern ??? gUnknown_08B17864
-// extern ??? gUnknown_08B17B44
+// extern ??? Tsa_08B176CC
+// extern ??? Img_08B177C0
+// extern ??? Img_08B17864
+// extern ??? Pal_08B17B44
 extern u8 gUnknown_08B17B64[]; // gfx?
 extern u8 gUnknown_08B18D68[];
 extern u16 gUnknown_08B18ED4[]; // pal
@@ -1698,7 +1700,7 @@ extern u16 gUnknown_08B18ED4[]; // pal
 // extern ??? gUnknown_08B19854
 // extern ??? gUnknown_08B19874
 // extern ??? gUnknown_08B19DEC
-// extern ??? gUnknown_08B19E0C
+// extern ??? gGuideTable
 // extern ??? _impure_ptr
 // extern ??? gUnknown_08B1FA24
 // extern ??? gUnknown_08B1FA38

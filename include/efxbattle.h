@@ -494,7 +494,7 @@ extern u16 gUnknown_0201D46A[];
 // extern ??? gUnknown_0201F148
 // extern ??? gUnknown_0201F160
 // extern ??? gUnknown_0201F198
-// extern ??? gUnknown_0201F19C
+// extern ??? gSoundRoomVolumeGraphBuffer
 extern u8 gEfxSplitedColorBuf[];
 extern u8 gUnknown_0201F978[];
 extern u16 gUnknown_0201F9A8[];
@@ -646,13 +646,13 @@ extern struct ProcCmd ProcScr_efxCriricalEffectBG[];
 extern struct ProcCmd ProcScr_efxCriricalEffectBGCOL[];
 extern struct ProcCmd ProcScr_efxNormalEffect[];
 extern struct ProcCmd ProcScr_efxNormalEffectBG[];
-extern u16 *gUnknown_085D8DF4[];
+extern u16 * TSAs_EfxNormalEffectBG[];
 extern struct ProcCmd ProcScr_efxPierceCriticalEffect[];
 extern struct ProcCmd ProcScr_efxPierceCriticalEffectBG[];
 extern struct ProcCmd ProcScr_efxPierceCriticalEffectBGCOL[];
 extern struct ProcCmd ProcScr_efxPierceNormalEffect[];
 extern struct ProcCmd ProcScr_efxPierceNormalEffectBG[];
-extern u16 *gUnknown_085D8E9C[];
+extern u16 *TSAs_EfxPierceNormalEffectBG[];
 extern struct ProcCmd ProcScr_efxYushaSpinShield[];
 extern struct ProcCmd ProcScr_efxYushaSpinShieldOBJ[];
 extern struct ProcCmd ProcScr_efxHurtmutEff00[];
@@ -770,7 +770,7 @@ extern const u16 gUnknown_080E7B8C[];
 
 extern char gNopStr[];
 // extern ??? gUnknown_085B9E4C
-extern u16 gUnknown_085BA0B8[];
+extern u16 Img_NODAMGEMIS[];
 extern u16 Pal_085BA2E0[];
 extern u16 Pal_085BA300[];
 extern u16 Pal_085BA320[];
@@ -815,20 +815,30 @@ extern AnimScr AnimScr_EfxLvupOBJ2[];
 // extern ??? gUnknown_085C7338
 // extern ??? gUnknown_085C73B8
 // extern ??? gUnknown_085C7438
-extern u32 AnimScr_085C81A4[];
-extern u32 AnimScr_085C8218[];
+extern u32 AnimScr_NoDamage[];
+extern u32 AnimScr_Miss[];
 extern u8 Img_EkrLvupNumBig[];
 extern AnimScr gUnknown_085C9270[];
 extern AnimScr gUnknown_085C92A0[];
 extern AnimScr gUnknown_085C92D0[];
 extern AnimScr gUnknown_085C92EC[];
 extern AnimScr gUnknown_085C9328[];
-extern u16 gUnknown_085CFB70[];
-extern u16 gUnknown_085D0820[];
-extern u16 gUnknown_085D0A20[];
-extern u16 gUnknown_085D0CE0[];
-extern u16 gUnknown_085D0FD0[];
-extern u16 gUnknown_085D1470[];
+extern u16 Img_EfxPierceCriticalEffectBG[];
+extern u16 Pal_EfxPierceCriticalEffectBG[];
+extern u16 TsaL_EfxPierceCriticalEffectBG[];
+extern u16 TsaR_EfxPierceCriticalEffectBG[];
+extern u16 Img_EfxPierceNormalEffectBG[];
+extern u16 Pal_EfxPierceNormalEffectBG[];
+extern u16 Tsa1_EfxPierceNormalEffectBG[];
+extern u16 Tsa2_EfxPierceNormalEffectBG[];
+extern u16 Tsa3_EfxPierceNormalEffectBG[];
+extern u16 Tsa4_EfxPierceNormalEffectBG[];
+extern u16 Tsa5_EfxPierceNormalEffectBG[];
+extern u16 Tsa6_EfxPierceNormalEffectBG[];
+extern u16 Tsa7_EfxPierceNormalEffectBG[];
+extern u16 Tsa8_EfxPierceNormalEffectBG[];
+extern u16 Tsa9_EfxPierceNormalEffectBG[];
+extern u16 TsaA_EfxPierceNormalEffectBG[];
 extern u32 AnimScr_EkrBaseKaiten1[];
 extern u32 AnimScr_EkrBaseKaiten3[];
 extern u32 AnimScr_EkrBaseKaiten4[];
@@ -865,43 +875,43 @@ extern u32 AnimScr_EkrBaseKaiten2[];
 // extern ??? gUnknown_085D9BB4
 // extern ??? gUnknown_085D9C00
 // extern ??? gUnknown_085D9C4C
-// extern ??? gUnknown_085D9C5C
-// extern ??? gUnknown_085DA05C
-// extern ??? gUnknown_085DA364
-// extern ??? gUnknown_085DA3C0
-// extern ??? gUnknown_085DA3E0
-// extern ??? gUnknown_085DA6FC
-// extern ??? gUnknown_085DA758
-// extern ??? gUnknown_085DA778
-// extern ??? gUnknown_085DA7AC
-// extern ??? gUnknown_085DA854
-// extern ??? gUnknown_085DA864
-// extern ??? gUnknown_085DA8E0
-// extern ??? gUnknown_085DA8F0
-// extern ??? gUnknown_085DA900
-// extern ??? gUnknown_085DAB30
-// extern ??? gUnknown_085DAB50
-// extern ??? gUnknown_085DAD6C
-// extern ??? gUnknown_085DAD8C
-// extern ??? gUnknown_085DAFA4
-// extern ??? gUnknown_085DAFC4
-// extern ??? gUnknown_085DB1E0
-// extern ??? gUnknown_085DB200
-// extern ??? gUnknown_085DB42C
-// extern ??? gUnknown_085DB44C
-// extern ??? gUnknown_085DB694
-// extern ??? gUnknown_085DB6B4
-// extern ??? gUnknown_085DB8EC
-// extern ??? gUnknown_085DB90C
-// extern ??? gUnknown_085DBB70
-// extern ??? gUnknown_085DBB90
-// extern ??? gUnknown_085DBE00
-// extern ??? gUnknown_085DBE20
-// extern ??? gUnknown_085DC050
-// extern ??? gUnknown_085DC244
-// extern ??? gUnknown_085DC498
-// extern ??? gUnknown_085DC6F8
-// extern ??? gUnknown_085DC958
+extern u16 Img_TeonoOBJ[];
+extern u16 Pal_TeonoOBJ[];
+extern u32 AnimScr_TeonoObjCloseRight[];
+extern u32 AnimScr_TeonoObjFarRight[];
+extern u32 AnimScr_TeonoObj2Right[];
+extern u32 AnimScr_TeonoObjCloseLeft[];
+extern u32 AnimScr_TeonoObjFarLeft[];
+extern u32 AnimScr_TeonoObj2Left[];
+extern u16 Img_EfxArrowOBJ[];
+extern u32 AnimScr_ArrowCloseRight[];
+extern u32 AnimScr_ArrowFarRight[];
+extern u32 AnimScr_ArrowCloseLeft[];
+extern u32 AnimScr_ArrowFarLeft[];
+extern u16 Img_SpellJavelin[];
+extern u16 Pal_SpellJavelin[];
+extern u16 Img_SpellJavelinCavalier[];
+extern u16 Pal_SpellJavelinCavalier[];
+extern u16 Img_SpellJavelinSoldier[];
+extern u16 Pal_SpellJavelinSoldier[];
+extern u16 Img_SpellJavelinPaladin[];
+extern u16 Pal_SpellJavelinPaladin[];
+extern u16 Img_SpellJavelinPrgasusKnight[];
+extern u16 Pal_SpellJavelinPrgasusKnight[];
+extern u16 Img_SpellJavelinFalcon[];
+extern u16 Pal_SpellJavelinFalcon[];
+extern u16 Img_SpellJavelinWyvernRider[];
+extern u16 Pal_SpellJavelinWyvernRider[];
+extern u16 Img_SpellJavelinWyvernLord[];
+extern u16 Pal_SpellJavelinWyvernLord[];
+extern u16 Img_SpellJavelinGenerial[];
+extern u16 Pal_SpellJavelinGenerial[];
+extern u16 Img_SpellJavelinUnk[];
+extern u16 Pal_SpellJavelinUnk[];
+extern u32 AnimScr_085DC244[];
+extern u32 AnimScr_085DC498[];
+extern u32 AnimScr_085DC6F8[];
+extern u32 AnimScr_085DC958[];
 // extern ??? gUnknown_085DCA5C
 // extern ??? gUnknown_085DCAF8
 extern u16 gUnknown_085DCB10[];
@@ -933,14 +943,24 @@ extern u32 gUnknown_085E1EB4[];
 // extern ??? gUnknown_085E5A78
 // extern ??? gUnknown_085E5AE4
 extern u16 gUnknown_085E7028[];
-extern u16 gUnknown_085E8108[];
+extern u16 Pal_085E8108[];
 extern u16 gUnknown_085E8308[];
 extern u16 gUnknown_085E87A8[];
 extern u16 gUnknown_085E8C04[];
 extern u16 gUnknown_085E8CC4[];
 extern u16 gUnknown_085E8CE4[];
-extern u16 gUnknown_085E8D88[];
-extern u16 gUnknown_085E9150[];
+extern u16 Img_EfxNormalEffectBG[];
+extern u16 Pal_EfxNormalEffectBG[];
+extern u16 Tsa1_EfxNormalEffectBG[];
+extern u16 Tsa2_EfxNormalEffectBG[];
+extern u16 Tsa3_EfxNormalEffectBG[];
+extern u16 Tsa4_EfxNormalEffectBG[];
+extern u16 Tsa5_EfxNormalEffectBG[];
+extern u16 Tsa6_EfxNormalEffectBG[];
+extern u16 Tsa7_EfxNormalEffectBG[];
+extern u16 Tsa8_EfxNormalEffectBG[];
+extern u16 Tsa9_EfxNormalEffectBG[];
+extern u16 TsaA_EfxNormalEffectBG[];
 extern u32 gUnknown_085EAB58[];
 extern u32 gUnknown_085EAC5C[];
 extern u32 gUnknown_085EAC84[];
@@ -1410,29 +1430,29 @@ void EfxFlashUnitEffectRestorePal(struct ProcEfxFlashing * proc);
 // ??? sub_806C478(???);
 // ??? sub_806C608(???);
 void NewEfxDamageMojiEffect(struct Anim * anim, int hitted);
-// ??? efxDamageMojiEffectMain(???);
+void efxDamageMojiEffectMain(struct ProcEfx * proc);
 void NewEfxDamageMojiEffectOBJ(struct Anim * anim, int hitted);
-// ??? efxDamageMojiEffectOBJMain(???);
+void efxDamageMojiEffectOBJMain(struct ProcEfxDamageMojiEffectOBJ * proc);
 void NewEfxPierceCritical(struct Anim * anim);
-// ??? efxCriricalEffectMain(???);
+void efxCriricalEffectMain(struct ProcEfx * proc);
 void NewEfxCriricalEffectBG(struct Anim * anim);
-// ??? efxCriricalEffectBGMain(???);
+void efxCriricalEffectBGMain(struct ProcEfxBG * proc);
 void NewEfxCriricalEffectBGCOL(struct Anim * anim);
-// ??? efxCriricalEffectBGCOLMain(???);
+void efxCriricalEffectBGCOLMain(struct ProcEfxBGCOL * proc);
 void NewEfxNormalEffect(struct Anim * anim);
-// ??? efxNormalEffectMain(???);
+void efxNormalEffectMain(struct ProcEfx * proc);
 void NewEfxNormalEffectBG(struct Anim * anim);
-// ??? efxNormalEffectBGMain(???);
+void efxNormalEffectBGMain(struct ProcEfxBG * proc);
 void NewEfxPierceCriticalEffect(struct Anim * anim);
-// ??? efxPierceCriticalEffectMain(???);
+void efxPierceCriticalEffectMain(struct ProcEfxBG * proc);
 void NewEfxPierceCriticalEffectBG(struct Anim * anim);
-// ??? efxPierceCriticalEffectBGMain(???);
+void efxPierceCriticalEffectBGMain(struct ProcEfxBG * proc);
 void NewEfxPierceCriticalEffectBGCOL(struct Anim * anim);
-// ??? efxPierceCriticalEffectBGCOLMain(???);
+void efxPierceCriticalEffectBGCOLMain(struct ProcEfxBGCOL * proc);
 void NewEfxPierceNormalEffect(struct Anim * anim);
-// ??? efxPierceNormalEffectMain(???);
+void efxPierceNormalEffectMain(struct ProcEfx * proc);
 void NewEfxPierceNormalEffectBG(struct Anim * anim);
-// ??? efxPierceNormalEffectBGMain(???);
+void efxPierceNormalEffectBGMain(struct ProcEfxBG * proc);
 void NewEfxYushaSpinShield(struct Anim * anim, int r1);
 // ??? EfxYushaSpinShieldMain(???);
 void NewEfxYushaSpinShieldOBJ(struct Anim * anim, int r1);
