@@ -598,10 +598,6 @@ extern const u16 gUnknown_080DCDE4[];
 // extern ??? gUnknown_080DCE6E
 // extern ??? gUnknown_080DCEEC
 // extern ??? gUnknown_080DCF7E
-// extern ??? gUnknown_080DD024
-// extern ??? gUnknown_080DD044
-// extern ??? gUnknown_080DD094
-// extern ??? gUnknown_080DD0C6
 // extern ??? gUnknown_080DD186
 // extern ??? gUnknown_080DD1F4
 // extern ??? gUnknown_080DD252
@@ -834,9 +830,9 @@ u16 IsItemDisplayedInBattle(u16 item);
 u16 IsWeaponLegency(u16 item);
 s16 EkrCheckWeaponSieglindeSiegmund(u16 item);
 bool EkrCheckAttackRound(u16 round);
-void sub_8058B64(void);
-void sub_8058B70(void);
-bool sub_8058B7C(void);
+void SetBattleScriptted(void);
+void SetBattleUnscriptted(void);
+bool CheckBattleScriptted(void);
 // ??? GetEkrHit(???);
 // ??? GetEkrDmg(???);
 // ??? GetEkrCrit(???);
