@@ -433,7 +433,7 @@ extern s16 gEfxPairHpBufOffset[];
 extern s16 gEkrPairBanimID2[];
 extern u8 gEkrPids[2];
 extern struct Unit *gpEkrTriangleUnits[2];
-extern char *gBanimCharacterPals[2];
+extern char *gBanimTriAtkPalettes[2];
 extern void * gUnknown_0203E1A4[2];
 extern s16 gEkrGaugeHp[2];
 extern s16 gEkrPairMaxHP[2];
@@ -471,7 +471,7 @@ extern u16 * gpEkrLvupBg1ScrollOffsetStart;
 extern u16 * gpEkrLvupBg1ScrollOffset;
 extern u16 gpEkrLvupBg1ScrollOffsetList1[];
 extern u16 gpEkrLvupBg1ScrollOffsetList2[];
-// extern ??? gUnknown_02020044
+extern int gUnknown_02020044;
 
 extern int gEkrMainBgmPlaying;
 extern int gEfxSoundSeExist;
@@ -595,17 +595,7 @@ extern const u16 gUnknown_080DCCC0[];
 extern const u16 gUnknown_080DCD26[];
 extern const u16 gUnknown_080DCD72[];
 extern const u16 gUnknown_080DCDE4[];
-// extern ??? gUnknown_080DCE6E
-// extern ??? gUnknown_080DCEEC
-// extern ??? gUnknown_080DCF7E
-// extern ??? gUnknown_080DD186
-// extern ??? gUnknown_080DD1F4
-// extern ??? gUnknown_080DD252
-// extern ??? gUnknown_080DD288
-// extern ??? gUnknown_080DD328
-// extern ??? gUnknown_080DD4D4
-// extern ??? gUnknown_080DD542
-// extern ??? gUnknown_080DD550
+// extern ??? gFrameConfig_080DD1F4
 // extern ??? gUnknown_080DD5D2
 // extern ??? gUnknown_080DD5D8
 // extern ??? gUnknown_080DD67A

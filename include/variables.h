@@ -32,16 +32,12 @@ extern u8 gEkrKakudaiSomeBufLeft[];
 // extern ??? gUnknown_02002038
 // extern ??? gBanimRightImgSheetBuf
 extern struct Font gUnknown_02002774;
-// extern ??? gaBattleForecastTextStructs
-// extern ??? gUnknown_02002FF4
-// extern ??? gUnknown_0200300C
+
 extern u8 gEkrKakudaiSomeBufRight[];
 // extern ??? gUnknown_0200310C
 // extern ??? gUnknown_020038AC
 // extern ??? gUnknown_020038C4
 // extern ??? gUnknown_020038C8
-// extern ??? gUnknown_020039C8
-// extern ??? gUnknown_02003A08
 // extern ??? gUnknown_02003B08
 // extern ??? gUnknown_02003B48
 // extern ??? gUnknown_02003B70
@@ -49,36 +45,16 @@ extern u8 gEkrKakudaiSomeBufRight[];
 // extern ??? gUnknown_02003BA8
 // extern ??? gUnknown_02003BE8
 
-// extern ??? gStatScreen
-extern u16 gBmFrameTmap0[];
+extern u16 gUiTmScratchA[];
+extern u16 gUiTmScratchB[];
+extern u16 gUiTmScratchC[];
 
-extern u16 gUnknown_02003D54[];
-
-// extern ??? gUnknown_02003DF0
-extern s16 gUnknown_02003E36[];
-// extern ??? gUnknown_02003E70
-// extern ??? gUnknown_02003E7C
-// extern ??? gUnknown_02003E86
-// extern ??? gUnknown_02003F84
-extern s16 gUnknown_02003FAC[];
-// extern ??? gUnknown_0200400C
-extern u16 gUnknown_02004054[];
-// extern ??? gUnknown_0200407C
 extern u16 gBanimPal1[];
-extern u16 gUnknown_020040AE[];
-// extern ??? gUnknown_020040B2
 extern u16 gBanimPal2[];
 extern u32 gBanimOaml[];
-extern u16 gUnknown_0200422C[];
-extern u16 gUnknown_02004254[];
-extern s16 gUnknown_020044AC[];
-extern u16 gUnknown_020044D4[];
-extern u16 gUnknown_020044EC[];
-extern u16 gBmFrameTmap1[];
 
 // extern ??? gChapterStatusText
 // extern ??? gUnknown_02004BBC
-// extern ??? gUnknown_02004BC4
 // extern ??? gMUGfxBuffer
 // extern ??? gUnknown_02007838
 // extern ??? gUnknown_020078D8
@@ -214,7 +190,7 @@ extern u16 gUnknown_030018F0[];
 // extern ??? gUnitDef2
 // extern ??? gUnitDefEggHatching
 // extern ??? gUnknown_03001C74
-// extern ??? gUnknown_03001C7C
+extern u8 gUnknown_03001C7C;
 // extern ??? gActiveEventRegistry
 // extern ??? gUnknown_03001CC0
 // extern ??? gUnknown_03001CC8
@@ -414,8 +390,8 @@ extern const u8 gUnknown_08205714[4];
 extern const int gUnknown_08205884[];
 extern const u8 gUnknown_0820588C[];
 extern const u8 gUnknown_0820588E[];
-// extern ??? gUnknown_082058A8
-// extern ??? gUnknown_082058B0
+extern unsigned const gUnknown_082058A8[];
+extern u8 const gUnknown_082058B0[];
 // extern ??? gUnknown_082058B4
 // extern ??? gUnknown_082058D4
 // extern ??? gUnknown_082058DC
@@ -641,10 +617,7 @@ extern CONST_DATA u16 Pal_PhaseChangePlayer[];
 extern CONST_DATA u16 Img_PhaseChangeSquares[];
 extern u8 gUnknown_085A0838[]; // tsa
 extern u8 gUnknown_085A08F0[]; // tsa
-// extern ??? gTSA_BattleForecastStandard
-// extern ??? gTSA_BattleForecastExtended
-// extern ??? gBattleForecast_x2x4Gfx
-// extern ??? gBattleForecast_x2x4Pal
+
 // extern ??? gUnknown_085A0D4C
 extern u16 CONST_DATA gUnknown_085A0EA0[]; // ap
 // extern ??? SpriteAnim_GasTrapVertical

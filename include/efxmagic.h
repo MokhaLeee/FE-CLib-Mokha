@@ -41,7 +41,7 @@ void EfxRestWINMain(struct ProcEfx * proc);
 // ??? EfxMagicHBlank_805B77C(???);
 // ??? EfxMagicHBlank_805B7BC(???);
 // ??? EfxMagicHBlank_805B7FC(???);
-void NewEfxRestWINH(struct Anim * anim, int a, u16 b, u32 c);
+void NewEfxRestWINH(struct Anim * anim, int a, s16 b, u32 c);
 void NewEfxRestWINH_(struct Anim * anim, int a, int b);
 
 extern CONST_DATA struct ProcCmd ProcScr_efxALPHA[];
@@ -96,21 +96,21 @@ extern struct ProcCmd ProcScr_efxElfireBGCOL[];
 extern struct ProcCmd ProcScr_efxElfireOBJ[];
 extern struct ProcCmd ProcScr_efxFimbulvetr[];
 extern struct ProcCmd ProcScr_efxFimbulvetrBGTR[];
-// extern ??? gUnknown_085D5688
-// extern ??? gUnknown_085D56A0
-// extern ??? gUnknown_085D56B8
-// extern ??? gUnknown_085D56D0
-// extern ??? gUnknown_085D56FC
-// extern ??? gUnknown_085D5728
-// extern ??? gUnknown_085D5740
-// extern ??? gUnknown_085D5758
-// extern ??? gUnknown_085D5770
-// extern ??? gUnknown_085D5788
-// extern ??? gUnknown_085D57A0
-// extern ??? gUnknown_085D57CC
-// extern ??? gUnknown_085D57F8
-// extern ??? gUnknown_085D5820
-// extern ??? gUnknown_085D5860
+// extern ??? TsaArray_FimbulvetrBg_Tornado
+// extern ??? ImgArray_FimbulvetrBg_Tornado
+// extern ??? ProcScr_efxFimbulvetrBG
+// extern ??? TsaArray_FimbulvetrBg
+// extern ??? ImgArray_FimbulvetrBg
+// extern ??? ProcScr_efxFimbulvetrOBJ
+// extern ??? ProcScr_efxFimbulvetrOBJ2
+// extern ??? ProcScr_efxFimbulvetrOBJ2Fall
+// extern ??? gProcScr_efxThunderstorm
+// extern ??? gProcScr_efxThunderstormBG
+extern u16 * ImgArray_BoltingBg[];
+extern u16 * TsaArray_BoltingBg[];
+// extern ??? gProcScr_efxThunderstormOBJ
+// extern ??? gProcScr_efxThunderstormCOLOR
+// extern ??? gProcScr_efxThunderstormDARK
 extern struct ProcCmd gProcScr_efxAlacalibur[];
 extern struct ProcCmd gProcScr_efxAlacaliburBG[];
 extern u16 * TsaArray_AircaliburBg[];
@@ -125,31 +125,31 @@ extern struct ProcCmd gProcScr_efxMistyrainOBJ2[];
 // extern ??? ProcScr_efxResire
 // extern ??? ProcScr_efxResireBG
 // extern ??? ProcScr_efxResireBG2
-// extern ??? gUnknown_085D5B40
-// extern ??? gUnknown_085D5C0C
-// extern ??? gUnknown_085D5CD8
-// extern ??? gUnknown_085D5CF0
-// extern ??? gUnknown_085D5D08
-// extern ??? gUnknown_085D5D20
-// extern ??? gUnknown_085D5DA4
-// extern ??? gUnknown_085D5E28
-// extern ??? gUnknown_085D5EAC
-// extern ??? gUnknown_085D5EC4
-// extern ??? gUnknown_085D5EDC
-// extern ??? gUnknown_085D6014
-// extern ??? gUnknown_085D614C
-// extern ??? gUnknown_085D6284
-// extern ??? gUnknown_085D62A4
-// extern ??? gUnknown_085D62DC
-// extern ??? gUnknown_085D62FC
-// extern ??? gUnknown_085D6314
-// extern ??? gUnknown_085D632C
-// extern ??? gUnknown_085D637C
-// extern ??? gUnknown_085D63CC
-// extern ??? gUnknown_085D63D8
-// extern ??? gUnknown_085D63E4
-// extern ??? gUnknown_085D6438
-// extern ??? gUnknown_085D648C
+// extern ??? ImgArray_NosferatuBg
+// extern ??? TsaArray_NosferatuBg
+// extern ??? ProcScr_efxResireRST
+// extern ??? ProcScr_efxLightning
+// extern ??? ProcScr_efxLightningBG
+// extern ??? ImgArray_LightningBg
+// extern ??? PalArray_LightningBg
+// extern ??? TsaArray_LightningBg
+// extern ??? ProcScr_efxPurge
+// extern ??? ProcScr_efxPurgeBG
+// extern ??? ImgArray_PurgeBg
+// extern ??? PalArray_PurgeBg
+// extern ??? TsaArray_PurgeBg
+// extern ??? ProcScr_efxPurgeOBJRND
+// extern ??? gPurgeAnimSpriteCoordinates
+// extern ??? ProcScr_efxPurgeOBJ
+// extern ??? ProcScr_efxDivine
+// extern ??? ProcScr_efxDivineBG
+// extern ??? ImgArray_DivineBg
+// extern ??? TsaArray_DivineBg
+// extern ??? ImgArray_DivineBg2
+// extern ??? TsaArray_DivineBg2
+// extern ??? ImgArray_DivineBg3
+// extern ??? TsaArray_DivineBg3
+// extern ??? ProcScr_efxDivineOBJ
 // extern ??? gUnknown_085D64A4
 // extern ??? gUnknown_085D64BC
 // extern ??? gUnknown_085D64D4
@@ -387,31 +387,31 @@ void StartSubSpell_efxElfireBGCOL(struct Anim * anim);
 void StartSubSpell_efxElfireOBJ(struct Anim * anim);
 // ??? sub_805E0B4(???);
 void StartSpellAnimFimbulvetr(struct Anim * anim);
-// ??? sub_805E120(???);
-// ??? sub_805E230(???);
-// ??? sub_805E2B4(???);
-// ??? sub_805E318(???);
-// ??? sub_805E39C(???);
-// ??? sub_805E430(???);
-// ??? sub_805E494(???);
-// ??? sub_805E4C4(???);
-// ??? sub_805E510(???);
-// ??? sub_805E53C(???);
-// ??? sub_805E694(???);
-void sub_805E754(struct Anim * anim);
-// ??? sub_805E790(???);
-// ??? sub_805E850(???);
-// ??? sub_805E8A4(???);
-// ??? sub_805E900(???);
-// ??? sub_805E924(???);
-// ??? sub_805E968(???);
-// ??? sub_805E98C(???);
-// ??? sub_805E9B0(???);
-// ??? sub_805E9E4(???);
-// ??? sub_805EA4C(???);
-// ??? sub_805EAAC(???);
-// ??? sub_805EAF0(???);
-// ??? sub_805EB54(???);
+void efxFimbulvetr_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxFimbulvetrBGTR(struct Anim * anim);
+void efxFimbulvetrBGTR_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxFimbulvetrBG(struct Anim * anim);
+void efxFimbulvetrBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxFimbulvetrOBJ(struct Anim * anim);
+void efxFimbulvetrOBJ_Loop(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxFimbulvetrOBJ2(struct Anim * anim);
+void efxFimbulvetrOBJ2_Loop(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxFimbulvetrOBJ2Fall(struct Anim * anim, int unk);
+void efxFimbulvetrOBJ2Fall_Loop(struct ProcEfxOBJ * proc);
+void StartSpellAnimBolting(struct Anim * anim);
+void efxThunderstorm_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxThunderstormBG(struct Anim * anim);
+void efxThunderstormBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxThunderstormOBJ(struct Anim * anim);
+void efxThunderstormOBJ_Loop(struct ProcEfxOBJ * proc);
+void efxThunderstormOBJ_End(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxThunderstormCOLOR(struct Anim * anim);
+void efxThunderstormColor_Loop_A(struct ProcEfxBGCOL * proc);
+void efxThunderstormColor_Loop_B(struct ProcEfxBGCOL * proc);
+void efxThunderstormColor_Loop_C(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxThunderstormDARK(struct Anim * anim, int timer, int terminator);
+void efxThunderstormDark_Loop_A(struct ProcEfxBGCOL * proc);
+void efxThunderstormDark_Loop_B(struct ProcEfxBGCOL * proc);
 void StartSpellAnimAircalibur(struct Anim * anim);
 void efxAlacalibur_Loop_Main(struct ProcEfx * proc);
 void sub_805ECD4(struct Anim * anim);
@@ -434,40 +434,40 @@ void efxMistyRainObj_805F2C4(struct ProcEfxOBJ * proc);
 void efxMistyRainObj2_805F300(struct ProcEfxOBJ * proc);
 void efxMistyRainObj2_805F32C(struct ProcEfxOBJ * proc);
 void StartSpellAnimNosferatu(struct Anim * anim);
-// ??? Loop6C_efxResire(???);
-// ??? sub_805F4B0(???);
-// ??? sub_805F53C(???);
-// ??? sub_805F5DC(???);
-// ??? sub_805F660(???);
-// ??? sub_805F6FC(???);
-// ??? sub_805F76C(???);
-// ??? sub_805F7D4(???);
-// ??? sub_805F838(???);
-// ??? sub_805F868(???);
-void sub_805F8B4(struct Anim * anim);
-// ??? sub_805F8F0(???);
-// ??? sub_805F9A8(???);
-// ??? sub_805FA28(???);
+void efxResire_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxResireBG(struct Anim * anim, int unk);
+void StartSubSpell_efxResireBG2(struct Anim * anim);
+void efxResireBG_Loop_A(struct ProcEfxBG * proc);
+void efxResireBG_Loop_B(struct ProcEfxBG * proc);
+void efxResireBG_Loop_C(struct ProcEfxBG * proc);
+void efxResireBG_Loop_D(struct ProcEfxBG * proc);
+void efxResireBG2_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxResireRST(struct Anim * anim, ProcPtr b, int c);
+void efxResireRST_Loop(struct ProcEfxRST * proc);
+void StartSpellAnimLightning(struct Anim * anim);
+void efxLightning_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxLightningBG(struct Anim * anim);
+void efxLightningBG_Loop(struct ProcEfxBG * proc);
 void StartSpellAnimPurge(struct Anim * anim);
-// ??? sub_805FB24(???);
-// ??? sub_805FB60(???);
-// ??? sub_805FC90(???);
-// ??? sub_805FCE0(???);
-// ??? sub_805FD5C(???);
-// ??? sub_805FD90(???);
-// ??? sub_805FDFC(???);
-// ??? sub_805FE68(???);
-void nullsub_41(struct Anim * anim);
+void sub_805FB24(int location, int type);
+void efxPurge_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxPurgeBG(struct Anim * anim);
+void efxPurgeBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxPurgeOBJRND(struct Anim * anim);
+void efxPurgeOBJRND_Loop(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxPurgeOBJ(struct Anim * anim, int x, int y);
+void efxPurgeOBJ_OnEnd(struct ProcEfxOBJ * proc);
+void StartSpellAnim_805FE80_Null(struct Anim * anim);
 void StartSpellAnimDivine(struct Anim * anim);
-// ??? DivineSfxLoop(???);
-// ??? sub_805FFB0(???);
-// ??? sub_8060034(???);
-// ??? sub_80600B8(???);
-// ??? sub_806013C(???);
-// ??? sub_80601E0(???);
-// ??? sub_8060254(???);
-void sub_8060284(struct Anim * anim);
-void nullsub_40(struct Anim * anim);
+void efxDivine_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxDivineBG(struct Anim * anim);
+void StartSubSpell_efxDivineBG_2(struct Anim * anim);
+void StartSubSpell_efxDivineBG_3(struct Anim * anim);
+void efxDivineBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxDivineOBJ(struct Anim * anim);
+void efxDivineOBJ_Loop(struct ProcEfxOBJ * proc);
+void StartSpellAnim_8060284_Null(struct Anim * anim);
+void StartSpellAnim_8060288_Null(struct Anim * anim);
 void sub_806028C(struct Anim * anim);
 // ??? sub_80602C8(???);
 // ??? sub_8060440(???);
