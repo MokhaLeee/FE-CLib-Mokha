@@ -15,6 +15,8 @@
 #define ENUF_SLOT2 EvtClearFlagAtSlot2
 #define ENUT EvtSetFlag
 #define SVAL EvtSetSlot
+#define CHECK_EVBIT EventCheckEvbit
+#define CHECK_EVENTID EventCheckFlag
 #define SADD EvtSlotAdd
 #define SENQUEUE EvtEnqueueFormSlot
 #define SENQUEUE1 EvtEnqueueFormSlot1
@@ -22,12 +24,19 @@
 #define LABEL EvtLabel
 #define GOTO EvtGoto
 #define CALL EvtCall
+#define BEQ EvtBEQ
 #define BNE EvtBNE
+#define BGE EvtBGE
+#define BGT EvtBGT
+#define BLE EvtBLE
+#define BLT EvtBLT
 #define ASMC EvtAsmCall
 #define STAL EvtSleep
 #define STAL1 EvtSleepWithCancel
 #define STAL2 EvtSleepWithGameCtrl
 #define STAL3 EvtSleepWithCancelGameCtrl
+#define EVBIT_MODIFY EvtModifyEvBit
+#define IGNORE_KEYS EvtSetKeyIgnore
 #define MUSC EvtStartBgm
 #define MUSCFAST EvtBgmFadeInFast
 #define MUSCMID EvtBgmFadeInMiddleSpeed
@@ -50,9 +59,15 @@
 #define CHECK_EVENTID EvtGetTriggeredEid
 #define CHECK_POSTGAME EvtGetIsGameCompleted
 #define TEXTSTART EvtTextStart
+#define REMOVEPORTRAITS EvtTextStartType1
+#define _1A22 EvtTextStartType2
+#define TUTORIALTEXTBOXSTART EvtTextTuorialStart
+#define SOLOTEXTBOXSTART EvtTextStartType4
+#define _1A25 EvtTextStartType5
 #define TEXTSHOW EvtTextShow
 #define REMA EvtTextRemoveAll
 #define TEXTEND EvtTextEnd
+#define CLEAN EvtClearScreen
 #define LOMA EvtLoadMap
 #define CAMERA EvtMoveCameraTo
 #define MNTS EvtBackToTitle
@@ -62,16 +77,31 @@
 #define MNC4 EvtMoveToGameEnding
 #define LOAD1 EvtLoadUnit1
 #define LOAD2 EvtLoadUnit2
+#define CHECK_AT EvtGetPidAt
+#define CHECK_ACTIVE EvrGetActiveUnitPid
 #define MOVE EvtMoveUnit
 #define MOVEONTO EvtMoveUnitToTarget
 #define MOVE_1STEP EvtMoveUnitOneStpe
 #define MOVEFORCED EvtMoveUnitByQueue
 #define _WARP EvtMoveUnitToValidTerrain /* This is an error on EA stdlib */
+#define CHECK_EXISTS EvtCheckUnitExists
+#define CHECK_STATUS EvtGetUnitVisitGroup
+#define CHECK_ALIVE EvtCheckUnitNotDead
+#define CHECK_DEPLOYED EvtCheckUnitDeployed
+#define CHECK_ACTIVEID EvtCheckUnitActive
+#define CHECK_ALLEGIANCE EvtGetUnitFaction
+#define CHECK_COORDS EvtGetUnitPosition
+#define CHECK_CLASS EvtGetUnitJid
+#define CHECK_LUCK EvtGetUnitLuck
 #define ENUN EvtWaitUnitMoving
-#define SET_HP EvtSetHpFormSlot1
+#define SET_HP EvtSetUnitHpFormSlot1
+#define SET_ENDTURN EvtSetUnitUnselectable
+#define _3427 EvtSetUnitHasMoved
 #define CLEA EvtHideAllAlliess
 #define CLEN EvtRemoveAllNpcs
 #define CLEE EvtRemoveAllEimies
+#define KILL EvtKillUnit
+#define DISA_IF EvtWaitUnitDeathFade
 #define DISA EvtRemoveUnit
 #define GIVEITEMTO EvtGiveItemAtSlot3
 #define GIVEITEMTOMAIN EvtGiveMoneymAtSlot3         /* what */
@@ -82,9 +112,11 @@
 #define CURSOR_CHAR EvtDisplayCursorAtUnit
 #define CURSOR_FLASHING_CHAR EvtDisplayFlashingCursorAtUnit
 #define CURE EvtEndCursor
+#define DISABLEOPTIONS EvtOverrideUnitMenu
+#define DISABLEWEAPONS EvtOverrideWeaponMenu
 #define FIGHT EvtStartEventBattle
 #define FIGHT_MAP EvtStartEventMapBattle
-#define FIGHT_SCRIPT EvtStartScriptedBattle
+#define FIGHT_SCRIPT EvtSetScriptedBattle
 
 #define CUMO_CHAR CURSOR_CHAR
 
@@ -95,7 +127,7 @@
 /* Main Code Helpers */
 #define DefeatBoss(event_scr) AFEV(EVFLAG_WIN, (event_scr), EVFLAG_DEFEAT_BOSS)
 #define CauseGameOverIfLordDies AFEV(0, gEvent_GameOver, EVFLAG_GAMEOVER)
-#define NoFade EVBIT_T(0x7)
+#define NoFade EVBIT_T(EV_STATE_SKIPPING | EV_STATE_0002 | EV_STATE_ABORT)
 
 /* Unit Helpers */
 #define FlashCursor(pid, time) \
@@ -134,3 +166,43 @@
 #define SLOTS_SETFROMQUEUE SDEQUEUE
 #define SAVETOQUEUE SENQUEUE1
 #define STQFROMSLOT SENQUEUE1
+
+
+/*************************************************************
+ * None EA stdlib but Mokha macros
+ * Note that this part of macros is not usable in EventAssembler
+ *************************************************************/
+
+#define TutEventExecType0(pid, rect, text1, pos1, text2, pos2, scr_next, scr_this) \
+    SVAL(EVT_SLOT_D, 0) \
+    SVAL(EVT_SLOT_1, (pid)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (rect)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (text1)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (pos1)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (text2)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (pos2)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (scr_next)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (scr_this)) \
+    SAVETOQUEUE \
+    CALL(EventScr_Prologue_Tutorial0_Exec)
+
+#define TutEventExecType1(rect, text, pos, scr_next, scr_this) \
+    SVAL(EVT_SLOT_D, 0) \
+    SVAL(EVT_SLOT_1, (rect)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (text)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (pos)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (scr_next)) \
+    SAVETOQUEUE \
+    SVAL(EVT_SLOT_1, (scr_this)) \
+    SAVETOQUEUE \
+    CALL(EventScr_Prologue_Tutorial1_Exec)
