@@ -56,7 +56,8 @@
 #define CHECK_SKIRMISH EvtGetSkirmishType
 #define CHECK_TUTORIAL EvtGetIsTutorial
 #define CHECK_MONEY EvtGetMoney
-#define CHECK_EVENTID EvtGetTriggeredEid
+#define CHECK_TRIG_EVENTID EvtGetTriggeredEid
+#define CHECK_EVENTID_ CHECK_TRIG_EVENTID
 #define CHECK_POSTGAME EvtGetIsGameCompleted
 #define TEXTSTART EvtTextStart
 #define REMOVEPORTRAITS EvtTextStartType1
@@ -67,9 +68,12 @@
 #define TEXTSHOW EvtTextShow
 #define REMA EvtTextRemoveAll
 #define TEXTEND EvtTextEnd
+#define BACG EvtDisplayTextBg
 #define CLEAN EvtClearScreen
 #define LOMA EvtLoadMap
 #define CAMERA EvtMoveCameraTo
+#define TILECHANGE EvtTriggerMapChange
+#define TILEREVERT EvtRevertMapChange
 #define MNTS EvtBackToTitle
 #define MNCH EvtChangeChapterWM
 #define MNC2 EvtChangeChapterBM
@@ -79,11 +83,14 @@
 #define LOAD2 EvtLoadUnit2
 #define CHECK_AT EvtGetPidAt
 #define CHECK_ACTIVE EvrGetActiveUnitPid
-#define MOVE EvtMoveUnit
-#define MOVEONTO EvtMoveUnitToTarget
-#define MOVE_1STEP EvtMoveUnitOneStpe
-#define MOVEFORCED EvtMoveUnitByQueue
-#define _WARP EvtMoveUnitToValidTerrain /* This is an error on EA stdlib */
+#define MOVE(speed, pid, x, y) EvtMoveUnit(false, speed, pid, x, y)
+#define MOVEONTO(speed, pid, pid_target) EvtMoveUnitToTarget(false, speed, pid, pid_target)
+#define MOVE_1STEP(speed, pid, direction) EvtMoveUnitOneStep(false, speed, pid, direction)
+#define MOVE_DEFINED(pid) EvtMoveUnitByQueue(false, pid)
+#define MOVE_CLOSEST(speed, pid, x, y) EvtMoveUnit(true, speed, pid, x, y)
+#define MOVE_NEXTTO(speed, pid, pid_target) EvtMoveUnitToTarget(true, speed, pid, pid_target)
+#define MOVE_1STEP_CLOSEST(speed, pid, direction) EvtMoveUnitOneStep(true, speed, pid, direction)
+#define MOVE_DEFINED_CLOSEST(pid) EvtMoveUnitByQueue(true, pid)
 #define CHECK_EXISTS EvtCheckUnitExists
 #define CHECK_STATUS EvtGetUnitVisitGroup
 #define CHECK_ALIVE EvtCheckUnitNotDead
@@ -94,6 +101,8 @@
 #define CHECK_CLASS EvtGetUnitJid
 #define CHECK_LUCK EvtGetUnitLuck
 #define ENUN EvtWaitUnitMoving
+#define REMU EvtSetUnitHidden
+#define REVEAL EvtSetUnitUnhidden
 #define SET_HP EvtSetUnitHpFormSlot1
 #define SET_ENDTURN EvtSetUnitUnselectable
 #define _3427 EvtSetUnitHasMoved
@@ -102,6 +111,10 @@
 #define CLEE EvtRemoveAllEimies
 #define KILL EvtKillUnit
 #define DISA_IF EvtWaitUnitDeathFade
+#define SPAWN_ALLY(pid, x, y) EvtLoadSingleUnit(EVSUBCMD_SPAWN_ALLY, pid, x, y)
+#define SPAWN_NPC(pid, x, y) EvtLoadSingleUnit(EVSUBCMD_SPAWN_NPC, pid, x, y)
+#define SPAWN_ENEMY(pid, x, y) EvtLoadSingleUnit(EVSUBCMD_SPAWN_ENEMY, pid, x, y)
+#define SPAWN_CUTSCENE_ALLY(pid, x, y) EvtLoadSingleUnit(EVSUBCMD_SPAWN_CUTSCENE_ALLY, pid, x, y)
 #define DISA EvtRemoveUnit
 #define GIVEITEMTO EvtGiveItemAtSlot3
 #define GIVEITEMTOMAIN EvtGiveMoneymAtSlot3         /* what */
@@ -109,7 +122,9 @@
 #define CHAI EvtChangeAI
 #define CHAI_AT EvtChangeAIat
 #define BROWNBOXTEXT EvtDisplayPopupSilently
+#define CURSOR_AT EvtDisplayCursorAt
 #define CURSOR_CHAR EvtDisplayCursorAtUnit
+#define CURSOR_FLASHING EvtDisplayFlashingCursorAt
 #define CURSOR_FLASHING_CHAR EvtDisplayFlashingCursorAtUnit
 #define CURE EvtEndCursor
 #define DISABLEOPTIONS EvtOverrideUnitMenu
@@ -118,16 +133,54 @@
 #define FIGHT_MAP EvtStartEventMapBattle
 #define FIGHT_SCRIPT EvtSetScriptedBattle
 
+#define CUMO_AT CURSOR_AT
 #define CUMO_CHAR CURSOR_CHAR
 
 #define END_MAIN EvtListEnd
 #define TURN EvtListTurn
+#define CHAR EvtListTalk
+#define CHAR_ EvtListConditionalTalk
+#define LOCA EvtListTile
 #define AFEV EvtListFlag
+#define AREA EvtListArea
 
 /* Main Code Helpers */
-#define DefeatBoss(event_scr) AFEV(EVFLAG_WIN, (event_scr), EVFLAG_DEFEAT_BOSS)
+
+#define TurnEventPlayer(eid, scr, turn) TURN(eid, scr, turn, 0, FACTION_BLUE)
+#define TurnEventPlayer_(eid, scr, turn, dura) TURN(eid, scr, turn, turn + dura - 1, FACTION_BLUE)
+#define TurnEventEnemy(eid, scr, turn) TURN(eid, scr, turn, 0, FACTION_RED)
+#define TurnEventEnemy_(eid, scr, turn, dura) TURN(eid, scr, turn, turn + dura - 1, FACTION_RED)
+#define TurnEventNPC(eid, scr, turn) TURN(eid, scr, turn, 0, FACTION_GREEN)
+#define TurnEventNPC_(eid, scr, turn, dura) TURN(eid, scr, turn, turn + dura - 1, FACTION_GREEN)
+#define Survive(scr, turn) TurnEventPlayer(0, scr, turn)
+#define OpeningTurnEvent(scr) TurnEventPlayer(0, scr, 1)
+
+#define CharacterEvent(eid, scr, pid1, pid2) CHAR((eid), (scr), (pid1), (pid2))
+#define CharacterEvent_(eid, scr, pid1, pid2, trigg_eid) CHAR_((eid), (scr), (pid1), (pid2), (trigg_eid))
+#define CharacterEventBothWays(eid, scr, pid1, pid2) CharacterEvent(eid, scr, pid1, pid2) CharacterEvent(eid, scr, pid2, pid1)
+
+#define House(eid, scr, x, y) LOCA(eid, scr, x, y, TILE_COMMAND_VISIT)
+#define Seize_(eid, scr, x, y) LOCA(eid, scr, x, y, TILE_COMMAND_SEIZE)
+#define Seize(x, y) Seize_(EVFLAG_WIN, EVENT_NOSCRIPT, x, y)
+
 #define CauseGameOverIfLordDies AFEV(0, gEvent_GameOver, EVFLAG_GAMEOVER)
+#define DefeatBoss(event_scr) AFEV(EVFLAG_WIN, (event_scr), EVFLAG_DEFEAT_BOSS)
+#define DefeatAll(event_scr) AFEV(EVFLAG_WIN, (event_scr), EVFLAG_DEFEAT_ALL)
 #define NoFade EVBIT_T(EV_STATE_SKIPPING | EV_STATE_0002 | EV_STATE_ABORT)
+
+#define HouseEvent(msg, bg) \
+    MUSI \
+    Text_BG(bg, msg) \
+    MUNO \
+    NoFade \
+    ENDA
+
+#define ConvoEvent(textID) \
+    MUSI \
+    Text(textID) \
+    MUNO \
+    NoFade \
+    ENDA
 
 /* Unit Helpers */
 #define FlashCursor(pid, time) \
@@ -167,17 +220,26 @@
 #define SAVETOQUEUE SENQUEUE1
 #define STQFROMSLOT SENQUEUE1
 
+/* End Of Chapter Helpers.txt */
+#define MoveToChapter(chapter) MNCH(chapter)
+
 
 /*************************************************************
  * None EA stdlib but Mokha macros
  * Note that this part of macros is not usable in EventAssembler
  *************************************************************/
 
-#define TutEventExecType0(pid, rect, text1, pos1, text2, pos2, scr_next, scr_this) \
+/**
+ * pid: character you need to select
+ * x, y: cursor need move to
+ * text1: if you don't move cursor to [x, y]
+ * text2: if you don't select the character
+ */
+#define TutEventExecType0(pid, curx, cury, text1, pos1, text2, pos2, scr_next, scr_this) \
     SVAL(EVT_SLOT_D, 0) \
     SVAL(EVT_SLOT_1, (pid)) \
     SAVETOQUEUE \
-    SVAL(EVT_SLOT_1, (rect)) \
+    SVAL(EVT_SLOT_1, (_EvtParams2(curx, cury))) \
     SAVETOQUEUE \
     SVAL(EVT_SLOT_1, (text1)) \
     SAVETOQUEUE \
@@ -193,9 +255,9 @@
     SAVETOQUEUE \
     CALL(EventScr_Prologue_Tutorial0_Exec)
 
-#define TutEventExecType1(rect, text, pos, scr_next, scr_this) \
+#define TutEventExecType1(curx, cury, text, pos, scr_next, scr_this) \
     SVAL(EVT_SLOT_D, 0) \
-    SVAL(EVT_SLOT_1, (rect)) \
+    SVAL(EVT_SLOT_1, (_EvtParams2(curx, cury))) \
     SAVETOQUEUE \
     SVAL(EVT_SLOT_1, (text)) \
     SAVETOQUEUE \
