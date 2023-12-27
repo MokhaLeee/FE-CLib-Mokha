@@ -245,46 +245,46 @@ extern struct ProcCmd gProcScr_efxMistyrainOBJ2[];
 // extern ??? gShineSpriteCoords
 // extern ??? ProcScr_efxShineOBJ
 // extern ??? ProcScr_efxLuna
-// extern ??? gUnknown_085D6FE4
-// extern ??? gUnknown_085D6FFC
-// extern ??? gUnknown_085D7000
-// extern ??? gUnknown_085D7018
-// extern ??? gUnknown_085D7030
-// extern ??? gUnknown_085D70F0
-// extern ??? gUnknown_085D7110
-// extern ??? gUnknown_085D7138
-// extern ??? gUnknown_085D7150
-// extern ??? gUnknown_085D7180
+// extern ??? ProcScr_efxLunaBG
+// extern ??? TsaArray_LunaBg1
+// extern ??? ProcScr_efxLunaSCR
+// extern ??? ProcScr_efxLunaSCR2
+// extern ??? gLunaBgScrollOffsets
+// extern ??? ProcScr_efxLunaBG2
+// extern ??? ProcScr_efxLunaBGCOL
+// extern ??? ProcScr_efxLunaBG3
+// extern ??? TsaArray_LunaBg3
+// extern ??? ImgArray_LunaBg3
 // extern ??? ProcScr_efxLunaOBJ
-// extern ??? gUnknown_085D71E0
-// extern ??? gUnknown_085D71F8
-// extern ??? gUnknown_085D7210
-// extern ??? gUnknown_085D7240
-// extern ??? gUnknown_085D7268
-// extern ??? gUnknown_085D7280
-// extern ??? gUnknown_085D7298
-// extern ??? gUnknown_085D7398
+// extern ??? ProcScr_efxLunaRST
+// extern ??? ProcScr_efxExcalibur
+// extern ??? ProcScr_efxExcaliburBG
+// extern ??? ProcScr_efxExcaliburBGCOL
+// extern ??? ProcScr_efxExcaliburSCR
+// extern ??? ProcScr_efxExcaliburSCR2
+// extern ??? gExcaliburBgScrollOffsets
+// extern ??? ProcScr_efxExcaliburBG2
 // extern ??? ProcScr_efxExcaliburBGCOL2
-// extern ??? gUnknown_085D73D8
-// extern ??? gUnknown_085D73F8
-// extern ??? gUnknown_085D7418
-// extern ??? gUnknown_085D7430
-// extern ??? gUnknown_085D7448
-// extern ??? gUnknown_085D744C
-// extern ??? gUnknown_085D7450
+// extern ??? ProcScr_efxExcaliburBG3
+// extern ??? ProcScr_efxExcaliburBGCOL3
+// extern ??? ProcScr_efxExcaliburOBJ
+// extern ??? ProcScr_efxExcaliburBG0
+// extern ??? ImgArray_efxExcaliburBG0
+// extern ??? TsaArray_efxExcaliburBG0
+// extern ??? ProcScr_efxGespenstBG4
 // extern ??? ProcScr_efxGespenstBGCOL2
-// extern ??? gUnknown_085D7490
-// extern ??? gUnknown_085D74A8
-// extern ??? gUnknown_085D74C0
-// extern ??? gUnknown_085D7530
-// extern ??? gUnknown_085D7550
-// extern ??? gUnknown_085D7570
-// extern ??? gUnknown_085D7588
-// extern ??? gUnknown_085D75B8
-// extern ??? gUnknown_085D75E8
-// extern ??? gUnknown_085D7600
-// extern ??? gUnknown_085D7628
-// extern ??? gUnknown_085D7650
+// extern ??? ProcScr_efxOura
+// extern ??? ProcScr_efxOuraBG
+// extern ??? TsaArray_AuraBg1
+// extern ??? ProcScr_efxOuraBG2
+// extern ??? ProcScr_efxOuraBGCOL
+// extern ??? ProcScr_efxOuraBG3
+// extern ??? TsaArray_AuraBg3
+// extern ??? ImgArray_AuraBg3
+// extern ??? ProcScr_efxSuperdruidBG3
+// extern ??? ImgArray_EreshkigalBg3
+// extern ??? TsaArray_EreshkigalBg3
+// extern ??? ProcScr_efxSuperdruidOBJ2
 // extern ??? ProcScr_efxDancepara
 // extern ??? ProcScr_efxIvaldi
 // extern ??? gUnknown_085D76A0
@@ -347,9 +347,9 @@ void NewEfxTeyariOBJ(struct Anim * anim, int type);
 void EfxTeyariObjMain(struct ProcEfxMagicOBJ * proc);
 void StartSpellAnimSong(struct Anim * anim);
 // ??? EfxSongMain(???);
-// ??? sub_805CA64(???);
+void sub_805CA64(struct Anim *, int);
 // ??? EfxSongBgMain(???);
-// ??? sub_805CB40(???);
+void sub_805CB40(struct Anim *, int);
 // ??? sub_805CBA8(???);
 void StartSpellAnimDance(struct Anim * anim);
 // ??? sub_805CC14(???);
@@ -622,86 +622,86 @@ void efxShineOBJRND_Loop(struct ProcEfxOBJ * proc);
 void StartSubSpell_efxShineOBJ(struct Anim * anim, int x, int y);
 void efxShineOBJ_Loop(struct ProcEfxOBJ * proc);
 void StartSpellAnimLuna(struct Anim * anim);
-// ??? sub_80639B0(???);
-// ??? sub_8063B6C(???);
-// ??? sub_8063BC8(???);
-// ??? sub_8063C20(???);
-// ??? sub_8063C40(???);
-// ??? sub_8063CFC(???);
-// ??? sub_8063D1C(???);
-// ??? sub_8063D64(???);
-// ??? sub_8063E58(???);
-// ??? sub_8063E74(???);
-// ??? sub_8063EA0(???);
-// ??? sub_8063EE8(???);
-// ??? sub_8063EF8(???);
-// ??? sub_8063F3C(???);
-// ??? sub_8063FC0(???);
-// ??? sub_8064024(???);
-// ??? sub_8064060(???);
-// ??? sub_80640D0(???);
-// ??? sub_806416C(???);
-// ??? sub_80641F0(???);
-// ??? sub_806428C(???);
-// ??? sub_80642BC(???);
-void sub_8064308(struct Anim * anim);
-// ??? sub_8064344(???);
-// ??? sub_80644E0(???);
-// ??? sub_806454C(???);
-// ??? sub_8064568(???);
-// ??? sub_80645FC(???);
-// ??? sub_806464C(???);
-// ??? sub_806466C(???);
-// ??? sub_80646B0(???);
-// ??? sub_80646C0(???);
-// ??? sub_80646FC(???);
-// ??? sub_8064720(???);
-// ??? sub_80647D0(???);
-// ??? sub_80647F0(???);
-// ??? sub_8064838(???);
-// ??? sub_806491C(???);
-// ??? sub_8064938(???);
-// ??? sub_8064958(???);
-// ??? sub_806499C(???);
-// ??? sub_80649E4(???);
-// ??? sub_8064AC8(???);
-// ??? sub_8064AE4(???);
-// ??? sub_8064B04(???);
-// ??? sub_8064B48(???);
-// ??? sub_8064B90(???);
-// ??? sub_8064BFC(???);
-// ??? sub_8064C28(???);
-// ??? sub_8064C80(???);
-void nullsub_51(struct Anim * anim);
-// ??? sub_8064D00(???);
-// ??? sub_8064DA8(???);
-// ??? sub_8064DC4(???);
-// ??? sub_8064DE4(???);
-// ??? sub_8064E2C(???);
+void efxLuna_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxLunaBG(struct Anim * anim);
+void efxLunaBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxLunaSCR(void);
+void efxLunaSCR_Loop(struct ProcEfx * proc);
+void StartSubSpell_efxLunaSCR2(ProcPtr proc);
+void efxLunaSCR2_Loop(struct ProcEfxSCR * proc);
+void StartSubSpell_efxLunaBG2(struct Anim * anim, int terminator);
+void efxLunaBG2_OnEnd(void);
+void efxLunaBG2_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxLunaBGCOL(struct Anim * anim, int terminator);
+void efxLunaBGCOL_OnEnd(void);
+void efxLunaBGCOL_Loop(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxLunaBG3(struct Anim * anim);
+void efxLunaBG3_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxLunaOBJ(struct Anim * anim);
+void efxLunaOBJ_Loop_A(struct ProcEfxOBJ * proc);
+void efxLunaOBJ_Loop_B(struct ProcEfxOBJ * proc);
+void efxLunaOBJ_Loop_C(struct ProcEfxOBJ * proc);
+void efxLunaOBJ_Loop_D(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxLunaRST(struct Anim * anim, ProcPtr b, int c);
+void efxLunaRST_Loop(struct ProcEfxRST * proc);
+void StartSpellAnimExcalibur(struct Anim * anim);
+void efxExcalibur_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxExcaliburBG(struct Anim * anim);
+void efxExcaliburBG_OnEnd(void);
+void efxExcaliburBG_Loop_A(struct ProcEfxBG * proc);
+void efxExcaliburBG_Loop_B(struct ProcEfxBG * proc);
+void efxExcaliburBG_Loop_C(struct ProcEfxBG * proc);
+void StartSubSpell_efxExcaliburBGCOL(struct Anim * anim);
+void efxExcaliburBGCOL_OnEnd(void);
+void efxExcaliburBGCOL_Loop(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxExcaliburSCR(int unk);
+void efxExcaliburSCR_Loop(struct ProcEfx * proc);
+void StartSubSpell_efxExcaliburSCR2(struct ProcEfx * proc, int b);
+void efxExcaliburSCR2_Loop(struct ProcEfxSCR * proc);
+void StartSubSpell_efxExcaliburBG2(struct Anim * anim);
+void efxExcaliburBG2_OnEnd(void);
+void efxExcaliburBG2_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxExcaliburBGCOL2(struct Anim * anim);
+void efxExcaliburBGCOL2_Loop(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxExcaliburBG3(struct Anim * anim);
+void efxExcaliburBG3_OnEnd(void);
+void efxExcaliburBG3_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxExcaliburBGCOL3(struct Anim * anim);
+void efxExcaliburBGCOL3_Loop(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxExcaliburOBJ(struct Anim * anim);
+void efxExcaliburOBJ_Loop(struct ProcEfxOBJ * proc);
+void StartSubSpell_efxExcaliburBG0(struct Anim * anim);
+void efxExcaliburBG0_Loop(struct ProcEfxBG * proc);
+void StartSpellAnimGespenst_Null(struct Anim * anim);
+void StartSubSpell_efxGespenstBG4(struct Anim * anim, int terminator);
+void efxGespenstBG4_OnEnd(void);
+void efxGespenstBG4_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxGespenstBGCOL2(struct Anim * anim);
+void efxGespenstBGCOL2_Loop(struct ProcEfxBGCOL * proc);
 void StartSpellAnimAura(struct Anim * anim);
-// ??? sub_8064EB0(???);
-// ??? sub_8065008(???);
-// ??? sub_806509C(???);
-// ??? sub_8065130(???);
-// ??? sub_80651C4(???);
-// ??? sub_806521C(???);
-// ??? sub_8065300(???);
-// ??? sub_806531C(???);
-// ??? sub_806533C(???);
-// ??? sub_8065384(???);
-// ??? sub_80653CC(???);
-// ??? sub_806542C(???);
-void sub_8065490(struct Anim * anim);
-void nullsub_53(struct Anim * anim);
-// ??? sub_8065498(???);
-// ??? sub_80654F8(???);
-// ??? sub_80655C4(???);
-// ??? sub_8065624(???);
-void sub_8065634(struct Anim * anim);
-void sub_8065670(struct Anim * anim);
-void sub_80656AC(struct Anim * anim);
-void sub_80656E8(struct Anim * anim);
-// ??? sub_8065724(???);
+void efxOura_Loop_Main(struct ProcEfx * proc);
+void StartSubSpell_efxOuraBG_A(struct Anim * anim);
+void StartSubSpell_efxOuraBG_B(struct Anim * anim);
+void StartSubSpell_efxOuraBG_C(struct Anim * anim);
+void efxOuraBG_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxOuraBG2(struct Anim * anim);
+void efxOuraBG2_OnEnd(void);
+void efxOuraBG2_Loop(struct ProcEfxBG * proc);
+void StartSubSpell_efxOuraBGCOL(struct Anim * anim);
+void efxOuraBGCOL_Loop(struct ProcEfxBGCOL * proc);
+void StartSubSpell_efxOuraBG3(struct Anim * anim);
+void efxOuraBG3_Loop(struct ProcEfxBG * proc);
+void StartSpellAnimLuce_Null(struct Anim * anim);
+void StartSpellAnimEreshkigal_Null(struct Anim * anim);
+void StartSubSpell_efxSuperdruidBG3(struct Anim * anim);
+void efxSuperdruidBG3_Loop(struct ProcEfxEclipseBG * proc);
+void StartSubSpell_efxSuperdruidOBJ2(struct Anim * anim);
+void efxSuperdruidOBJ2_OnEnd(void);
+void StartSpellAnimFillasMight(struct Anim * anim);
+void StartSpellAnimThorsIre(struct Anim * anim);
+void StartSpellAnimNinisGrace(struct Anim * anim);
+void StartSpellAnimSetsLitany(struct Anim * anim);
+void efxDancepara_Loop(struct ProcEfx * proc);
 void StartSpellAnimIvaldi(struct Anim * anim);
 // ??? Loop6C_efxIvaldi(???);
 // ??? StartSpellBG_IvaldiBG1(???);

@@ -32,8 +32,9 @@ struct Anim;
 
 enum glb_pos
 {
-    POS_L,
-    POS_R
+    POS_L = 0,
+    POS_R = 1,
+    POS_INVALID = -1
 };
 
 struct BgCoords
@@ -93,7 +94,7 @@ struct BmSt // Game State Struct
     /* 3B */ u8 altBlendBCb;
     /* 3C */ u8 just_resumed;
     /* 3D */ u8 taken_action;
-    /* 3E */ u8 unk3E;
+    /* 3E */ u8 swapActionRangeCount;
     /* 3F */ s8 unk3F;
 };
 
@@ -480,10 +481,6 @@ struct Struct202B6B0 {
     u16 unk5A;
     u8 _pad5C[0x8A - 0x5C];
     u16 unk8A;
-};
-
-struct Struct203E87C {
-    u8 unk00[5];
 };
 
 struct EfxFrameConfig {
