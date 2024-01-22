@@ -101,10 +101,12 @@ struct ProcEfxOBJ {
     /* 42 */ u16 unk42;
     /* 44 */ int unk44;
     /* 48 */ int unk48;
-    STRUCT_PAD(0x4C, 0x5C);
+    /* 4C */ int unk4C;
+    STRUCT_PAD(0x50, 0x5C);
     /* 5C */ struct Anim * anim;
     /* 60 */ struct Anim * anim2;
     /* 64 */ struct Anim * anim3;
+    /* 68 */ struct Anim * anim4;
 };
 
 struct ProcEfxALPHA
@@ -615,40 +617,40 @@ extern u32 gUnknown_0201FAD8;
 // extern ??? TsaArray_EvilEyeBg2_Far
 // extern ??? PalArray_EvilEyeBg2
 // extern ??? ProcScr_efxEvilEyeOBJ
-// extern ??? gUnknown_085D80B0
-// extern ??? gUnknown_085D80C8
-// extern ??? gUnknown_085D80E0
-// extern ??? gUnknown_085D80E4
+// extern ??? ProcScr_efxNaglfar
+// extern ??? ProcScr_efxNaglfarBG
+// extern ??? ImgArray_NaglfarBg1
+// extern ??? TsaArray_NaglfarBg1
 // extern ??? ProcScr_efxNaglfarBG2
-// extern ??? gUnknown_085D8100
-// extern ??? gUnknown_085D8140
-// extern ??? gUnknown_085D8180
-// extern ??? gUnknown_085D81C0
-// extern ??? gUnknown_085D81D8
-// extern ??? gUnknown_085D81E8
-// extern ??? gUnknown_085D81F8
-// extern ??? gUnknown_085D8210
-// extern ??? gUnknown_085D8224
+// extern ??? ImgArray_NaglfarBg2
+// extern ??? TsaArray_NaglfarBg2
+// extern ??? PalArray_NaglfarBg2
+// extern ??? ProcScr_efxNaglfarBG3
+// extern ??? ImgArray_NaglfarBg3
+// extern ??? TsaArray_NaglfarBg3
+// extern ??? ProcScr_efxNaglfarBG4
+// extern ??? ImgArray_NaglfarBg4
+// extern ??? TsaArray_NaglfarBg4
 // extern ??? ProcScr_efxNaglfarOBJ
-// extern ??? gUnknown_085D8250
+// extern ??? ProcScr_efxNaglfarOBJ2
 // extern ??? ProcScr_efxNaglfarOBJRockGyre
-// extern ??? gUnknown_085D8280
+// extern ??? ProcScr_efxNaglfarBlack
 // extern ??? ProcScr_efxDrzDrakbreath
-// extern ??? gUnknown_085D82C8
-// extern ??? gUnknown_085D82E0
+// extern ??? ProcScr_efxDrzDrakbreathOBJ
+// extern ??? ProcScr_efxDrzDrakbreathBG
 // extern ??? ProcScr_efxDrzDrakbreathBGCOL
-// extern ??? gUnknown_085D8318
-// extern ??? gUnknown_085D8330
-// extern ??? gUnknown_085D8348
-// extern ??? gUnknown_085D8374
+// extern ??? ProcScr_efxDarkGrado
+// extern ??? ProcScr_efxDarkGradoMapFadeOut
+// extern ??? TsaArray_GleipnirBg_Sigil
+// extern ??? ImgArray_GleipnirBg_Sigil
 // extern ??? ProcScr_efxDarkGradoBG01
-// extern ??? gUnknown_085D83B8
-// extern ??? gUnknown_085D83F8
-// extern ??? gUnknown_085D8438
-// extern ??? gUnknown_085D8478
-// extern ??? gUnknown_085D847C
+// extern ??? TsaArray_GleipnirBg_Nebula
+// extern ??? ImgArray_GleipnirBg_Nebula
+// extern ??? PalArray_GleipnirBg_Nebula
+// extern ??? TsaArray_GleipnirBg_Fog
+// extern ??? ImgArray_GleipnirBg_Fog
 // extern ??? ProcScr_efxDarkGradoBG02
-// extern ??? gUnknown_085D84B4
+// extern ??? ProcScr_085D84B4
 // extern ??? gUnknown_085D84D4
 // extern ??? gUnknown_085D8524
 // extern ??? gUnknown_085D8574
@@ -656,48 +658,48 @@ extern u32 gUnknown_0201FAD8;
 // extern ??? gUnknown_085D8614
 // extern ??? gUnknown_085D8664
 // extern ??? gUnknown_085D86B4
-// extern ??? gUnknown_085D8704
+// extern ??? ProcScr_efxDarkGradoOBJ01piece
 // extern ??? ProcScr_efxDarkGradoOBJ01
 // extern ??? ProcScr_efxDarkGradoOBJ02piece
 // extern ??? ProcScr_efxDarkGradoOBJ02
 // extern ??? ProcScr_efxCrimsonEye
-// extern ??? gUnknown_085D877C
-// extern ??? gUnknown_085D878C
+// extern ??? TsaArray_efxCrimsonEyeBGFinish1
+// extern ??? ImgArray_efxCrimsonEyeBGFinish1
 // extern ??? ProcScr_efxCrimsonEyeBGFinish1
 // extern ??? ProcScr_efxCrimsonEyeOBJFinishPiece
 // extern ??? gUnknown_085D87DC
 // extern ??? ProcScr_efxCrimsonEyeOBJFinish
-// extern ??? gUnknown_085D8874
+// extern ??? TsaArray_efxCrimsonEyeBG
 // extern ??? ProcScr_efxCrimsonEyeBG
 // extern ??? gUnknown_085D88AC
 // extern ??? ProcScr_efxCrimsonEyeOBJ
 // extern ??? ProcScr_efxDarkLongMons
-// extern ??? gUnknown_085D89B8
-// extern ??? gUnknown_085D89F8
-// extern ??? gUnknown_085D8A38
+// extern ??? TsaArray_efxDarkLongMonsBG01
+// extern ??? ImgArray_efxDarkLongMonsBG01
+// extern ??? PalArray_efxDarkLongMonsBG01
 // extern ??? ProcScr_efxDarkLongMonsBG01
-// extern ??? gUnknown_085D8A98
+// extern ??? TsaArray_efxDarkLongMonsBG02
 // extern ??? ProcScr_efxDarkLongMonsBG02
 // extern ??? ProcScr_efxDarkLongMonsOBJ
-// extern ??? gUnknown_085D8AEC
+// extern ??? ProcScr_085D8AEC
 // extern ??? ProcScr_efxGorgon
-// extern ??? gUnknown_085D8B24
-// extern ??? gUnknown_085D8B4C
-// extern ??? gUnknown_085D8B78
-// extern ??? gUnknown_085D8BA4
+// extern ??? ProcScr_085D8B24
+// extern ??? TsaArray_efxGorgonBGDirt
+// extern ??? ImgArray_efxGorgonBGDirt
+// extern ??? PalArray_efxGorgonBGDirt
 // extern ??? ProcScr_efxGorgonBGDirt
-// extern ??? gUnknown_085D8BE8
-// extern ??? gUnknown_085D8BF4
-// extern ??? gUnknown_085D8C00
+// extern ??? TsaArray_efxGorgonBGTwister
+// extern ??? ImgArray_efxGorgonBGTwister
+// extern ??? PalArray_efxGorgonBGTwister
 // extern ??? ProcScr_efxGorgonBGTwister
-// extern ??? gUnknown_085D8C24
+// extern ??? ProcScr_085D8C24
 // extern ??? ProcScr_efxGorgonOBJTwisterPiece
 // extern ??? ProcScr_efxGorgonOBJTwister
-// extern ??? gUnknown_085D8C7C
-// extern ??? gUnknown_085D8CA0
-// extern ??? ProcScr_efxGorgonBGFinish
-// extern ??? gUnknown_085D8CE4
-// extern ??? gUnknown_085D8D14
+extern u16 * TsaArray_efxGorgonBGFinish[];
+extern u16 * ImgArray_efxGorgonBGFinish[];
+extern struct ProcCmd ProcScr_efxGorgonBGFinish[];
+// extern ??? ProcScr_085D8CE4
+// extern ??? ProcScr_085D8D14
 extern struct ProcCmd ProcScr_efxDamageMojiEffect[];
 extern struct ProcCmd ProcScr_efxDamageMojiEffectOBJ[];
 extern struct ProcCmd ProcScr_efxCriricalEffect[];
@@ -967,16 +969,16 @@ extern u16 Img_SpellJavelinGenerial[];
 extern u16 Pal_SpellJavelinGenerial[];
 extern u16 Img_SpellJavelinUnk[];
 extern u16 Pal_SpellJavelinUnk[];
-extern u32 AnimScr_085DC244[];
-extern u32 AnimScr_085DC498[];
-extern u32 AnimScr_085DC6F8[];
-extern u32 AnimScr_085DC958[];
-extern u32 gUnknown_085DCA5C[];
-extern u32 gUnknown_085DCAF8[];
-extern u16 gUnknown_085DCB10[];
-extern u16 gUnknown_085DCC84[];
-extern u32 gUnknown_085DD484[];
-extern u32 gUnknown_085DD4B4[];
+extern u32 AnimScr_EfxTeyariObjType0Right[];
+extern u32 AnimScr_EfxTeyariObjType0Left[];
+extern u32 AnimScr_EfxTeyariObjType1Right[];
+extern u32 AnimScr_EfxTeyariObjType1Left[];
+extern u32 AnimScr_085DCA5C[];
+extern u32 AnimScr_085DCAF8[];
+extern u16 Img_EfxDanceObj[];
+extern u16 Pal_EfxDanceObj[];
+extern u32 AnimScr_EfxDanceObj[];
+extern u32 AnimScr_EfxSongObj2[];
 extern u16 Img_BreathSprites[];
 extern u16 Pal_FireBreathSprites[];
 extern u16 gUnknown_085DE984[];
@@ -984,7 +986,7 @@ extern u16 gUnknown_085DF224[];
 extern u16 gUnknown_085DFA08[];
 extern u16 Pal_IceBreathSprites[];
 extern u16 Pal_DarkBreathSprites[];
-// extern ??? gUnknown_085DFA68
+extern u16 Pal_WretchedAirSprites[];
 extern u32 gUnknown_085E067C[];
 extern u32 gUnknown_085E12DC[];
 extern u32 gUnknown_085E15F4[];
@@ -1805,29 +1807,117 @@ extern u16 Tsa_086A0388[];
 extern u16 Img_IvaldiBg4[];
 extern u16 Pal_IvaldiBg4[];
 extern u16 Tsa_086A1D00[];
-// extern ??? gUnknown_086A21F4
-// extern ??? gUnknown_086A2614
-// extern ??? gUnknown_086A2724
-// extern ??? gUnknown_086A273C
-// extern ??? gUnknown_086A2844
-// extern ??? gUnknown_086A285C
-// extern ??? gUnknown_086A2874
-// extern ??? gUnknown_086A2CE8
-// extern ??? gUnknown_086A2DBC
-// extern ??? gUnknown_086A2DD0
-// extern ??? gUnknown_086A2E98
-// extern ??? gUnknown_086A2EAC
-// extern ??? gUnknown_086A66D8
-// extern ??? gUnknown_086B52CC
-// extern ??? gUnknown_086B5580
-// extern ??? gUnknown_086B58DC
-// extern ??? gUnknown_086B5974
-// extern ??? gUnknown_086B5984
-// extern ??? gUnknown_086B598C
-// extern ??? gUnknown_086B5A2C
-// extern ??? gUnknown_086B5A4C
-// extern ??? gUnknown_086B5EAC
-// extern ??? gUnknown_086BC824
+extern u16 Img_GleipnirSprites_Rocks[];
+extern u16 Pal_GleipnirSprites_Rocks[];
+extern u32 gUnknown_086A2724[];
+extern u32 gUnknown_086A273C[];
+extern u32 gUnknown_086A2844[];
+extern u32 gUnknown_086A285C[];
+extern u16 Img_GleipnirSprites_Comet[];
+extern u16 Pal_GleipnirSprites_Comet[];
+extern u32 gUnknown_086A2DBC[];
+extern u32 gUnknown_086A2DD0[];
+extern u32 gUnknown_086A2E98[];
+extern u32 gUnknown_086A2EAC[];
+extern u16 Img_086A2EC0[];
+extern u16 Img_086A34D0[];
+extern u16 Img_086A3BA0[];
+extern u16 Img_086A4270[];
+extern u16 Img_086A48D8[];
+extern u16 Img_086A4E9C[];
+extern u16 Img_086A538C[];
+extern u16 Img_086A576C[];
+extern u16 Img_086A5B4C[];
+extern u16 Img_086A5F2C[];
+extern u16 Img_086A6304[];
+extern u16 Pal_GleipnirBg_Sigil[];
+extern u16 Tsa_086A66F8[];
+extern u16 Tsa_086A68A0[];
+extern u16 Tsa_086A6A14[];
+extern u16 Tsa_086A6B88[];
+extern u16 Tsa_086A6CD0[];
+extern u16 Tsa_086A6DDC[];
+extern u16 Tsa_086A6EBC[];
+extern u16 Tsa_086A6F94[];
+extern u16 Tsa_086A7058[];
+extern u16 Tsa_086A7114[];
+extern u16 Tsa_086A71B8[];
+extern u16 Img_086A7258[];
+extern u16 Img_086A76C0[];
+extern u16 Img_086A7BC4[];
+extern u16 Img_086A817C[];
+extern u16 Img_086A87EC[];
+extern u16 Img_086A8F48[];
+extern u16 Img_086A97A8[];
+extern u16 Img_086AA13C[];
+extern u16 Img_086AABE0[];
+extern u16 Img_086AB790[];
+extern u16 Img_086AC4B0[];
+extern u16 Img_086AD2B8[];
+extern u16 Img_086AE220[];
+extern u16 Img_086AF26C[];
+extern u16 Img_086B0398[];
+extern u16 Img_086B15C4[];
+extern u16 Pal_086B2878[];
+extern u16 Pal_086B2898[];
+extern u16 Pal_086B28B8[];
+extern u16 Pal_086B28D8[];
+extern u16 Pal_086B28F8[];
+extern u16 Pal_086B2918[];
+extern u16 Pal_086B2938[];
+extern u16 Pal_086B2958[];
+extern u16 Pal_086B2978[];
+extern u16 Pal_086B2998[];
+extern u16 Pal_086B29B8[];
+extern u16 Pal_086B29D8[];
+extern u16 Pal_086B29F8[];
+extern u16 Pal_086B2A18[];
+extern u16 Pal_086B2A38[];
+extern u16 Pal_086B2A58[];
+extern u16 Tsa_086B2A78[];
+extern u16 Tsa_086B2B30[];
+extern u16 Tsa_086B2BF4[];
+extern u16 Tsa_086B2CCC[];
+extern u16 Tsa_086B2DB8[];
+extern u16 Tsa_086B2EBC[];
+extern u16 Tsa_086B2FD8[];
+extern u16 Tsa_086B3114[];
+extern u16 Tsa_086B326C[];
+extern u16 Tsa_086B33E0[];
+extern u16 Tsa_086B3578[];
+extern u16 Tsa_086B3734[];
+extern u16 Tsa_086B38FC[];
+extern u16 Tsa_086B3AEC[];
+extern u16 Tsa_086B3CE8[];
+extern u16 Tsa_086B3F00[];
+extern u16 Img_GleipnirBg_Fog[];
+extern u16 Pal_GleipnirBg_Fog[];
+extern u16 Tsa_GleipnirBg_Fog[];
+extern u16 Img_CrimsonEyeSprites[];
+extern u16 Pal_CrimsonEyeSprites[];
+extern u32 gUnknown_086B5974[];
+extern u32 gUnknown_086B5984[];
+extern u32 gUnknown_086B598C[];
+extern u16 Pal_efxGorgonBGFinish[];
+extern u16 Img_efxCrimsonEyeBG[];
+extern u16 Pal_efxCrimsonEyeBG[];
+extern u16 Tsa_086B5ECC[];
+extern u16 Tsa_086B5F78[];
+extern u16 Tsa_086B603C[];
+extern u16 Tsa_086B6100[];
+extern u16 Tsa_086B61C4[];
+extern u16 Tsa_086B6288[];
+extern u16 Tsa_086B634C[];
+extern u16 Tsa_086B6410[];
+extern u16 Img_086B64BC[];
+extern u16 Img_086B7DA8[];
+extern u16 Img_086B9620[];
+extern u16 Img_086BAF14[];
+extern u16 Pal_efxCrimsonEyeBGFinish1[];
+extern u16 Tsa_086BC884[];
+extern u16 Tsa_086BCAF8[];
+extern u16 Tsa_086BCD70[];
+extern u16 Tsa_086BCFE8[];
 extern u16 Img_StoneSprites[];
 extern u16 Pal_StoneSprites[];
 extern u32 gUnknown_086BDA5C[];
@@ -1958,23 +2048,213 @@ extern u16 Tsa_086D953C[];
 extern u16 Tsa_086D96F0[];
 extern u16 Tsa_086D98A8[];
 extern u16 Tsa_086D9A74[];
-// extern ??? gUnknown_086D9C40
-// extern ??? gUnknown_086DA33C
-// extern ??? gUnknown_086DA920
-// extern ??? gUnknown_086E7EB0
-// extern ??? gUnknown_086E91B8
-// extern ??? gUnknown_086E9D40
-// extern ??? gUnknown_086EA3EC
-// extern ??? gUnknown_086EAE14
-// extern ??? gUnknown_086EAE24
-// extern ??? gUnknown_086FDA44
-// extern ??? gUnknown_086FE938
-// extern ??? gUnknown_086FF3A4
-// extern ??? gUnknown_086FF5EC
-// extern ??? gUnknown_086FFD3C
-// extern ??? gUnknown_087013A0
-// extern ??? gUnknown_087197E4
-// extern ??? gUnknown_08720D84
+extern u16 gUnknown_086D9C40[];
+extern u16 gUnknown_086DA33C[];
+extern u32 gUnknown_086DA920[];
+extern u16 Img_086DAF34[];
+extern u16 Img_086DB760[];
+extern u16 Img_086DC064[];
+extern u16 Img_086DCA64[];
+extern u16 Img_086DD598[];
+extern u16 Img_086DE168[];
+extern u16 Img_086DED90[];
+extern u16 Img_086DF9F8[];
+extern u16 Img_086E05F0[];
+extern u16 Img_086E1294[];
+extern u16 Img_086E1F54[];
+extern u16 Img_086E2BE8[];
+extern u16 Img_086E3828[];
+extern u16 Img_086E4420[];
+extern u16 Img_086E4F90[];
+extern u16 Img_086E5A30[];
+extern u16 Pal_086E6440[];
+extern u16 Pal_086E6460[];
+extern u16 Pal_086E6480[];
+extern u16 Pal_086E64A0[];
+extern u16 Pal_086E64C0[];
+extern u16 Tsa_086E64E0[];
+extern u16 Tsa_086E65EC[];
+extern u16 Tsa_086E671C[];
+extern u16 Tsa_086E6860[];
+extern u16 Tsa_086E69C8[];
+extern u16 Tsa_086E6B38[];
+extern u16 Tsa_086E6CC4[];
+extern u16 Tsa_086E6E60[];
+extern u16 Tsa_086E700C[];
+extern u16 Tsa_086E71BC[];
+extern u16 Tsa_086E7380[];
+extern u16 Tsa_086E7550[];
+extern u16 Tsa_086E7730[];
+extern u16 Tsa_086E7914[];
+extern u16 Tsa_086E7AFC[];
+extern u16 Tsa_086E7CD8[];
+extern u16 gUnknown_086E7EB0[];
+extern u16 gUnknown_086E91B8[];
+extern u16 Tsa_086E91D8[];
+extern u16 Tsa_086E927C[];
+extern u16 Tsa_086E9358[];
+extern u16 Tsa_086E9474[];
+extern u16 Tsa_086E95D4[];
+extern u16 Tsa_086E9758[];
+extern u16 Tsa_086E98E4[];
+extern u16 Tsa_086E9A64[];
+extern u16 Tsa_086E9BD4[];
+extern u16 Img_086E9D40[];
+extern u16 Pal_086EA3EC[];
+extern u32 gUnknown_086EAE14[];
+extern u32 gUnknown_086EAE24[];
+extern u16 Img_086EB8B4[];
+extern u16 Img_086EBD44[];
+extern u16 Img_086EC264[];
+extern u16 Img_086EC7D4[];
+extern u16 Img_086ECDD8[];
+extern u16 Img_086ED424[];
+extern u16 Img_086EDAF8[];
+extern u16 Img_086EE25C[];
+extern u16 Img_086EE9F8[];
+extern u16 Img_086EF1DC[];
+extern u16 Img_086EF9C8[];
+extern u16 Pal_086F01E4[];
+extern u16 Pal_086F0204[];
+extern u16 Pal_086F0224[];
+extern u16 Pal_086F0244[];
+extern u16 Pal_086F0264[];
+extern u16 Pal_086F0284[];
+extern u16 Pal_086F02A4[];
+extern u16 Pal_086F02C4[];
+extern u16 Pal_086F02E4[];
+extern u16 Pal_086F0304[];
+extern u16 Pal_086F0324[];
+extern u16 Tsa_086F0344[];
+extern u16 Tsa_086F03EC[];
+extern u16 Tsa_086F04B8[];
+extern u16 Tsa_086F05A0[];
+extern u16 Tsa_086F069C[];
+extern u16 Tsa_086F079C[];
+extern u16 Tsa_086F08B8[];
+extern u16 Tsa_086F09E0[];
+extern u16 Tsa_086F0B2C[];
+extern u16 Tsa_086F0C88[];
+extern u16 Tsa_086F0DF8[];
+extern u16 Img_086F0F6C[];
+extern u16 Img_086F24C8[];
+extern u16 Img_086F3830[];
+extern u16 Pal_086F4A38[];
+extern u16 Pal_086F4A58[];
+extern u16 Pal_086F4A78[];
+extern u16 Tsa_086F4A98[];
+extern u16 Tsa_086F4CCC[];
+extern u16 Tsa_086F4ED8[];
+extern u16 Img_086F50D4[];
+extern u16 Img_086F6264[];
+extern u16 Img_086F7150[];
+extern u16 Img_086F80B8[];
+extern u16 Img_086F915C[];
+extern u16 Img_086FA350[];
+extern u16 Img_086FB07C[];
+extern u16 Img_086FBCE8[];
+extern u16 Img_086FCD58[];
+extern u16 Pal_086FDA44[];
+extern u16 Tsa_086FDA64[];
+extern u16 Tsa_086FDB08[];
+extern u16 Tsa_086FDCE0[];
+extern u16 Tsa_086FDEC4[];
+extern u16 Tsa_086FE0D4[];
+extern u16 Tsa_086FE320[];
+extern u16 Tsa_086FE4E0[];
+extern u16 Tsa_086FE680[];
+extern u16 Tsa_086FE81C[];
+extern u16 Img_NaglfarSprites_A[];
+extern u16 Pal_NaglfarSprites_A[];
+extern u32 gUnknown_086FF4A8[];
+extern u32 gUnknown_086FF4B0[];
+extern u32 gUnknown_086FF4B8[];
+extern u32 gUnknown_086FF4C0[];
+extern u32 gUnknown_086FF4C8[];
+extern u32 gUnknown_086FF4D0[];
+extern u32 gUnknown_086FF5BC[];
+extern u32 gUnknown_086FF5C4[];
+extern u32 gUnknown_086FF5CC[];
+extern u32 gUnknown_086FF5D4[];
+extern u32 gUnknown_086FF5DC[];
+extern u32 gUnknown_086FF5E4[];
+extern u16 Img_NaglfarSprites_B[];
+extern u16 Pal_NaglfarSprites_B[];
+extern u32 gUnknown_08700098[];
+extern u32 gUnknown_087000A4[];
+extern u32 gUnknown_087003EC[];
+extern u32 gUnknown_087003F8[];
+extern u16 Img_NaglfarBg1_A[];
+extern u16 Pal_NaglfarBg1_A[];
+extern u16 Tsa_NaglfarBg1_A[];
+extern u16 Img_08701660[];
+extern u16 Img_087020CC[];
+extern u16 Img_08702D98[];
+extern u16 Img_08703BCC[];
+extern u16 Img_08704E90[];
+extern u16 Img_08706388[];
+extern u16 Img_087079EC[];
+extern u16 Img_08708DA0[];
+extern u16 Img_08709FA8[];
+extern u16 Img_0870B060[];
+extern u16 Img_0870C014[];
+extern u16 Img_0870CDF0[];
+extern u16 Img_0870DBCC[];
+extern u16 Img_0870E894[];
+extern u16 Img_0870F524[];
+extern u16 Img_08710218[];
+extern u16 Pal_08710DB8[];
+extern u16 Pal_08710DD8[];
+extern u16 Pal_08710DF8[];
+extern u16 Pal_08710E18[];
+extern u16 Pal_08710E38[];
+extern u16 Pal_08710E58[];
+extern u16 Pal_08710E78[];
+extern u16 Pal_08710E98[];
+extern u16 Pal_08710EB8[];
+extern u16 Pal_08710ED8[];
+extern u16 Pal_08710EF8[];
+extern u16 Pal_08710F18[];
+extern u16 Pal_08710F38[];
+extern u16 Pal_08710F58[];
+extern u16 Pal_08710F78[];
+extern u16 Pal_08710F98[];
+extern u16 Tsa_08710FB8[];
+extern u16 Tsa_087111E0[];
+extern u16 Tsa_08711438[];
+extern u16 Tsa_087116A4[];
+extern u16 Tsa_087118FC[];
+extern u16 Tsa_08711B6C[];
+extern u16 Tsa_08711DD8[];
+extern u16 Tsa_0871203C[];
+extern u16 Tsa_087122A4[];
+extern u16 Tsa_0871250C[];
+extern u16 Tsa_0871276C[];
+extern u16 Tsa_087129C0[];
+extern u16 Tsa_08712C14[];
+extern u16 Tsa_08712E6C[];
+extern u16 Tsa_087130B4[];
+extern u16 Tsa_08713310[];
+extern u16 Img_08713558[];
+extern u16 Img_08714E64[];
+extern u16 Img_08716710[];
+extern u16 Img_08717E78[];
+extern u16 Pal_NaglfarBg3[];
+extern u16 Tsa_08719804[];
+extern u16 Tsa_08719CA4[];
+extern u16 Tsa_0871A134[];
+extern u16 Tsa_0871A5D0[];
+extern u16 Img_0871AA78[];
+extern u16 Img_0871BF64[];
+extern u16 Img_0871D310[];
+extern u16 Img_0871E6C0[];
+extern u16 Img_0871F9DC[];
+extern u16 Pal_NaglfarBg4[];
+extern u16 Tsa_08720DA4[];
+extern u16 Tsa_0872101C[];
+extern u16 Tsa_08721294[];
+extern u16 Tsa_0872150C[];
+extern u16 Tsa_08721784[];
 extern u32 gUnknown_08723208[];
 extern u16 Img_08723274[];
 extern u16 Pal_efxExcaliburBG0[];
@@ -1982,7 +2262,7 @@ extern u16 Tsa_08724444[];
 extern u16 Img_FireBreathBg[];
 extern u16 Pal_FireBreathBg[];
 extern u16 Tsa_FireBreathBg[];
-// extern ??? gUnknown_08725DAC
+extern u16 gUnknown_08725DAC[];
 extern u16 Img_ShineBg1[];
 extern u16 Pal_ShineBg_08726FF4[];
 extern u16 Tsa_ShineBg1_Left[];
@@ -2159,9 +2439,9 @@ extern u16 Tsa_08755E94[];
 extern u16 Tsa_08755F3C[];
 extern u16 Img_SongSprites[];
 extern u32 gUnknown_08758134[];
-extern u16 gUnknown_08758218[];
-extern u32 gUnknown_087584B8[];
-extern u32 gUnknown_087585DC[];
+extern u16 Img_EfxLokmsunaObj[];
+extern u32 AnimScr_EfxLokmsunaObjLeft[];
+extern u32 AnimScr_EfxLokmsunaObjRight[];
 // extern ??? gEkrDracoZombiTsaSetLut
 extern struct ProcCmd ProcScr_EkrDracoZombie[];
 extern struct ProcCmd ProcScr_ekrDragonQuake[];
@@ -2314,31 +2594,6 @@ void NewEfxFlashUnitEffectEnd(struct Anim * anim, int dura1, int dura2, int c);
 void EfxFlashUnitEffectMain(struct ProcEfxFlashing * proc);
 void EfxFlashUnitEffectRestorePal(struct ProcEfxFlashing * proc);
 
-// ??? sub_806B534(???);
-// ??? sub_806B64C(???);
-// ??? sub_806B664(???);
-// ??? sub_806B680(???);
-// ??? sub_806B73C(???);
-// ??? sub_806B7A8(???);
-// ??? sub_806B830(???);
-// ??? sub_806B89C(???);
-// ??? sub_806B938(???);
-// ??? sub_806B940(???);
-// ??? sub_806BACC(???);
-// ??? sub_806BBDC(???);
-// ??? sub_806BBF0(???);
-// ??? sub_806BC98(???);
-// ??? sub_806BD94(???);
-// ??? sub_806BEEC(???);
-// ??? sub_806C050(???);
-// ??? sub_806C0B8(???);
-// ??? sub_806C14C(???);
-// ??? sub_806C154(???);
-// ??? sub_806C1B8(???);
-// ??? sub_806C2D4(???);
-// ??? sub_806C464(???);
-// ??? sub_806C478(???);
-// ??? sub_806C608(???);
 void NewEfxDamageMojiEffect(struct Anim * anim, int hitted);
 void efxDamageMojiEffectMain(struct ProcEfx * proc);
 void NewEfxDamageMojiEffectOBJ(struct Anim * anim, int hitted);

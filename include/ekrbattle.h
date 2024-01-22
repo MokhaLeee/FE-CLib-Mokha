@@ -422,7 +422,7 @@ extern int gBanimLinkArenaFlag;
 extern int gBattleDeamonActive;
 extern struct ProcEkrBattleDeamon *gpProcEkrBattleDeamon;
 extern s16 gEkrDebugModeMaybe;
-extern s16 gBanimGackgroundIndex;
+extern s16 gBanimBackgroundIndex;
 extern s16 gEkrInitialHitSide;
 extern s16 gEkrSnowWeather;
 extern s16 gEkrPairSideVaild[2];
@@ -612,25 +612,20 @@ extern const u16 gUnknown_080DCDE4[];
 // extern ??? gUnknown_080DE900
 // extern ??? gUnknown_080DE924
 // extern ??? gUnknown_080DEA74
-// extern ??? gUnknown_080DEA96
-// extern ??? gUnknown_080DEAAA
-// extern ??? gUnknown_080DEAFA
-// extern ??? gUnknown_080DEB6A
 // extern ??? gUnknown_080DEBC8
 // extern ??? gUnknown_080DEBF8
 // extern ??? gUnknown_080DEC0C
 // extern ??? gUnknown_080DEC30
-// extern ??? gUnknown_080DECBA
-// extern ??? gUnknown_080DEDBC
-// extern ??? gUnknown_080DEDFA
-// extern ??? gUnknown_080DEE40
-// extern ??? gUnknown_080DEEC2
-// extern ??? gUnknown_080DEF20
-// extern ??? gUnknown_080DEF78
-// extern ??? gUnknown_080DEFD0
-// extern ??? gUnknown_080DF042
-// extern ??? gUnknown_080DF080
-// extern ??? gUnknown_080DF0E0
+// extern ??? gFrameConfig_GleipnirBg_Sigil
+// extern ??? gFrameConfig_GleipnirBg_Nebula
+// extern ??? gFrameConfig_GleipnirBg_Fog
+// extern ??? gFrameConfig_efxCrimsonEyeBGFinish1
+// extern ??? gFrameConfig_efxCrimsonEyeBG
+// extern ??? gFrameConfig_efxDarkLongMonsBG01
+// extern ??? gFrameConfig_efxDarkLongMonsBG02
+// extern ??? gFrameConfig_efxGorgonBGDirt
+// extern ??? gFrameConfig_efxGorgonBGTwister
+extern const u16 gFrameConfig_efxGorgonBGFinish[];
 extern const u16 FrameLut_EfxCriricalEffectBGCOL[];
 extern const u16 gUnknown_080DF1EE[];
 extern const u16 gUnknown_080DF26A[];
