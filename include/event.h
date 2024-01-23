@@ -185,8 +185,8 @@ extern u32 gEventSlotCounter;
 extern struct ProcCmd gGenericProc[4];
 extern struct UnitDefinition gLoadUnitBuffer[];
 
-extern struct ProcCmd gProc_StdEventEngine[]; // map event engine proc
-extern struct ProcCmd gProc_BattleEventEngine[]; // battle (?) event engine proc
+extern struct ProcCmd ProcScr_StdEventEngine[]; // map event engine proc
+extern struct ProcCmd ProcScr_BattleEventEngine[]; // battle (?) event engine proc
 extern EventFuncType gEventLoCmdTable[]; // regular event functions
 extern EventFuncType gEventHiCmdTable[]; // gmap event functions
 extern struct ProcCmd ProcScr_EventEngineDeamon[]; // map event engine "witness lock" (alive while map event engine is)
@@ -216,7 +216,7 @@ extern EventScr EventScr_08592140[];
 extern EventScr EventScr_08592170[];
 extern u16 CONST_DATA Obj_EventShinningCursor[];
 
-void _MarkSomethingInMenu(void);
+void _FreezeMenu(void);
 void EventEngine_OnUpdate(struct EventEngineProc* proc);
 void EventEngine_OnEnd(struct EventEngineProc* proc);
 void EnqueueEventCall(const u16* events, u8 execType);
@@ -253,23 +253,23 @@ unsigned SlotQueuePop(void);
 void SetEventSlotCounter(unsigned value);
 unsigned GetEventSlotCounter(void);
 
-// void sub_800B910(u8 bg1, u8 bg2, u8 c);
-// void sub_800B954(u8 a, u8 bg, u8 c);
-// void sub_800B994(u8 a, u8 b, u8 c);
-// void sub_800B9B8(u8 bg, u8 b);
-// void sub_800BA04(u8 a, u8 b);
+// void CopyBgImage(u8 bg1, u8 bg2, u8 c);
+// void CopyBgTiles(u8 a, u8 bg, u8 c);
+// void CopyBgPalette(u8 a, u8 b, u8 c);
+// void BgChangeChr(u8 bg, u8 b);
+void sub_800BA04(u8, u8);
 void sub_800BA34(void);
 void SetSomeRealCamPos(int x, int y, s8 unk);
 void EventSetFogVisionExt(s16, s8, ProcPtr);
 void TriggerMapChanges(u16 mapChangeId, s8 displayFlag, ProcPtr parent);
 void UntriggerMapChange(u16 mapChangeId, s8 displayFlag, ProcPtr parent);
-void sub_800BB98(void);
-void sub_800BB98(void);
-s8 sub_800BBB4(u16 pid);
-u16 sub_800BBE4(void);
+void ResetBkselPalette(void);
+void ResetBkselPalette(void);
+s8 GetAllyUnitCount(u16 pid);
+u16 GetNpcUnitCount(void);
 void HideAllUnits(void);
 struct Unit * GetUnitStructFromEventParameter(s16 pid);
-void sub_800BCDC(u16); // battle related
+void ChangeUnitSpritePalette(u16); // battle related
 u8 Event80_WmSkip_Unsure(struct EventEngineProc * proc);
 u8 Event81_WmFadeOut(struct EventEngineProc * proc);
 u8 Event82_WmEnd(struct EventEngineProc * proc);
@@ -346,7 +346,7 @@ void nullsub_32(void);
 u8 EventC5_WmClearPortrait(struct EventEngineProc * proc);
 void nop_800CD38(struct Proc8591C68 * proc);
 void nullsub_34(struct Proc8591C68 * proc);
-void sub_800CD40(struct Proc8591C68 * proc);
+void EventFaceDeamonDelete(struct Proc8591C68 * proc);
 u8 EventC6_WmDisplayText(struct EventEngineProc * proc);
 u8 EventC7_(struct EventEngineProc * proc);
 u8 EventC8_(struct EventEngineProc * proc);

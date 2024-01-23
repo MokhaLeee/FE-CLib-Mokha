@@ -147,7 +147,6 @@ extern u8 gUnknown_03001C7C;
 // extern ??? gActiveEventRegistry
 // extern ??? gUnknown_03001CC0
 // extern ??? gUnknown_03001CC8
-extern struct UnitDefinition UnitDef_03001CE8[];
 // extern ??? gUnknown_03001D50
 // extern ??? gUnknown_03001DA8
 // extern ??? gUnknown_03001DE8
@@ -854,7 +853,6 @@ extern CONST_DATA u8 Unk_088ADFAA[];
 extern CONST_DATA u8 Unk_088ADFAB[];
 // extern ??? gSupportData
 // extern ??? ItemBonus_Excalibur
-extern u16 * gUnknown_088AF834[];
 // extern ??? gUnknown_088AF880
 // extern ??? gUnknown_088AFB5A
 // extern ??? gSpellAssocData
@@ -925,8 +923,6 @@ extern u16 CONST_DATA *ImgLut_EventMapAnimMaskfx[];    /* images */
 extern u16 CONST_DATA *gUnknown_089EE9C8[];    /* images */
 extern struct ProcCmd ProcScr_EventMapAnim[];
 extern struct ProcCmd gUnknown_089EEA28[];
-extern struct MenuItemDef MenuItemDef_RouteSplit[];
-extern struct MenuDef MenuDef_RouteSplit;
 // extern ??? gUnknown_089FF480
 // extern ??? EventScr_SkirmishCommonBeginning
 // extern ??? EventScr_8A0035C
