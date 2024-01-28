@@ -434,7 +434,7 @@ struct GMapData
     /* 30 */ struct GMNode nodes[0x1C];
     /* A0 */ int unk_a0; // pad?
     /* A4 */ struct OpenPaths openPaths;
-    /* C8 */ u8 unk_c8; // entry node id?
+    /* C8 */ u8 current_node; // entry node id?
     /* C9 */ u8 unk_c9[3]; // List of active world map skirmishes
     /* CC */ u8 unk_cc; // used to determine which skirmish enemy block to load
     /* CD */ u8 unk_cd;
@@ -589,7 +589,7 @@ void Worlmap_StartGmapSogu(struct WorldMapMainProc * proc);
 void Worlmap_WaitGmapSogu(ProcPtr proc);
 // ??? sub_80B9E64(???);
 void ResetWorldMapScreen(void);
-void DoNothing(void);
+void NULL_080B9F08(void);
 void sub_80B9F14(ProcPtr proc);
 void sub_80B9F24(ProcPtr proc);
 void sub_80B9F34(ProcPtr proc);
