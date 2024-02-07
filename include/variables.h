@@ -17,9 +17,9 @@ extern u16 *gMinimapObjectFlashPal;
 // extern ??? gUnknown_020007E0
 // extern ??? gUnknown_02000920
 // extern ??? gUnknown_02000938
-// extern ??? gUnknown_02000940
-// extern ??? gUnknown_02000944
-// extern ??? gUnknown_02000948
+extern u8 gUnknown_02000940[];
+extern u8 gUnknown_02000944[];
+extern struct PlaySt_OptionBits gUnknown_02000948[];
 // extern ??? gUnknown_02000C60
 // extern ??? gUnknown_02000C78
 // extern ??? gUnknown_02000F00
@@ -1118,16 +1118,25 @@ extern u16 * Objs_08A2067C[];
 // extern ??? gUnknown_08A209B8
 extern u16* gUnknown_08A209E4[];
 extern u16* gUnknown_08A209F0[];
-// extern ??? gUnknown_08A209FC
-// extern ??? gTextIds_DifficultyDescription
-// extern ??? ProcScr_NewGameDifficultySelect
-// extern ??? gSprite_08A20A98
-// extern ??? gSprite_DifficultyMenuSelectModeBg
-// extern ??? gSprite_DifficultyMenuSelectModeText
-// extern ??? gSprite_08A20AC2
-// extern ??? gSpriteArray_08A20B08
-// extern ??? gUnknown_08A20B14
-// extern ??? gProcScr_DrawDifficultyMenuSprites
+
+struct Unknown_08A209FC
+{
+    s8 a;
+    s8 b;
+};
+
+extern struct Unknown_08A209FC gUnknown_08A209FC[];
+extern u16 CONST_DATA gTextIds_DifficultyDescription[];
+extern struct ProcCmd CONST_DATA ProcScr_NewGameDifficultySelect[];
+extern u16 CONST_DATA gSprite_08A20A98[];
+extern u16 CONST_DATA gSprite_DifficultyMenuSelectModeText[];
+extern u16 CONST_DATA gSprite_08A20AC2[];
+extern u16 CONST_DATA gSprite_08A20AD0[];
+extern u16 CONST_DATA gSprite_08A20AE4[];
+extern u16 CONST_DATA gSprite_08A20AF2[];
+extern u16 * CONST_DATA gSpriteArray_08A20B08[];
+extern u8 CONST_DATA gUnknown_08A20B14[];
+extern struct ProcCmd CONST_DATA gProcScr_DrawDifficultyMenuSprites[];
 // extern ??? gSprite_UiCursorHand_08A20B3C
 // extern ??? gSprite_UiCursorHand_08A20B44
 // extern ??? gProcScr_UiCursorHand
