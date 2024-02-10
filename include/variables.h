@@ -66,8 +66,8 @@ extern u32 gBanimOamr2[];
 // extern ??? gUnknown_0200AF00
 // extern ??? gUnknown_0200C300
 // extern ??? gUnknown_0200CB00
-// extern ??? gUnknown_0200D3E0
-// extern ??? gUnknown_0200D6E0
+// extern ??? gSortedUnitsBuf
+// extern ??? gSortedUnits
 // extern ??? gUnknown_0200D7E0
 // extern ??? gUnknown_0200DFE0
 // extern ??? gUnknown_0200E060
@@ -298,8 +298,6 @@ extern u8 const gUnknown_082058B0[];
 // extern ??? gUnknown_08205918
 // extern ??? gUnknown_08205938
 // extern ??? gUnknown_08205B84
-// extern ??? gUnknown_08205B94
-// extern ??? gUnknown_08205BB0
 // extern ??? gUnknown_08205BC0
 // extern ??? gLinkArenaBanList
 // extern ??? gUnknown_08205C14
@@ -425,7 +423,7 @@ extern const char *gStrPrefix[][2];
 // extern ??? ProcScr_BoomFogFx
 // extern ??? ProcScr_EventEarthQuake
 // extern ??? gProcScr_StoneShatterEvent
-// extern ??? gUnknown_08592628
+// extern ??? BmBgxConf_StoneShatter
 // extern ??? gUnknown_085926F4
 // extern ??? gUnknown_085996F4
 // extern ??? gUnknown_08599FD4
@@ -1074,18 +1072,18 @@ extern u16 gTSA_TerrainBox_Destructable[];
 extern u16 gUnknown_08A176B4[];
 extern u16 gTSA_GoalBox_TwoLines[];
 extern u16 gTSA_GoalBox_OneLine[];
-// extern ??? ProcScr_bmenu
-// extern ??? ProcScr_bmenu2
-// extern ??? gUnknown_08A17990
-// extern ??? ProcScr_bmenu3
+// extern ??? ProcScr_UnitListScreen_Field
+// extern ??? ProcScr_UnitListScreen_PrepMenu
+// extern ??? ProcScr_UnitListScreen_SoloAnim
+// extern ??? ProcScr_UnitListScreen_WorldMap
 // extern ??? ProcScr_bmview
 // extern ??? gUnknown_08A17B30
 // extern ??? gUnknown_08A17B36
-// extern ??? gUnknown_08A17B58
-// extern ??? gUnknown_08A17B64
-// extern ??? gUnknown_08A17B6C
-// extern ??? gUnknown_08A17C20
-// extern ??? gUnknown_08A17C48
+// extern ??? gSpriteArray_08A17B58
+// extern ??? Sprite_08A17B64
+// extern ??? Sprite_08A17B6C
+// extern ??? gSpriteArray_08A17C20
+// extern ??? gUnitListScreenFields
 // extern ??? gUnknown_08A17C4C
 
 // extern ??? gSram
@@ -1206,7 +1204,7 @@ extern u16 gUnknown_08A2E4A4[]; // Pal
 extern u8 gUnknown_08A2E4C4[]; // TSA
 extern u8 gUnknown_08A2E5EC[]; // Gfx
 extern u16 gUnknown_08A2E8F0[]; // Pal
-extern u8 gUnknown_08A2E950[]; // Gfx
+extern u8 Img_SysBlackBox[]; // Gfx
 // extern ??? ProcScr_ColFadeOut
 // extern ??? ProcScr_ColFadeIn
 extern u8 gUnknown_08A301B0[]; // gfx?
