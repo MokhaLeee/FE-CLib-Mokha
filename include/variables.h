@@ -63,7 +63,7 @@ extern u32 gBanimOaml[];
 extern u32 gBanimOamr2[];
 // extern ??? gUnknown_0200A2D8
 // extern ??? gUnknown_0200A300
-// extern ??? gUnknown_0200AF00
+extern u8 gUnknown_0200AF00[];
 // extern ??? gUnknown_0200C300
 // extern ??? gUnknown_0200CB00
 // extern ??? gSortedUnitsBuf
@@ -116,8 +116,6 @@ extern int gBattleScriptted;
 // extern ??? gpPopupUnit
 // extern ??? gPopupItem
 // extern ??? gPopupNumber
-// extern ??? ItemBackupEvtBattle
-// extern ??? gUnknown_03000600
 // extern ??? sEventFadeSt
 // extern ??? gUnknown_03000800
 // extern ??? gUnknown_03000808
@@ -275,7 +273,7 @@ extern u8 gTsa_StoneShatter_081C1C90[];
 extern u8 gTsa_StoneShatter_081C1CDC[];
 
 extern const u8 gUnknown_08205714[4];
-// extern ??? gUnknown_0820579C
+// extern ??? NigtMarefxConf
 // extern ??? gUnknown_08205824
 // extern ??? gUnknown_08205833
 // extern ??? gUnknown_08205846
@@ -320,7 +318,6 @@ extern const struct FaceVramEntry gFaceConfig_PrepItemUseScreen[4];
 
 // extern ??? gUnknown_08206954
 
-// extern ??? GfxSet_WmNationMap
 // extern ??? gUnknown_08206B70
 // extern ??? gUnknown_08206E24
 // extern ??? gUnknown_08206FB4
@@ -403,20 +400,6 @@ extern const char *gStrPrefix[][2];
 //extern struct {u32 *unk0; u32 *unk4; u32 *unk8;} gStrPrefix;
 // extern ??? gUnknown_08591AB4
 
-// extern ??? sProcScr_Popup
-// extern ??? sProcScr_PopupUpdateIcon
-// extern ??? gPopup_GotItem
-// extern ??? gPopup_ItemWasPilfered
-// extern ??? sProcScr_GotItem
-// extern ??? gPopup_GotGold
-// extern ??? gPopup_GoldWasStole
-// extern ??? gPopup_StoleItem
-// extern ??? gPopup_ItemStolen
-// extern ??? gPopup_WpnBroken
-// extern ??? gPopup_WRankUp
-// extern ??? gPopup_NewAlly
-extern struct ProcCmd CONST_DATA gProcScr_BrownTextBox[];
-extern struct ProcCmd CONST_DATA gProcScr_08592530[];
 extern struct ProcCmd CONST_DATA ProcScr_EventFadefx[];
 extern struct ProcCmd CONST_DATA ProcScr_ShinningStonefx[];
 extern struct ProcCmd CONST_DATA ProcScr_BoomFogFx[];
@@ -427,7 +410,7 @@ extern struct ProcCmd CONST_DATA gProcScr_StoneShatterEvent[];
 // extern ??? gUnknown_085996F4
 // extern ??? gUnknown_08599FD4
 
-// extern ??? gUnknown_0859A1E0
+// extern ??? ProcScr_PartialGameLock
 // extern ??? gStatusNameTextIdLookup
 // extern ??? gUnitLookup
 // extern ??? gTilesetTerrainLookup
@@ -1243,8 +1226,8 @@ extern u8 gTsa_FinScreen[];
 extern u16 gUnknown_08A40AD4[]; // pal
 extern u8 gUnknown_08A40B14[]; // tsa
 // extern ??? gUnknown_08A40FC8
-// extern ??? gGfx_BrownTextBox
-// extern ??? gPal_BrownTextBox
+extern u8 gGfx_BrownTextBox[];
+extern u16 gPal_BrownTextBox[];
 // extern ??? gUnknown_08A83364
 // extern ??? gUnknown_08A95F64
 // extern ??? gUnknown_08A95FE4
@@ -1285,6 +1268,22 @@ extern u8 gImg_08A9E544[];
 extern u16 gPal_08A9E5BC[];
 extern u8 gTsa_08A9E5DC[];
 extern u16 Pal_WmHighLightNationMap[];
+extern u16 Img_WmHightLightMapFrecia[];
+extern u16 Ap_WmHightLightMapFrecia[];
+extern u16 Img_WmHightLightMap2[];
+extern u16 Ap_WmHightLightMap2[];
+extern u16 Img_WmHightLightMap3[];
+extern u16 Ap_WmHightLightMap3[];
+extern u16 Img_WmHightLightMap4[];
+extern u16 Ap_WmHightLightMap4[];
+extern u16 Img_WmHightLightMap5[];
+extern u16 Ap_WmHightLightMap5[];
+extern u16 Img_WmHightLightMap6[];
+extern u16 Ap_WmHightLightMap6[];
+extern u16 Img_WmHightLightMap7[];
+extern u16 Ap_WmHightLightMap7[];
+extern u16 Img_WmHightLightMap8[];
+extern u16 Ap_WmHightLightMap8[];
 // extern ??? gUnknown_08AA114C
 // extern ??? gUnknown_08AA1190
 // extern ??? gUnknown_08AA11B0
