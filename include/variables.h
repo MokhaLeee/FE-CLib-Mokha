@@ -223,8 +223,6 @@ extern const u16 gUnknown_080D7504[];
 // extern ??? gUnknown_080D77BC
 // extern ??? gUnknown_080D77DC
 // extern ??? gUnknown_080D77FC
-// extern ??? gUnknown_080D78EC
-// extern ??? gUnknown_080D7908
 // extern ??? gUnknown_080D792C
 // extern ??? gUnknown_080D793C
 // extern ??? UnitMenuOverrideConf
@@ -272,10 +270,10 @@ extern u8 gTsa_StoneShatter_081C1CDC[];
 
 extern const u8 gUnknown_08205714[4];
 // extern ??? NigtMarefxConf
-// extern ??? gUnknown_08205824
-// extern ??? gUnknown_08205833
-// extern ??? gUnknown_08205846
-// extern ??? gUnknown_08205855
+extern const u8 gUnknown_08205824[];
+extern const u8 gUnknown_08205833[];
+extern const u8 gUnknown_08205846[];
+extern const u8 gUnknown_08205855[];
 extern const int gUnknown_08205884[];
 extern const u8 gUnknown_0820588C[];
 extern const u8 gUnknown_0820588E[];
@@ -392,8 +390,8 @@ extern struct Glyph *TextGlyphs_System[];
 extern struct Glyph *TextGlyphs_Talk[];
 extern struct Glyph *TextGlyphs_Special[];
 extern struct ProcCmd CONST_DATA gProcScr_TalkPutSpriteText_Unused[];
-extern struct ProcCmd CONST_DATA gUnknown_0859160C[];
-extern struct ProcCmd CONST_DATA gUnknown_0859163C[];
+extern struct ProcCmd CONST_DATA ProcScr_0859160C[];
+extern struct ProcCmd CONST_DATA ProcScr_0859163C[];
 
 extern const char *gStrPrefix[][2];
 //extern struct {u32 *unk0; u32 *unk4; u32 *unk8;} gStrPrefix;
@@ -472,8 +470,8 @@ extern u16 Pal_HelpBox[]; // pal
 extern u16 gPal_HelpTextBox[];
 extern u16 gPal_YellowTextBox[];
 extern u16 Pal_GreenTextColors[];
-// extern ??? gUnknown_0859EFE0
-// extern ??? gUnknown_0859F000
+extern u16 Pal_Text_Inverted[];
+extern u16 Pal_TalkBubble_Inverted[];
 // extern ??? Img_PhaseChangeUnk
 // extern ??? Img_PhaseChangePlayer
 extern CONST_DATA u16 Pal_PhaseChangePlayer[];
@@ -880,8 +878,8 @@ extern CONST_DATA struct ProcCmd gProcScr_MU_89A2CF8[];
 #define gMMSDataTable unit_icon_move_table
 extern CONST_DATA struct MMSData gMMSDataTable[]; // Moving Map Sprite Table
 
-// extern ??? gUnknown_089E8238
-// extern ??? gUnknown_089E84D4
+// extern ??? Img_TalkBubble
+extern u16 Pal_TalkBubble[];
 // extern ??? gUnknown_089ED67C
 // extern ??? gUnknown_089ED694
 // extern ??? gUnknown_089ED6AC
@@ -1071,32 +1069,6 @@ extern u16 gTSA_GoalBox_OneLine[];
 // extern ??? sSupportUnkLut
 // extern ??? sArenaCpTeamNameLut
 // extern ??? gpSramExtraData
-// extern ??? gBgConfig_SaveMenu
-// extern ??? gProcScr_08A20068
-// extern ??? ProcScr_CallExtraMap
-// extern ??? ProcScr_SaveMenu
-// extern ??? gProcScr_SaveMenuPostChapter
-// extern ??? gUnknown_08A204B8
-// extern ??? gUnknown_08A204BC
-// extern ??? gUnknown_08A2051C
-// extern ??? gUnknown_08A20536
-// extern ??? gUnknown_08A20570
-// extern ??? gUnknown_08A20578
-// extern ??? gUnknown_08A20580
-// extern ??? gUnknown_08A20588
-extern u16 Obj_08A20590[];
-// extern ??? gUnknown_08A20650
-extern u16 * Objs_08A2067C[];
-// extern ??? ProcScr_savedraw
-// extern ??? gProcScr_SaveDrawCursor
-// extern ??? gProcScr_08A206F8
-// extern ??? gUnknown_08A20720
-// extern ??? gProcScr_SqMask
-// extern ??? gProcScr_SaveBgUp
-// extern ??? gUnknown_08A2099C
-// extern ??? gUnknown_08A209B8
-extern u16* gUnknown_08A209E4[];
-extern u16* gUnknown_08A209F0[];
 
 struct Unknown_08A209FC
 {
@@ -1155,7 +1127,7 @@ extern u8 gUnknown_08A268F8[]; // tsa, fog overlay
 extern u8 Img_SaveScreenSprits[]; // gfx
 extern u16 Pal_SaveScreenSprits[]; // pal
 extern u16 Pal_08A28088[];
-// extern ??? gUnknown_08A280A8
+extern u16 gUnknown_08A280A8[]; // ap
 extern u8 Img_GameMainMenuObjs[];
 // extern ??? Img_DifficultyMenuObjs
 // extern ??? Pal_DifficultyMenuObjs
