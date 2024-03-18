@@ -18,11 +18,12 @@ struct ProcTactician {
     /* 31 */ u8 text_idx;
     /* 32 */ u8 unk32;
     /* 33 */ u8 unk33;
-    /* 34 */ u16 conf_idx;
-    /* 36 */ STRUCT_PAD(0x36, 0x38);
+    /* 34 */ s16 conf_idx;
+    /* 36 */ s16 unk36;
     /* 38 */ u8 cur_len;                /* used tactician name string length */
     /* 39 */ u8 unk39;
-    /* 3A */ u16 unk3A;
+    /* 3A */ u8 unk3A;
+    /* 3A */ u8 unk3B;
     /* 3C */ u8 max_len;                /* pre-configured max string length */
     /* 3D */ char str[0x4C - 0x3D];
     /* 4C */ u16 unk4C[0x10];
@@ -32,30 +33,61 @@ struct TacticianTextConf {
     /* 00 */ u8 * str[0xC];
     /* 30 */ u16 xpos;
     /* 32 */ u16 unk32;
-    /* 34 */ STRUCT_PAD(0x34, 0x36);
-    /* 36 */ s16 unk36[5];
+    /* 34 */ u8 unk34;
+    /* 35 */ STRUCT_PAD(0x35, 0x36);
+    /* 36 */ s16 unk36[4];
+    /* 3E */ u8 unk3E;
 };
 
 extern const struct TacticianTextConf gTacticianTextConf[];
 struct TacticianTextConf * GetTacticianTextConf(s16);
 
-u32 SioStrCpy(void const * src, void * dst);
+enum sio_save_config_bitfile {
+    SIO_SAVE_CONF_B3 = 1 << 3,
+};
+
+struct SioSaveConf {
+    u8 _unk0_ : 3;
+    u8 _unk3_ : 1;
+    u8 _unk4_ : 4;
+    u8 _unk8_;
+};
+extern struct SioSaveConf gSioSaveConfig;
+
+u32 SioStrCpy(u8 const * src, u8 * dst);
 void SioDrawNumber(struct Text * text, int x, int color, int number);
-// ??? sub_8042E0C(???);
-// ??? sub_8042E2C(???);
+void SioInit(void);
+void SioPollingMsgAndAck(ProcPtr proc);
 // ??? SetBmStLinkArenaFlag(???);
 // ??? UnsetBmStLinkArenaFlag(???);
 bool CheckInLinkArena(void);    // <!> This function is defined as different types by files, maybe a bug.
-void sub_8042EA8();
-// ??? sub_8042EB4(???);
-// ??? sub_8042EF0(???);
-// ??? sub_8042F44(???);
-// ??? sub_8042F58(???);
-// ??? sub_8042F84(???);
-// ??? sub_8042F98(???);
-// ??? sub_8042FE0(???);
-// ??? sub_8042FFC(???);
-// ??? sub_804302C(???);
+void sub_8042EA8(void);
+
+struct Proc_Sio_085A93A0 {
+    PROC_HEADER;
+
+    STRUCT_PAD(0x29, 0x58);
+
+    /* 38 */ u32 timer;
+};
+
+void sub_8042EB4(struct Proc_Sio_085A93A0 * proc);
+void sub_8042EF0(struct Proc_Sio_085A93A0 * proc);
+void sub_8042F44(void);
+void sub_8042F58(ProcPtr proc);
+void sub_8042F84(void);
+void sub_8042F98(ProcPtr proc);
+
+struct ProcSioHold {
+    PROC_HEADER;
+
+    int x;
+    int y, y_min, y_max;
+};
+
+void SioHold_Loop(struct ProcSioHold * proc);
+// ??? StartSioHold(???);
+// ??? EndSioHold(???);
 // ??? sub_804303C(???);
 void ClearSioBG(void);
 // ??? sub_804309C(???);
@@ -64,7 +96,7 @@ void ClearSioBG(void);
 // ??? sub_80431B4(???);
 void SioPlaySoundEffect(int);
 // ??? sub_8043244(???);
-// ??? sub_8043268(???);
+bool sub_8043268(const u16 * list);
 // ??? sub_80432F4(???);
 // ??? sub_8043308(???);
 // ??? sub_804331C(???);
@@ -358,7 +390,7 @@ void sub_8049788(void);
 void InitSioBG(void);
 // ??? sub_804C3A0(???);
 // ??? sub_804C3A4(???);
-// ??? nullsub_13(???);
+void nullsub_13(void);
 // ??? sub_804C3AC(???);
 // ??? sub_804C3EC(???);
 // ??? sub_804C47C(???);
@@ -382,7 +414,7 @@ void sub_804C508(void);
 // ??? sub_804CC78(???);
 // ??? sub_804CCCC(???);
 ProcPtr NewProc_085AAAC4(ProcPtr parent, int a, int b);
-// ??? sub_804CDD0(???);
+void sub_804CDD0(void *, int, int, int, int, int);
 // ??? sub_804CDE8(???);
 // ??? sub_804CE5C(???);
 // ??? sub_804CE8C(???);
@@ -410,8 +442,8 @@ ProcPtr NewProc_085AAAC4(ProcPtr parent, int a, int b);
 // ??? sub_804D778(???);
 // ??? sub_804D7B0(???);
 // ??? sub_804D7DC(???);
-// ??? sub_804D80C(???);
-// ??? sub_804D834(???);
+void sub_804D80C(void);
+void sub_804D834(int, int);
 // ??? sub_804D858(???);
 // ??? sub_804D8A4(???);
 // ??? sub_804D8C8(???);
@@ -433,23 +465,23 @@ ProcPtr NewProc_085AAAC4(ProcPtr parent, int a, int b);
 // extern ??? gLinkArenaSt
 // extern ??? gUnknown_0203DA30
 // extern ??? gUnk_Sio_0203DA78
-// extern ??? gUnk_Sio_0203DA88
+extern struct Text gUnk_Sio_0203DA88[];
 extern struct Text Texts_0203DAB0;
 // extern ??? gUnk_Sio_0203DAC0
 // extern ??? gUnk_Sio_0203DAC5
-// extern ??? gUnk_Sio_0203DB10
+
 extern struct Text Texts_0203DB14[10];
 // extern ??? gUnk_Sio_0203DB1C
 extern struct Font Font_0203DB64;
 // extern ??? gUnk_Sio_0203DB7C
 // extern ??? gUnk_Sio_0203DC44
 // extern ??? gUnk_Sio_0203DC48
-// extern ??? gUnk_Sio_0203DD0C
+extern struct Text gSioTexts[];
 extern struct Text Text_0203DB14;
 extern u8 gUnk_Sio_0203DD24;
 // extern ??? gUnk_Sio_0203DD28
-// extern ??? gUnk_Sio_0203DD2C
-// extern ??? gUnk_Sio_0203DD4C
+extern u16 gUnk_Sio_0203DD2C[];
+extern int gUnk_Sio_0203DD4C;
 // extern ??? gUnk_Sio_0203DD50
 // extern ??? gUnk_Sio_0203DD8C
 // extern ??? gUnk_Sio_0203DD90
@@ -510,3 +542,29 @@ extern s16 gUnknown_080D9C9E[];
 // extern ??? gUnknown_080DA26A
 // extern ??? gUnknown_080DA27E
 // extern ??? gUnknown_080DA2B0
+
+extern CONST_DATA struct ProcCmd ProcScr_SIOCON[];
+extern CONST_DATA struct ProcCmd ProcScr_SIOVSYNC[];
+extern CONST_DATA struct ProcCmd ProcScr_SIOMAIN[];
+extern CONST_DATA u8 * gpSioUnkBuffer;
+extern CONST_DATA struct ProcCmd gUnknown_085A93A0[];
+extern CONST_DATA struct ProcCmd ProcScr_HOLD[];
+// extern ??? gSioList_085A93E0
+extern CONST_DATA u16 gSioList_085A93F0[];
+// extern ??? gUnknown_085A94A0
+extern CONST_DATA struct ProcCmd ProcScr_Sio_085A94AC[];
+// extern ??? ProcScr_TacticianNameSelection
+// extern ??? gUnknown_085A96D4
+
+extern int gUnknown_03001808;
+extern int gUnknown_0300180C;
+// extern ??? gUnknown_03001810
+// extern ??? gUnknown_03001818
+// extern ??? gUnknown_0300182C
+// extern ??? gUnknown_03001830
+// extern ??? gUnknown_03001834
+// extern ??? gUnknown_03001838
+// extern ??? gUnknown_03001840
+// extern ??? gUnknown_03001850
+// extern ??? gUnknown_03001860
+// extern ??? gUnknown_03001864

@@ -121,18 +121,6 @@ extern int gBaArenaFlag;
 // extern ??? gDungeonState
 // extern ??? gUnknown_030017AC
 
-// extern ??? gUnknown_03001808
-// extern ??? gUnknown_0300180C
-// extern ??? gUnknown_03001810
-// extern ??? gUnknown_03001818
-// extern ??? gUnknown_0300182C
-// extern ??? gUnknown_03001830
-// extern ??? gUnknown_03001834
-// extern ??? gUnknown_03001838
-// extern ??? gUnknown_03001840
-// extern ??? gUnknown_03001850
-// extern ??? gUnknown_03001860
-// extern ??? gUnknown_03001864
 extern u16 gUnknown_030018F0[];
 // extern ??? gUnitDef1
 // extern ??? gUnknown_03001C48
@@ -538,17 +526,9 @@ extern u16 CONST_DATA Pal_EventCursorShinning[];
 // extern ??? gUnknown_085A92E0
 // extern ??? gUnknown_085A92E4
 // extern ??? gUnknown_085A9304
-// extern ??? ProcScr_SIOCON
-// extern ??? ProcScr_SIOVSYNC
-// extern ??? ProcScr_SIOMAIN
-// extern ??? gUnknown_085A93A0
-// extern ??? ProcScr_HOLD
-// extern ??? gUnknown_085A93E0
-// extern ??? gUnknown_085A93F0
-// extern ??? gUnknown_085A94A0
-// extern ??? gUnknown_085A94AC
-// extern ??? ProcScr_TacticianNameSelection
-// extern ??? gUnknown_085A96D4
+
+/* sio.h */
+
 // extern ??? gUnknown_085A96E4
 // extern ??? gUnknown_085A96F4
 // extern ??? gUnknown_085A9774
@@ -1195,7 +1175,33 @@ extern u8 gGfx_FinScreen[];
 extern u8 gTsa_FinScreen[];
 extern u16 gUnknown_08A40AD4[]; // pal
 extern u8 gUnknown_08A40B14[]; // tsa
-// extern ??? gUnknown_08A40FC8
+extern u16 Pal_StaffReelEnt_08A40FC8[];
+extern u8 Img_StaffReelEnt_08A40FE8[];
+extern u8 Img_StaffReelEnt_08A41B30[];
+extern u8 Img_StaffReelEnt_08A42748[];
+extern u8 Img_StaffReelEnt_08A432C0[];
+extern u8 Img_StaffReelEnt_08A43CBC[];
+extern u8 Img_StaffReelEnt_08A45150[];
+extern u8 Img_StaffReelEnt_08A4561C[];
+extern u8 Img_StaffReelEnt_08A45F58[];
+extern u8 Img_StaffReelEnt_08A46988[];
+extern u8 Img_StaffReelEnt_08A472B0[];
+extern u8 Img_StaffReelEnt_08A48744[];
+extern u8 Img_StaffReelEnt_08A497A8[];
+extern u8 Img_StaffReelEnt_08A4A9D4[];
+extern u8 Tsa_StaffReelEnt_08A4AE08[];
+extern u8 Tsa_StaffReelEnt_08A4B090[];
+extern u8 Tsa_StaffReelEnt_08A4B2F4[];
+extern u8 Tsa_StaffReelEnt_08A4B558[];
+extern u8 Tsa_StaffReelEnt_08A4B788[];
+extern u8 Tsa_StaffReelEnt_08A4BB50[];
+extern u8 Tsa_StaffReelEnt_08A4BCC4[];
+extern u8 Tsa_StaffReelEnt_08A4BEC0[];
+extern u8 Tsa_StaffReelEnt_08A4C0E4[];
+extern u8 Tsa_StaffReelEnt_08A4C308[];
+extern u8 Tsa_StaffReelEnt_08A4C6EC[];
+extern u8 Tsa_StaffReelEnt_08A4C9F0[];
+extern u8 Tsa_StaffReelEnt_08A4CD40[];
 extern u8 gGfx_BrownTextBox[];
 extern u16 gPal_BrownTextBox[];
 // extern ??? gUnknown_08A83364
@@ -1254,19 +1260,19 @@ extern u16 Img_WmHightLightMap7[];
 extern u16 Ap_WmHightLightMap7[];
 extern u16 Img_WmHightLightMap8[];
 extern u16 Ap_WmHightLightMap8[];
-// extern ??? gUnknown_08AA114C
-// extern ??? gUnknown_08AA1190
-// extern ??? gUnknown_08AA11B0
+extern u8 Img_WorldMapPlaceDot[];
+extern u16 Pal_WmPlaceDot_Highlight[];
+extern u16 Pal_WmPlaceDot_Standard[];
 extern u8 gUnknown_08AA11D0[]; // tsa?
-// extern ??? gUnknown_08AA1280
-// extern ??? gUnknown_08AA188C
-// extern ??? gUnknown_08AA18AC
+extern u8 Img_WorldmapMinimap[];
+extern u16 Pal_WorldmapMinimap[];
+extern u8 gUnknown_08AA18AC[];
 // extern ??? gUnknown_08AA1930
 // extern ??? gUnknown_08AA1950
 extern u8 gImg_WorldmapSkirmish[]; // gfx
 extern u8 SpriteAnim_WorldmapSkirmish[]; // ap proc data
-// extern ??? gUnknown_08AA2044
-// extern ??? gUnknown_08AA2084
+// extern ??? ProcScr_EndingCredits_BlendCGMaybe
+// extern ??? ProcScr_EndingCredits
 // extern ??? gBgConfig_OpSubtitle
 // extern ??? gUnknown_08AA21A4
 // extern ??? gProcScr_OpSubtitle
