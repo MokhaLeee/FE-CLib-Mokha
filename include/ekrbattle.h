@@ -85,7 +85,7 @@ struct ProcEfxSpdQuake {
     /* 29 */ STRUCT_PAD(0x29, 0x2C);
     /* 2C */ s16 timer;
     /* 2E */ STRUCT_PAD(0x2E, 0x44);
-    /* 44 */ struct Vec2 *vecs;
+    /* 44 */ const s16 * vecs;
     /* 48 */ STRUCT_PAD(0x48, 0x5C);
     /* 5C */ struct Anim * anim;
 };
@@ -529,10 +529,10 @@ extern struct ProcCmd ProcScr_efxDeadPika[];
 extern struct ProcCmd ProcScr_efxDeadAlpha[];
 extern struct ProcCmd ProcScr_efxDeadDragonAlpha[];
 extern struct ProcCmd gProc_efxFarAttack[];
-extern struct ProcCmd gProc_efxQuakePure[];
+extern struct ProcCmd ProcScr_efxQuakePure[];
 // extern ??? gUnknown_085B9804
 extern struct ProcCmd ProcScr_EfxHitQuakePure[];
-extern struct ProcCmd gProc_efxQuake[];
+extern struct ProcCmd ProcScr_efxQuake[];
 extern struct ProcCmd ProcScr_EfxHitQuake[];
 extern struct ProcCmd ProcScr_efxFlashBG[];
 extern struct ProcCmd ProcScr_efxWhiteOUT[];
@@ -574,9 +574,9 @@ extern struct ProcCmd gProc_ekrTogiColor[];
 
 extern const s16 gEfxNoDmgBgShakeOff[];
 // extern ??? gUnknown_080DA4BA
-extern CONST_DATA struct Vec2 gEfxQuakeVecs[];
+extern const s16 gEfxQuakeVecs[];
 // extern ??? gUnknown_080DA526
-extern CONST_DATA struct Vec2 gEfxQuakeVecs2[];
+extern const s16 gEfxQuakeVecs2[];
 // extern ??? gUnknown_080DA5BA
 // extern ??? gUnknown_080DA604
 // extern ??? gUnknown_080DA66E
@@ -647,13 +647,13 @@ extern const u16 FrameLut_EfxCriricalEffectBGCOL[];
 extern const u16 gUnknown_080DF1EE[];
 extern const u16 gUnknown_080DF26A[];
 extern const u16 gUnknown_080DF2DC[];
-extern const u16 gUnknown_080DF386[];
-extern const u16 gUnknown_080DF39C[];
-extern const u16 gUnknown_080DF3A2[];
-extern const u16 gUnknown_080DF3C4[];
-extern const u16 gUnknown_080DF4F4[];
-extern const u16 gUnknown_080DF546[];
-extern const u16 gUnknown_080DF568[];
+extern const u16 FrameConfig_EfxMagFcastBg1[];
+extern const u16 FrameConfig_EfxMagFcastBg2[];
+extern const u16 FrameConfig_EfxMagFcastBg3[];
+extern const u16 FrameConfig_EfxMagFcastBg4[];
+extern const u16 FrameConf_EfxMagdhisEffectBG[];
+extern const u16 FrameConf_EfxChillEffectBG[];
+extern const u16 FrameConf_EfxChillEffectBGCOL[];
 
 extern CONST_DATA struct BattleAnimDef AnimConf_088AEFD8[];
 extern CONST_DATA struct BattleAnimDef AnimConf_088AEFE4[];
@@ -788,7 +788,7 @@ void ekrBattle_80503EC(struct ProcEkrBattle * proc);
 void ekrBattle_StartPromotion(struct ProcEkrBattle * proc);
 void ekrBattle_WaitPromotionIdle(struct ProcEkrBattle * proc);
 void ekrBattleInRoundIdle(struct ProcEkrBattle * proc);
-void ekrBattleOnBattkeEnd(struct ProcEkrBattle * proc);
+void ekrBattleOnBattleEnd(struct ProcEkrBattle * proc);
 void ekrBattle_8050600(struct ProcEkrBattle * proc);
 void ekrBattle_WaitForPostBattleAct(struct ProcEkrBattle * proc);
 void ekrBattleExecExpGain(struct ProcEkrBattle * proc);
@@ -986,8 +986,8 @@ void sub_805AA28(struct AnimBuffer * pAnimBuf);
 // void sub_805AA68(void *);
 // void sub_805AE14(void *);
 // void sub_805AE40(void *, s16, s16, s16, s16);
-// ??? sub_805AE58(???);
-// ??? sub_805AFA0(???);
+void sub_805AE58(void *);
+void sub_805AFA0(int, s16);
 
 struct ProcEkrTogi
 {
