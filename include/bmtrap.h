@@ -25,7 +25,7 @@ struct ProcBmTrap {
 void RegisterTrapDeathBWL(struct ProcBmTrap * proc);
 void ExecFireTileTrapAnim1(struct ProcBmTrap * proc);
 void ExecFireTileTrapAnim2(struct ProcBmTrap * proc);
-void ApplyTrapDamagAnim(struct ProcBmTrap * proc);
+void ApplyTrapDamageAnim(struct ProcBmTrap * proc);
 void ApplyTrapDamageReal(struct ProcBmTrap * proc);
 int GetPickTrapType(struct Unit * unit);
 int ExecTrap(ProcPtr proc, struct Unit * unit, int param_3);
