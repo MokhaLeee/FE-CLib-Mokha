@@ -21,7 +21,7 @@ extern u16 *gMinimapObjectFlashPal;
 extern u8 gUnknown_02000940[];
 extern u8 gUnknown_02000944[];
 extern struct PlaySt_OptionBits gUnknown_02000948[];
-// extern ??? gUnk_Sio_02000C60
+
 // extern ??? gUnk_Sio_02000C78
 // extern ??? gUnk_Sio_02000F00
 // extern ??? gBmMapBuffer
@@ -523,12 +523,12 @@ extern u16 CONST_DATA Pal_EventCursorShinning[];
 
 /* sio.h */
 
-// extern ??? gUnknown_085A96E4
-// extern ??? gUnknown_085A96F4
-// extern ??? gUnknown_085A9774
+// extern ??? SpriteArray_085A96E4
+// extern ??? ProcScr_LinkArenaPostBattle_DrawSprites
+// extern ??? ProcScr_SioPostBattle_PlayMusic
 // extern ??? gUnknown_085A9864
 // extern ??? gUnknown_085A9884
-// extern ??? gUnknown_085A9D98
+// extern ??? ProcScr_SIORESULT_NewHighScore
 // extern ??? FaceConfig_085A9E48
 // extern ??? FaceConfig_085A9E68
 // extern ??? ProcScr_SIOMENU
@@ -571,7 +571,7 @@ extern u16 CONST_DATA Pal_EventCursorShinning[];
 // extern ??? gUnknown_085AA9D8
 // extern ??? gUnknown_085AAA0E
 // extern ??? gUnknown_085AAA48
-// extern ??? gUnknown_085AAA50
+extern u16 Sprite_085AAA50[]; // sprite
 // extern ??? gUnknown_085AAA5E
 // extern ??? gUnknown_085AAA78
 // extern ??? gUnknown_085AAA90
@@ -594,32 +594,32 @@ extern u16 CONST_DATA Pal_EventCursorShinning[];
 extern u8 Img_LinkArenaMenu[];
 extern u8 Img_TacticianSelObj[];
 // extern ??? gUnknown_085AC604
-// extern ??? gUnknown_085AC9DC
-// extern ??? gUnknown_085ACD20
-// extern ??? gUnknown_085ACEFC
-// extern ??? gUnknown_085AD0CC
+extern u8 Img_LinkArenaRankIcons[]; // img
+extern u8 Img_LinkArenaActiveBannerFx[]; // img
+extern u8 gUnknown_085ACEFC[]; // img
+extern u8 Img_LinkArenaPlacementRanks[]; // img
 // extern ??? gUnknown_085AD80C
 // extern ??? gUnknown_085AD9CC
-// extern ??? gUnknown_085ADA38
+extern u8 Img_LinkArenaPlayerBanners[]; // img
 extern u16 Pal_LinkArenaMenu[];
 extern u16 Pal_TacticianSelObj[];
-// extern ??? gUnknown_085ADCC8
+extern u16 Pal_LinkArenaRankIcons[]; // pal
 // extern ??? gUnknown_085ADDA8
-// extern ??? gUnknown_085ADDC8
+extern u16 Pal_LinkArenaPlacementRanks[]; // pal
 // extern ??? gUnknown_085ADDE8
-// extern ??? gUnknown_085ADE08
+extern u16 Pal_LinkArenaActiveBannerFx[]; // pal
 // extern ??? gUnknown_085ADE28
 // extern ??? gUnknown_085ADE48
 extern u16 Pal_085ADE68[];
-// extern ??? gUnknown_085ADE88
+extern u8 gUnknown_085ADE88[]; // tsa?
 // extern ??? gUnknown_085ADF40
 extern u16 Tsa_085AE190[];
-// extern ??? gUnknown_085AE464
-// extern ??? gUnknown_085AE778
+extern u8 Tsa_SioResultRankings[]; // tsa
+extern u8 gUnknown_085AE778[]; // tsa
 // extern ??? gUnknown_085AE7EC
-// extern ??? gUnknown_085AF170
-// extern ??? gUnknown_085B081C
-// extern ??? gUnknown_085B089C
+extern u8 Img_LinkArenaPostBattleBg[]; // img
+extern u16 Pal_LinkArenaPostBattleBg[]; // pal
+extern u8 Tsa_LinkArenaPostBattleBg[]; // tsa
 // extern ??? gUnknown_085B0DE8
 // extern ??? gUnknown_085B0F2C
 // extern ??? gProcScr_TargetSelection

@@ -54,6 +54,25 @@ struct SioSaveConf {
 } __attribute__((packed));
 extern struct SioSaveConf gSioSaveConfig;
 
+struct SioUnknown_0203DD90
+{
+    // 00 -- ??
+    // 01 -- current phase
+    // 02 -- current cursor unit idx
+    // 03 -- current cursor unit idx (again?)
+    // 04 -- current selected unit idx (attacker)
+    // 05 -- current selected combat target unit id
+    // 06 -- weapon index maybe?
+    // 07-09 -- ??
+    // 0A-0D = byte array - num units alive per team
+    // 14-24? - scores - word array
+    STRUCT_PAD(0x00, 0x24);
+    u16 unk_24[4]; // leader face IDs
+    // more?
+};
+
+struct SioUnknown_0203DD90 gUnk_Sio_0203DD90;
+
 u32 SioStrCpy(u8 const * src, u8 * dst);
 void SioDrawNumber(struct Text * text, int x, int color, int number);
 void SioInit(void);
@@ -145,18 +164,18 @@ void SaveTactician(struct ProcTactician * proc, const struct TacticianTextConf *
 // ??? NameSelect_DrawName(???);
 // ??? sub_8045108(???);
 // ??? sub_80451F0(???);
-// ??? sub_8045208(???);
-// ??? sub_8045234(???);
-// ??? sub_804538C(???);
-// ??? sub_8045494(???);
+// ??? SioPostBattleSprites_Init(???);
+// ??? SioPostBattleSprites_Loop_DrawSlideIn(???);
+// ??? SioPostBattleSprites_Loop_DrawStatic(???);
+// ??? StartDrawLinkArenaRankSprites(???);
 // ??? sub_80454E4(???);
 // ??? sub_804556C(???);
-// ??? sub_8045610(???);
-// ??? sub_8045640(???);
-// ??? sub_80457F8(???);
-// ??? sub_804589C(???);
-// ??? sub_80458E8(???);
-// ??? sub_8045920(???);
+// ??? SioPostBattle_StartMusicProc(???);
+// ??? SioPostBattle_Init(???);
+// ??? SioPostBattle_Loop_Main(???);
+// ??? SioPostBattle_AwaitAPress(???);
+// ??? SioPostBattleMusic_PlayFanfare(???);
+// ??? SioPostBattleMusic_PlayStandardBgm(???);
 // ??? sub_8045930(???);
 // ??? sub_8045A64(???);
 // ??? sub_8045AF4(???);
@@ -191,23 +210,22 @@ void SaveTactician(struct ProcTactician * proc, const struct TacticianTextConf *
 // ??? sub_8046DEC(???);
 // ??? sub_8046E0C(???);
 // ??? sub_8046E4C(???);
-// ??? sub_8046E5C(???);
-// ??? sub_8046E94(???);
-// ??? sub_8046EB8(???);
-// ??? sub_8046F68(???);
-// ??? sub_8047008(???);
-// ??? sub_804720C(???);
+// ??? DrawLinkArenaRankIcon(???);
+void DrawLinkArenaModeIcon(u16 *, u32);
+// ??? DrawLinkArenaRankingRow(???);
+// ??? DrawLinkArenaRankings(???);
+// ??? SioResult_Init(???);
+// ??? SioResult_Loop_Main(???);
 // ??? sub_8047308(???);
-// ??? sub_8047324(???);
-// ??? sub_8047570(???);
-// ??? sub_804762C(???);
-// ??? sub_8047654(???);
-// ??? sub_804766C(???);
-// ??? sub_804768C(???);
+// ??? SioResult_NewHS_Init(???);
+// ??? SioResult_NewHS_LoopScroll(???);
+// ??? SioResult_NewHS_AwaitAPress(???);
+// ??? StartSioResultNewHighScore(???);
+// ??? LoadLinkArenaRuleSettings(???);
+// ??? SaveLinkArenaRuleSettings(???);
 // ??? sub_80476CC(???);
-// ??? sub_8047780(???);
-// ??? sub_8047928(???);
-int sub_8047A54(ProcPtr, int);
+// ??? SioRuleSettings_Init(???);
+// ??? SioRuleSettings_Loop_Main(???);
 
 struct Proc85AA9C0
 {
@@ -231,6 +249,7 @@ struct SioMenuProc
     /* 59 */ s8 unk_59;
 };
 
+int sub_8047A54(struct SioMenuProc *, int);
 // ??? CheckSomethingSaveRelated(???);
 // ??? SioMenu_Init(???);
 // ??? SioMenu_LoadGraphics(???);
@@ -264,7 +283,7 @@ void sub_8048260(ProcPtr); // StartNameSelect
 // ??? sub_8048838(???);
 void CallEraseSaveEvent(ProcPtr);
 // ??? sub_8048864(???);
-// ??? sub_8048884(???);
+void sub_8048884(void *); // TODO: Fix param type
 // ??? sub_8048934(???);
 // ??? sub_8048988(???);
 // ??? nullsub_43(???);
@@ -409,11 +428,11 @@ void Clear_0203DDDC(void);
 // ??? sub_804C260(???);
 // ??? sub_804C2B8(???);
 // ??? sub_804C2DC(???);
-// ??? sub_804C2EC(???);
+void sub_804C2EC(int, int, ProcPtr);
 // ??? sub_804C31C(???);
 void InitSioBG(void);
 // ??? sub_804C3A0(???);
-// ??? sub_804C3A4(???);
+void sub_804C3A4(int);
 void nullsub_13(void);
 // ??? sub_804C3AC(???);
 // ??? sub_804C3EC(???);
@@ -421,7 +440,7 @@ void nullsub_13(void);
 void NewProc085AA980(ProcPtr parent, int, int);
 // ??? sub_804C4F8(???);
 void sub_804C508(void);
-// ??? sub_804C558(???);
+void sub_804C558(void);
 // ??? sub_804C590(???);
 // ??? sub_804C5A4(???);
 // ??? sub_804C5F8(???);
@@ -441,16 +460,16 @@ ProcPtr NewProc_085AAAC4(ProcPtr parent, int a, int b);
 void sub_804CDD0(void *, int, int, int, int, int);
 // ??? sub_804CDE8(???);
 // ??? sub_804CE5C(???);
-// ??? sub_804CE8C(???);
+ProcPtr sub_804CE8C(ProcPtr);
 // ??? sub_804CEB0(???);
-// ??? sub_804CEC4(???);
+void sub_804CEC4(ProcPtr, s16, s16, s16);
 // ??? sub_804CECC(???);
 // ??? sub_804CF04(???);
 void sub_804CFB8(ProcPtr, s16, s16);
 // ??? sub_804CFE0(???);
 // ??? sub_804D01C(???);
-// ??? sub_804D1E0(???);
-// ??? sub_804D24C(???);
+void sub_804D1E0(int, int, int, int, u8, ProcPtr);
+void sub_804D24C(int, s16);
 // ??? sub_804D2A4(???);
 // ??? sub_804D37C(???);
 // ??? StopBGM2(???);
@@ -461,11 +480,11 @@ void sub_804CFB8(ProcPtr, s16, s16);
 // ??? sub_804D664(???);
 // ??? sub_804D6B4(???);
 // ??? sub_804D6C4(???);
-// ??? sub_804D6D4(???);
+void sub_804D6D4(void);
 // ??? sub_804D724(???);
 // ??? sub_804D778(???);
 // ??? sub_804D7B0(???);
-// ??? sub_804D7DC(???);
+ProcPtr sub_804D7DC(int, int, ProcPtr);
 void sub_804D80C(void);
 void sub_804D834(int, int);
 // ??? sub_804D858(???);
@@ -486,23 +505,24 @@ void sub_804D834(int, int);
 
 // extern ??? gUnk_Sio_02000000
 
+extern struct Font Font_Sio_02000C60;
 // extern ??? gLinkArenaSt
 // extern ??? gUnknown_0203DA30
 // extern ??? gUnk_Sio_0203DA78
 extern struct Text gUnk_Sio_0203DA88[];
 extern struct Text Texts_0203DAB0;
 // extern ??? gUnk_Sio_0203DAC0
-// extern ??? gUnk_Sio_0203DAC5
+extern char gUnk_Sio_0203DAC5[][15];
 
 extern struct Text Texts_0203DB14[10];
-// extern ??? gUnk_Sio_0203DB1C
+extern struct Text gUnk_Sio_0203DB1C[];
 extern struct Font Font_0203DB64;
 // extern ??? gUnk_Sio_0203DB7C
-// extern ??? gUnk_Sio_0203DC44
+// extern ??? gSioResultRankings
 // extern ??? gUnk_Sio_0203DC48
 extern struct Text gSioTexts[];
 extern struct Text Text_0203DB14;
-extern u8 gUnk_Sio_0203DD24;
+extern s8 gUnk_Sio_0203DD24;
 // extern ??? gUnk_Sio_0203DD28
 extern u16 gUnk_Sio_0203DD2C[];
 extern int gUnk_Sio_0203DD4C;
@@ -523,19 +543,25 @@ extern s16 gUnknown_080D9C9E[];
 // extern ??? gUnknown_080D9D56
 // extern ??? gUnknown_080D9D5E
 // extern ??? gUnknown_080D9D61
-// extern ??? gUnknown_080D9DE4
-// extern ??? gUnknown_080D9DF2
-// extern ??? gUnknown_080D9E06
-// extern ??? gUnknown_080D9E0E
+extern u16 const Sprite_080D9D6E[];
+extern u16 const Sprite_080D9D76[];
+extern u16 const Sprite_080D9D7E[];
+extern u16 const Sprite_080D9D86[];
+extern u16 const Sprite_080D9D8E[];
+extern u16 const Sprite_080D9DA2[];
+extern u16 const Sprite_080D9DC2[];
+extern u16 const Sprite_080D9DD6[];
+extern u16 const Sprite_080D9DE4[];
+extern u16 const Sprite_080D9DF2[];
+extern u16 const Sprite_080D9E06[];
+extern u16 const Sprite_080D9E0E[];
 // extern ??? gUnknown_080D9E1C
 // extern ??? gUnknown_080D9E44
-// extern ??? gUnknown_080D9E50
-// extern ??? gUnknown_080D9E9C
-// extern ??? gUnknown_080D9EA6
-// extern ??? gUnknown_080D9EC0
+// extern ??? gLinkArenaRuleData
+
 // extern ??? gUnknown_080D9EC8
 // extern ??? gUnknown_080D9EF0
-// extern ??? SioMenuProcLut
+
 // extern ??? gUnknown_080D9F18
 // extern ??? gUnknown_080D9F20
 // extern ??? gUnknown_080D9F28
@@ -578,7 +604,7 @@ extern CONST_DATA u16 gSioList_085A93F0[];
 // extern ??? gUnknown_085A94A0
 extern CONST_DATA struct ProcCmd ProcScr_Sio_085A94AC[];
 // extern ??? ProcScr_TacticianNameSelection
-// extern ??? gUnknown_085A96D4
+// extern ??? SpriteArray_085A96D4
 extern struct ProcCmd ProcScr_DebugMonitor[];
 extern struct ProcCmd ProcScr_SIOTERM[];
 extern struct ProcCmd ProcScr_SIOPRA[];
