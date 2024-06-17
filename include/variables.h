@@ -446,7 +446,7 @@ extern u16 gPal_MapSprite[];
 extern u16 gPal_NotMapSprite[];
 extern u16 gPal_MapSpriteArena[];
 extern u16 gPal_MapSpriteSepia[];
-extern u8 Pal_Text[];
+extern u16 Pal_Text[];
 extern u8 gUnknown_0859EF20[];
 extern u16 Pal_HelpBox[]; // pal
 extern u16 gPal_HelpTextBox[];
@@ -532,14 +532,8 @@ extern u16 CONST_DATA Pal_EventCursorShinning[];
 // extern ??? FaceConfig_085A9E48
 // extern ??? FaceConfig_085A9E68
 // extern ??? ProcScr_SIOMENU
-// extern ??? gUnknown_085A9F48
-// extern ??? gUnknown_085A9F98
-// extern ??? gUnknown_085AA06C
-// extern ??? gUnknown_085AA084
-// extern ??? gUnknown_085AA0A4
-// extern ??? gUnknown_085AA0CA
-// extern ??? gUnknown_085AA0F0
-// extern ??? gUnknown_085AA130
+// extern ??? EventScr_EraseSaveInfo
+
 // extern ??? gUnknown_085AA158
 // extern ??? gUnknown_085AA15C
 // extern ??? gUnknown_085AA1AC
@@ -593,13 +587,13 @@ extern u16 Sprite_085AAA50[]; // sprite
 // extern ??? gUnknown_085AAE0C
 extern u8 Img_LinkArenaMenu[];
 extern u8 Img_TacticianSelObj[];
-// extern ??? gUnknown_085AC604
+extern u8 gUnknown_085AC604[]; // img
 extern u8 Img_LinkArenaRankIcons[]; // img
 extern u8 Img_LinkArenaActiveBannerFx[]; // img
 extern u8 gUnknown_085ACEFC[]; // img
 extern u8 Img_LinkArenaPlacementRanks[]; // img
 // extern ??? gUnknown_085AD80C
-// extern ??? gUnknown_085AD9CC
+extern u8 gUnknown_085AD9CC[]; // img
 extern u8 Img_LinkArenaPlayerBanners[]; // img
 extern u16 Pal_LinkArenaMenu[];
 extern u16 Pal_TacticianSelObj[];
@@ -612,7 +606,7 @@ extern u16 Pal_LinkArenaActiveBannerFx[]; // pal
 // extern ??? gUnknown_085ADE48
 extern u16 Pal_085ADE68[];
 extern u8 gUnknown_085ADE88[]; // tsa?
-// extern ??? gUnknown_085ADF40
+extern u8 gUnknown_085ADF40[]; // tsa
 extern u16 Tsa_085AE190[];
 extern u8 Tsa_SioResultRankings[]; // tsa
 extern u8 gUnknown_085AE778[]; // tsa
@@ -954,10 +948,10 @@ extern unsigned CONST_DATA gMid_Dark;
 // extern ??? gUnknown_08A016C8
 // extern ??? gUnknown_08A016D8
 extern struct ProcCmd gProcScr_BoxDialogue[];
-// extern ??? gUnknown_08A01740
-// extern ??? gProcScr_BoxDialogueInterpreter
+// extern ??? ProcScr_MergeBoxDialogue
+// extern ??? ProcScr_BoxDialogueDrawTextExt
 // extern ??? gUnknown_08A01800
-// extern ??? gUnknown_08A01818
+// extern ??? ProcScr_TalkBoxIdle
 extern u16 CONST_DATA gUnknown_08A01EE4[]; // some face-related palette (if portrait)
 extern u16 CONST_DATA gUnknown_08A01F04[]; // some face-related palette (if card)
 extern u8  CONST_DATA gUnknown_08A01F24[]; // img?
@@ -1037,11 +1031,7 @@ extern u16 gTSA_TerrainBox_Destructable[];
 extern u16 gUnknown_08A176B4[];
 extern u16 gTSA_GoalBox_TwoLines[];
 extern u16 gTSA_GoalBox_OneLine[];
-// extern ??? ProcScr_UnitListScreen_Field
-// extern ??? ProcScr_UnitListScreen_PrepMenu
-// extern ??? ProcScr_UnitListScreen_SoloAnim
-// extern ??? ProcScr_UnitListScreen_WorldMap
-// extern ??? ProcScr_bmview
+
 // extern ??? gUnknown_08A17B30
 // extern ??? gUnknown_08A17B36
 // extern ??? gSpriteArray_08A17B58
@@ -1121,7 +1111,7 @@ extern u8 Img_GameMainMenuObjs[];
 // extern ??? gUnknown_08A294BA
 // extern ??? gUnknown_08A29558
 extern u16 gUnknown_08A295B4[]; // pal
-extern u8 gUnknown_08A295D4[]; // tsa
+extern u8 Tsa_CommGameBgScreenInShop[]; // tsa
 // extern ??? gUnknown_08A29A88
 // extern ??? gUnknown_08A2B1E4
 // extern ??? gUnknown_08A2C11C
@@ -1539,7 +1529,7 @@ extern u16 Pal_OpAnimHleathSafetyScreen[];
 extern struct ProcCmd CONST_DATA ProcScr_E_Guide1[];
 extern struct ProcCmd CONST_DATA ProcScr_E_Guide2[];
 extern u8 Img_CommGameBgScreen[];  // gfx
-extern u16 gUnknown_08B1754C[]; // pal
+extern u16 Pal_CommGameBgScreenInShop[]; // pal
 extern u16 gUnknown_08B1756C[]; // pal, used in opsubtitle
 // extern ??? Tsa_08B176CC
 // extern ??? Img_08B177C0
