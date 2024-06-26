@@ -255,7 +255,7 @@ struct ProcEfxFlashing {
 struct ProcEfxHPBarColorChange {
     PROC_HEADER;
 
-    /* 29 */ u8 unk29;
+    /* 29 */ u8 disabled;
 
     STRUCT_PAD(0x2A, 0x2C);
 
@@ -2540,7 +2540,7 @@ extern u16 gUnknown_08802B04[];
 extern u16 gPalEfxHpBarGreen[];
 extern u16 gUnknown_08802BC4[];
 extern u16 gPalEfxHpBarPurple[];
-extern u16 gUnknown_08802D24[];
+extern u16 Pal_BanimUnitFlashing[];
 
 void EkrEfxStatusClear(void);
 int CheckEkrHitDone(void);
@@ -2648,10 +2648,10 @@ void EfxFlashHPBarMain1(struct ProcEfxFlashing * proc);
 void EfxFlashHPBarRestorePal(struct ProcEfxFlashing * proc);
 void NewEfxHPBarColorChange(struct Anim * anim);
 void EndEfxHPBarColorChange(void);
-void EfxHPBarColorChangeSet29(void);
-void EfxHPBarColorChangeClear29(void);
+void DisableEfxHpBarColorChange(void);
+void EnableEfxHpBarColorChange(void);
 void EfxHPBarColorChangeMain(struct ProcEfxHPBarColorChange * proc);
-void NewEfxFlashUnit(struct Anim * anim, int a, int b, int c);
+void NewEfxFlashUnit(struct Anim * anim, u16 dura1, u16 dura2, int c);
 void EfxFlashUnitMain(struct ProcEfxFlashing * proc);
 void EfxFlashUnitRestorePal(struct ProcEfxFlashing * proc);
 void NewEfxFlashUnitEffectEnd(struct Anim * anim, int dura1, int dura2, int c);
