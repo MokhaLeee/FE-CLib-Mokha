@@ -157,7 +157,7 @@ extern void (* sHBlankHandler2)(void);
 extern u16 * gOamAffinePutIt;
 // extern ??? gUnknown_03004160
 // extern ??? gUnknown_03004960
-// extern ??? gUnknown_03004990
+// extern ??? gpBgVerticalScrollSt
 // extern ??? gStatGainSimUnit
 extern struct Unit * gActiveUnit;
 // extern ??? gUnknown_03004E70
@@ -589,7 +589,7 @@ extern u8 Img_LinkArenaPlayerBanners[]; // img
 extern u16 Pal_LinkArenaMenu[];
 extern u16 Pal_TacticianSelObj[];
 extern u16 Pal_LinkArenaRankIcons[]; // pal
-// extern ??? gUnknown_085ADDA8
+extern u16 gUnknown_085ADDA8[]; // pal
 extern u16 Pal_LinkArenaPlacementRanks[]; // pal
 // extern ??? gUnknown_085ADDE8
 extern u16 Pal_LinkArenaActiveBannerFx[]; // pal
@@ -864,9 +864,9 @@ extern u16 Pal_TalkBubble[];
 // extern ??? gUnknown_089ED6AC
 extern struct ProcCmd ProcScr_BmGameOver[];
 extern struct ProcCmd ProcScr_ForceAsyncButtonB[];
-extern struct ProcCmd gUnknown_089EE000[];
-extern struct ProcCmd ProcScr_089EE030[];
-extern struct ProcCmd ProcScr_089EE048[];
+extern struct ProcCmd ProcScr_EventHorizontalQuakefx[];
+extern struct ProcCmd ProcScr_EventVerticalQuakefx[];
+extern struct ProcCmd ProcScr_EventQuakefx[];
 extern struct ProcCmd ProcScr_089EE068[];
 extern struct ProcCmd ProcScr_WorldFlush[];
 extern u16 CONST_DATA Obj_089EE99C[];
