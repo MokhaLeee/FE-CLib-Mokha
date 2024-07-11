@@ -38,12 +38,20 @@ void AP_LoadDefinition(struct APHandle *, const u16 *);
 void AP_ExecDummyFrame(struct APHandle *);
 void AP_Init(struct APHandle *, const u16 *, u16);
 struct APHandle * AP_Find(const u16 * definition);
-ProcPtr APProc_Create(const void * apDefinition, int xPos, int yPos, int tileBase, int anim, u16 aObjNode);
+ProcPtr APProc_Create(const void * apDefinition, int xPos, int yPos, int tileBase, int anim, int aObjNode);
 // ??? APProc_OnUpdate(???);
 // ??? APProc_OnEnd(???);
 void APProc_SetParameters(struct APProc * proc, int x, int y, int tileBase);
 void APProc_Delete(struct APProc * proc);
 void APProc_DeleteAll(void);
 bool APProc_Exists(void);
+
+#define ResetSpriteAnimClock(anim) \
+    (anim)->frameTimer = 0; \
+    (anim)->frameInterval = 0x100
+
+#define FreezeSpriteAnim(anim) \
+    (anim)->frameTimer = 0; \
+    (anim)->frameInterval = 0
 
 #endif // GUARD_AP_H
