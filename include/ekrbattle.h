@@ -75,7 +75,9 @@ enum gEkrDistanceType_index {
     EKR_DISTANCE_FAR,
     EKR_DISTANCE_FARFAR,
     EKR_DISTANCE_MONOCOMBAT,
-    EKR_DISTANCE_PROMOTION
+    EKR_DISTANCE_PROMOTION,
+
+    EKR_DISTANCE_MAX
 };
 extern s16 gEkrDistanceType;
 
@@ -564,7 +566,7 @@ extern const u16 * CONST_DATA gUnknown_085B9CC4[];
 extern struct ProcCmd ProcScr_ekrUnitKakudai[];
 
 extern AnimScr BanimScr_DefaultAnim[];
-extern void *gUnknown_085B9D6C[];
+extern void *TsaConfs_BanimTmA[];
 extern struct ProcCmd gProc_ekrChienCHR[];
 extern struct ProcCmd gProc_efxAnimeDrvProc[];
 extern struct ProcCmd ProcScr_ekrUnitMainMini[];
@@ -600,18 +602,14 @@ extern const u8 BattleTypeToAnimModeEndOfDodge[5];
 extern const u8 BanimTypesPosLeft[5];
 extern const u8 BanimTypesPosRight[5];
 extern const u16 BanimLeftDefaultPos[5];
-// extern ??? gUnknown_080DAF60
+extern u16 gUnknown_080DAF60[];
 extern const u8 Img_080DB034[];
 extern const u8 Img_080DB538[];
 extern const u8 Img_080DB9C4[];
 extern const u8 Img_080DBE1C[];
 extern const u8 Img_080DC350[];
 extern const u16 Pal_080DC85C[2];
-extern const u16 gUnknown_080DCCA6[];
-extern const u16 gUnknown_080DCCC0[];
-extern const u16 gUnknown_080DCD26[];
-extern const u16 gUnknown_080DCD72[];
-extern const u16 gUnknown_080DCDE4[];
+extern const u16 FrameConfig_AnimaHitBG[];
 // extern ??? gFrameConfig_080DD1F4
 // extern ??? gUnknown_080DD8C6
 // extern ??? gUnknown_080DD8CC
@@ -927,13 +925,13 @@ void SetAnimStateUnHidden(int ais_id);
 
 struct BanimUnkStructComm
 {
-    /* 00 */ s16 unk00; // terrain L
-    /* 02 */ s16 unk02; // pal ID L
-    /* 04 */ s16 unk04; // chr L
-    /* 06 */ s16 unk06; // terrain R
-    /* 08 */ s16 unk08; // pal ID R
-    /* 0A */ s16 unk0A; // chr R
-    /* 0C */ s16 unk0C;
+    /* 00 */ s16 terrain_l; // terrain L
+    /* 02 */ s16 pal_l; // pal ID L
+    /* 04 */ s16 chr_l; // chr L
+    /* 06 */ s16 terrain_r;
+    /* 08 */ s16 pal_r;
+    /* 0A */ s16 chr_r; // chr R
+    /* 0C */ s16 distance;
     /* 0E */ s16 unk0E;
     /* 10 */ u16 unk10;
     /* 14 */ ProcPtr proc14; // sub emulator proc a
@@ -969,7 +967,7 @@ struct AnimBuffer
 void sub_805A3DC(struct AnimBuffer * pAnimBuf, struct Anim * anim);
 void sub_805A580(struct Anim *);
 void sub_805A5A8(struct Anim *);
-void sub_805A60C(struct AnimBuffer * pAnimBuf);
+void InitMainMiniAnim(struct AnimBuffer * pAnimBuf);
 void sub_805A7B4(struct AnimBuffer * pAnimBuf);
 void sub_805A930(struct AnimBuffer * pAnimBuf, int animId, int charPalId);
 void sub_805A940(struct AnimBuffer * pAnimBuf, u16 x, u16 y);
@@ -986,8 +984,8 @@ void sub_805AA28(struct AnimBuffer * pAnimBuf);
 // void sub_805AA68(void *);
 // void sub_805AE14(void *);
 // void sub_805AE40(void *, s16, s16, s16, s16);
-void sub_805AE58(void *);
-void sub_805AFA0(int, s16);
+void sub_805AE58(struct BanimUnkStructComm *);
+void sub_805AFA0(s16, s16);
 
 struct ProcEkrTogi
 {
