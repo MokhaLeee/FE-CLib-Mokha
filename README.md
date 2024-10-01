@@ -24,5 +24,5 @@ C header files for **FireEmblem8U** port from [decomp](https://github.com/FireEm
 ## See also
 
 * [**fe8-chax-template**](https://github.com/MokhaLeee/fe8-chax-template), an example to use this C-Lib to compile your own source files.
-* [**FE8U-CSkillSys**](https://github.com/FireEmblemUniverse/fe8u-cskillsys), project to insert everything through EA for CHAX.
+* [**FE8U-CSkillSys**](https://github.com/FireEmblemUniverse/fe8u-cskillsys), project for modern CHAX for FE8U.
 * [**FireEmblemUniverse/fireemblem8u**](https://github.com/FireEmblemUniverse/fireemblem8u), a decompilation of Fire Emblem: The Sacred Stones (US)
