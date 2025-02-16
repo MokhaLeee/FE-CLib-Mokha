@@ -12,6 +12,7 @@ enum song_idx {
     SONG_0C = 0x0C,
     SONG_0E = 0x0E,
     SONG_0F = 0x0F,
+    SONG_BGM_MAP_PL10 = 0x010,
     SONG_11 = 0x11,
     SONG_12 = 0x12,
     SONG_13 = 0x13,
@@ -48,12 +49,12 @@ enum song_idx {
     SONG_60 = 0x60, // save success
     SONG_61 = 0x61,
     SONG_65 = 0x65,
-    SONG_66 = 0x66,
+    SONG_SE_SYS_CURSOR_UD1 = 0x66,
     SONG_67 = 0x67, // change selection in menu/help box
     SONG_68 = 0x68,
     SONG_69 = 0x69,
-    SONG_6A = 0x6A,
-    SONG_6B = 0x6B,
+    SONG_SE_SYS_WINDOW_SELECT1 = 0x6A,
+    SONG_SE_SYS_WINDOW_CANSEL1 = 0x6B,
     SONG_6C = 0x6C,
     SONG_6E = 0x6E,
     SONG_6F = 0x6F, // stat screen page slide
