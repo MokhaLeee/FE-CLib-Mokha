@@ -63,7 +63,7 @@ extern struct Unit* sUnitStackBase;
 extern struct Unit* sUnitStackTop;
 extern u8 sUnitStackSize;
 
-extern int gBattleScriptted;
+extern int gBattleScripted;
 extern int gBaArenaFlag;
 // extern ??? gpActiveClassReelSpellProc
 // extern ??? gpActiveCRSpellBgColorProc
@@ -121,7 +121,7 @@ extern u16 gOam[];
 extern u32 * gOamHiPutIt;
 extern void (* sHBlankHandler2)(void);
 // extern ??? gUnknown_03003750
-// extern ??? gUnknown_03004150
+extern void (*gpARM_HuffmanTextDecomp)(const char *, char *);
 // extern ??? gUnknown_03004154
 extern u16 * gOamAffinePutIt;
 // extern ??? gUnknown_03004160
@@ -816,9 +816,9 @@ extern u8 CONST_DATA gUnknown_08A0328C[];
 // extern ??? gUnknown_08A032AC
 // extern ??? gUnknown_08A03334
 // extern ??? gUnknown_08A03354
-extern u8  CONST_DATA gUnknown_08A03368[]; // stat screen background img
-extern u8  CONST_DATA gUnknown_08A05F10[]; // stat screen background tsa
-extern u16 CONST_DATA gUnknown_08A06460[]; // stat screen background pal
+extern u8  CONST_DATA Img_StatscreenBG[]; // stat screen background img
+extern u8  CONST_DATA Tsa_StatscreenBG[]; // stat screen background tsa
+extern u16 CONST_DATA Pal_StatscreenBG[]; // stat screen background pal
 extern u8  CONST_DATA gUnknown_08A064E0[]; // halo img
 extern u8  CONST_DATA gUnknown_08A071FC[]; // halo tsa
 extern u16 CONST_DATA gUnknown_08A0731C[]; // halo pal
