@@ -43,7 +43,7 @@ void sub_80028FC(int songId);
 int IsMusicProc2Running(void);
 // ??? sub_800296C(???);
 // ??? sub_80029BC(???);
-void CallSomeSoundMaybe(int songId, int b, int c, int d, ProcPtr parent);
+void ChangeBgm(int songId, int vc_init_volume, int vc_end_volume, int duration, ProcPtr parent);
 s8 MusicProc4Exists(void);
 // ??? sub_8002A88(???);
 void DeleteAll6CWaitMusicRelated();

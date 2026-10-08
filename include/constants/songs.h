@@ -96,7 +96,7 @@ enum song_idx {
     SONG_69 = 0x69,
     SONG_SE_SYS_WINDOW_SELECT1 = 0x6A,
     SONG_SE_SYS_WINDOW_CANSEL1 = 0x6B,
-    SONG_6C = 0x6C,
+    SONG_6C = 0x6C, // SE_SYS_MISS1
     SONG_6D = 0x6D,
     SONG_6E = 0x6E,
     SONG_6F = 0x6F, // stat screen page slide
@@ -278,7 +278,7 @@ enum song_idx {
     SONG_312 = 0x312,
     SONG_313 = 0x313,
     SONG_314 = 0x314,
-    SONG_316 = 0x316,
+    SONG_SYS_CHAPTER_START = 0x316,
     SONG_317 = 0x317,
     SONG_320 = 0x320,
     SONG_321 = 0x321,

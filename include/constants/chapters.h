@@ -94,5 +94,11 @@ enum chapter_idx
     CHAPTER_75 = 0x75,
     CHAPTER_7F = 0x7f,
 
+    CHAPTER_FE = 0xFE,
     CHAPTER_FF = 0xFF,
 };
+
+#define CHAPTER_IS_TOWER(chapterId) (chapterId) - CHAPTER_T_02 < 9
+#define CHAPTER_IS_RUINS(chapterId) (chapterId) - CHAPTER_R_02 < 9
+
+#define CHAPTER_IS_DUNGEON(chapterId) (chapterId) - CHAPTER_T_01 < 0x14

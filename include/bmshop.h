@@ -8,7 +8,8 @@
 enum {
     SHOP_TYPE_ARMORY        = 0,
     SHOP_TYPE_VENDOR        = 1,
-    SHOP_TYPE_SECRET_SHOP   = 2
+    SHOP_TYPE_SECRET_SHOP   = 2,
+    SHOP_TYPE_MANAGE_ITEMS  = 3, // used in "GMap Base Menu"
 };
 
 enum {
